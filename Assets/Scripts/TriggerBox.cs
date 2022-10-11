@@ -6,7 +6,7 @@ public class TriggerBox : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Welosss");
+        Debug.Log("Welos");
     }
         
 
