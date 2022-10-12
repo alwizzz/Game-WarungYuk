@@ -39,7 +39,7 @@ public class Table : Interactable
     //    }
     //}
 
-    public override void InteractionWhenHoldingItem(PlayerAction playerAction)
+    public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)
     {
         if(hasItemOnTable) { return; } // do nothing if there's something on table
         TakeItemFromPlayer(playerAction);
@@ -47,7 +47,7 @@ public class Table : Interactable
 
     }
 
-    public override void InteractionWhenNotHoldingItem(PlayerAction playerAction)
+    public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {
         if (!hasItemOnTable) { return; } // do nothing if there's nothing on table
         GiveItemToPlayer(playerAction);

@@ -1,0 +1,128 @@
+{
+    "region": "sumatra",
+    "completedDishes": [
+        "mie_aceh", "soto_medan", "rendang"
+    ],
+    "rawIngredients": [
+        "daging", "mie", "ayam", "santan"
+    ],
+    "processedIngredients": null,
+    "processes": [
+        "rebus"
+    ], 
+    "dishProcessTransitions":[
+        {
+            "process": "REBUS",
+            "input": "mie_daging",
+            "output": "mie_aceh",
+            "isSynchronous": true
+        },
+        {
+            "process": "REBUS",
+            "input": "mie_ayam",
+            "output": "soto_medan",
+            "isSynchronous": true
+        },
+        {
+            "process": "REBUS",
+            "input": "daging_santan",
+            "output": "rendang",
+            "isSynchronous": false
+        }
+    ],
+    "ingredientProcessTransitions" : null,
+    "dishStates": [
+        {
+            "name": "mangkok",
+            "transitions": [
+                {
+                    "input": "daging",
+                    "nextState": "daging",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "ayam",
+                    "nextState": "ayam",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "mie",
+                    "nextState": "mie",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "daging",
+            "transitions": [
+                {
+                    "input": "mie",
+                    "nextState": "mie_daging",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mie",
+            "transitions":[
+                {
+                    "input": "daging",
+                    "nextState": "mie_daging",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "ayam",
+                    "nextState": "mie_ayam",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "ayam",
+            "transitions": [
+                {
+                    "input": "mie",
+                    "nextState": "mie_ayam",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+
+
+        {
+            "name": "piring",
+            "transitions": [
+                {
+                    "input": "daging",
+                    "nextState": "daging",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "santan",
+                    "nextState": "santan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "daging",
+            "transitions": [
+                {
+                    "input": "santan",
+                    "nextState": "daging_santan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "santan",
+            "transitions": [
+                {
+                    "input": "daging",
+                    "nextState": "daging_santan",
+                    "intoCompletedDish": false
+                }
+            ]
+        }
+    ]
+}

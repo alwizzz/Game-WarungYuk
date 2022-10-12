@@ -43,6 +43,8 @@ public class PlayerAction : MonoBehaviour
 
         return temp;
     }
+
+    public string GetHeldItemTypeString() => heldItem.GetType().ToString();
     public void SetHeldItem(Item input) { 
         heldItem = input;
         heldItem.MoveToPivot(holdingPivot);

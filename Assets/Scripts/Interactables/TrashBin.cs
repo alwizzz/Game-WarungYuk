@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrashBin : Interactable
 {
-    public override void InteractionWhenHoldingItem(PlayerAction playerAction)
+    public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)
     {
         DestroyItemFromPlayer(playerAction);
     }

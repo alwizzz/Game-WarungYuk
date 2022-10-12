@@ -10,18 +10,18 @@ public abstract class Interactable : MonoBehaviour
         Debug.Log("player attempts to interact with " + this);
         if (playerAction.IsHolding())
         {
-            InteractionWhenHoldingItem(playerAction);
+            InteractionWhenPlayerHoldingItem(playerAction);
         } else
         {
-            InteractionWhenNotHoldingItem(playerAction);
+            InteractionWhenPlayerNotHoldingItem(playerAction);
         }
     }
 
-    public virtual void InteractionWhenHoldingItem(PlayerAction playerAction)
+    public virtual void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)
     {
         return;
     }
-    public virtual void InteractionWhenNotHoldingItem(PlayerAction playerAction)
+    public virtual void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {
         return;
     }

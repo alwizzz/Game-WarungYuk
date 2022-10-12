@@ -6,7 +6,7 @@ public class Spawner : Interactable
 {
     [SerializeField] Item rawIngredientPrefab;
 
-    public override void InteractionWhenNotHoldingItem(PlayerAction playerAction)
+    public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {
         SpawnItemToPlayer(playerAction);
     }
