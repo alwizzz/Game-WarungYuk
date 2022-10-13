@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class Processor : Interactable
 {
+    [SerializeField] string processName;
+    [SerializeField] List<CookingRecipe.DishProcessTransition> dishProcessTransitions;
+    [SerializeField] List<CookingRecipe.IngredientProcessTransition> ingredientProcessTransitions;
+
+
+    LevelMaster levelMaster;
+    CookingRecipe cookingRecipe;
+    
+
+    private void Awake()
+    {
+        levelMaster = FindObjectOfType<LevelMaster>();
+
+    }
+
+    IEnumerator Delay(int n) { yield return new WaitForSeconds(n); }
+
+    private void Start()
+    {
+        cookingRecipe = levelMaster.GetCookingRecipe();
+        //StartCoroutine(Delay(5));
+        dishProcessTransitions = cookingRecipe.GetDishProcessTransitions(processName);
+        ingredientProcessTransitions = cookingRecipe.GetIngredientProcessTransitions(processName);
+    }
+
     public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)
     {
-        var playerItemTypeString = playerAction.GetHeldItemTypeString();
-        Debug.Log("held item is " + playerItemTypeString);
-        if(playerItemTypeString == "RawIngredient")
+        var playerHeldItemTypeString = playerAction.GetHeldItem().GetType().ToString();
+        Debug.Log("held item is " + playerHeldItemTypeString);
+        if(playerHeldItemTypeString == "RawIngredient")
         {
             ProcessIngredient();
         }
-        else if (playerItemTypeString == "UncompletedDish")
+        else if (playerHeldItemTypeString == "UncompletedDish")
         {
             ProcessDish();
         }

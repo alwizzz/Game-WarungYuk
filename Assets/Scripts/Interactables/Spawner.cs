@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : Interactable
 {
-    [SerializeField] Item rawIngredientPrefab;
+    [SerializeField] RawIngredient rawIngredientPrefab;
 
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {
@@ -18,6 +18,6 @@ public class Spawner : Interactable
             transform.position,
             Quaternion.identity
         );
-        playerAction.SetHeldItem(rawIngredient);
+        playerAction.GiveItemToHold(rawIngredient);
     }
 }

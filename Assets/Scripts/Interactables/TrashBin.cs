@@ -11,7 +11,7 @@ public class TrashBin : Interactable
 
     void DestroyItemFromPlayer(PlayerAction playerAction)
     {
-        var item = playerAction.GetHeldItem();
+        var item = playerAction.TakeHeldItem();
         //if(item is Dish)
         //{
 

@@ -35,7 +35,8 @@ public class PlayerAction : MonoBehaviour
     }
 
     public bool IsHolding() => isHolding;
-    public Item GetHeldItem()
+    public Item GetHeldItem() => heldItem;
+    public Item TakeHeldItem()
     {
         var temp = heldItem;
         heldItem = null;
@@ -43,9 +44,7 @@ public class PlayerAction : MonoBehaviour
 
         return temp;
     }
-
-    public string GetHeldItemTypeString() => heldItem.GetType().ToString();
-    public void SetHeldItem(Item input) { 
+    public void GiveItemToHold(Item input) { 
         heldItem = input;
         heldItem.MoveToPivot(holdingPivot);
         UpdateIsHolding();

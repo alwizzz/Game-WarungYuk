@@ -41,10 +41,35 @@ public class Table : Interactable
 
     public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)
     {
-        if(hasItemOnTable) { return; } // do nothing if there's something on table
-        TakeItemFromPlayer(playerAction);
-        //TakeItemFromPlayerREF(playerAction, itemOnTable, plac);
+        if(!hasItemOnTable) 
+        { 
+            TakeItemFromPlayer(playerAction); 
+        } 
+        else
+        {
+            AttemptToMix(playerAction, playerAction.GetHeldItem());
+        }
+    }
 
+    void AttemptToMix(PlayerAction playerAction, Item playerHeldItem)
+    {
+        var playerHeldItemString = playerHeldItem.GetType().ToString();
+        if (
+            itemOnTable.GetType().ToString() == "UncompletedDish" && 
+            (playerHeldItemString == "RawIngredient" || playerHeldItemString == "ProcessedIngredient")
+        )
+        {
+            // downcasting
+            UncompletedDish uDish = (UncompletedDish)itemOnTable;
+            Ingredient playerHeldIngredient = (Ingredient)playerHeldItem;
+
+            if (uDish.IsMixable(playerHeldIngredient))
+            {
+                var temp = playerAction.TakeHeldItem();
+                Ingredient ingredientToMix = (Ingredient) temp;
+                uDish.Mix(ingredientToMix);
+            }
+        }
     }
 
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
@@ -55,7 +80,7 @@ public class Table : Interactable
 
     void TakeItemFromPlayer(PlayerAction playerAction)
     {
-        itemOnTable = playerAction.GetHeldItem();
+        itemOnTable = playerAction.TakeHeldItem();
         itemOnTable.MoveToPivot(placingPivot);
         UpdateHasItemOnTable();
     }
@@ -71,7 +96,7 @@ public class Table : Interactable
 
     void GiveItemToPlayer(PlayerAction playerAction)
     {
-        playerAction.SetHeldItem(itemOnTable);
+        playerAction.GiveItemToHold(itemOnTable);
         itemOnTable = null;
         UpdateHasItemOnTable();
     }

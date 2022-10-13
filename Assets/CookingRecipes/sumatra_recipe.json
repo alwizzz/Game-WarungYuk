@@ -13,13 +13,13 @@
     "dishProcessTransitions":[
         {
             "process": "REBUS",
-            "input": "mie_daging",
+            "input": "mangkok_mie_daging",
             "output": "mie_aceh",
             "isSynchronous": true
         },
         {
             "process": "REBUS",
-            "input": "mie_ayam",
+            "input": "mangkok_mie_ayam",
             "output": "soto_medan",
             "isSynchronous": true
         },
@@ -31,98 +31,110 @@
         }
     ],
     "ingredientProcessTransitions" : null,
-    "dishStates": [
+    "bowlDishStates": [
         {
             "name": "mangkok",
             "transitions": [
                 {
                     "input": "daging",
-                    "nextState": "daging",
+                    "nextState": "mangkok_daging",
                     "intoCompletedDish": false
                 },
                 {
                     "input": "ayam",
-                    "nextState": "ayam",
+                    "nextState": "mangkok_ayam",
                     "intoCompletedDish": false
                 },
                 {
                     "input": "mie",
-                    "nextState": "mie",
+                    "nextState": "mangkok_mie",
                     "intoCompletedDish": false
                 }
             ]
         },
         {
-            "name": "daging",
+            "name": "mangkok_daging",
             "transitions": [
                 {
                     "input": "mie",
-                    "nextState": "mie_daging",
+                    "nextState": "mangkok_mie_daging",
                     "intoCompletedDish": false
                 }
             ]
         },
         {
-            "name": "mie",
+            "name": "mangkok_mie",
             "transitions":[
                 {
                     "input": "daging",
-                    "nextState": "mie_daging",
+                    "nextState": "mangkok_mie_daging",
                     "intoCompletedDish": false
                 },
                 {
                     "input": "ayam",
-                    "nextState": "mie_ayam",
+                    "nextState": "mangkok_mie_ayam",
                     "intoCompletedDish": false
                 }
             ]
         },
         {
-            "name": "ayam",
+            "name": "mangkok_ayam",
             "transitions": [
                 {
                     "input": "mie",
-                    "nextState": "mie_ayam",
+                    "nextState": "mangkok_mie_ayam",
                     "intoCompletedDish": false
                 }
             ]
         },
-
-
+        {
+            "name": "mangkok_mie_daging",
+            "transitions": null
+        },
+        {
+            "name": "mangkok_mie_ayam",
+            "transitions": null
+        }
+    ],
+    "plateDishStates": [
         {
             "name": "piring",
             "transitions": [
                 {
                     "input": "daging",
-                    "nextState": "daging",
+                    "nextState": "piring_daging",
                     "intoCompletedDish": false
                 },
                 {
                     "input": "santan",
-                    "nextState": "santan",
+                    "nextState": "piring_santan",
                     "intoCompletedDish": false
                 }
             ]
         },
         {
-            "name": "daging",
+            "name": "piring_daging",
             "transitions": [
                 {
                     "input": "santan",
-                    "nextState": "daging_santan",
+                    "nextState": "piring_daging_santan",
                     "intoCompletedDish": false
                 }
             ]
         },
         {
-            "name": "santan",
+            "name": "piring_santan",
             "transitions": [
                 {
                     "input": "daging",
-                    "nextState": "daging_santan",
+                    "nextState": "piring_daging_santan",
                     "intoCompletedDish": false
                 }
             ]
+        },
+        {
+            "name": "piring_daging_santan",
+            "transitions": null
         }
     ]
 }
