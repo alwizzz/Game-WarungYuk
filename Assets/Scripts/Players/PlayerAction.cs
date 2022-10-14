@@ -5,20 +5,22 @@ using UnityEngine;
 public class PlayerAction : MonoBehaviour
 {
     [SerializeField] GameObject playerBody;
-    //[SerializeField] PlayerMovement playerMovement;
+    [SerializeField] PlayerMovement playerMovement;
     [SerializeField] PlayerInteraction playerInteraction;
+    [SerializeField] Animator playerAnimator;
 
     [SerializeField] bool isHolding;
+    [SerializeField] bool isProcessing;
+
     [SerializeField] Item heldItem;
     [SerializeField] Transform holdingPivot;
 
-    Animator playerAnimator;
 
     private void Awake()
     {
         //playerMovement = GetComponent<PlayerMovement>();
-        playerInteraction = GetComponentInChildren<PlayerInteraction>();
-        playerAnimator = playerBody.GetComponentInChildren<Animator>();
+        //playerInteraction = GetComponentInChildren<PlayerInteraction>();
+        //playerAnimator = playerBody.GetComponentInChildren<Animator>();
     }
 
     private void Start()
@@ -28,14 +30,37 @@ public class PlayerAction : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && playerInteraction.HasInteractedObject())
+        var interactedObject = playerInteraction.GetInteractedObject();
+        if (interactedObject)
         {
-            playerInteraction.GetInteractedObject().Interact(this);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                interactedObject.Interact(this);
+            } 
+            //else if(Input.GetKeyDown(KeyCode.Q) && interactedObject.GetType().ToString() == "Processor" && isHolding)
+            //{
+            //    Processor processor = (Processor)interactedObject;
+            //    processor.Process(this);
+            //}
+            if(interactedObject.GetType().ToString() == "Processor")
+            {
+                if (Input.GetKeyDown(KeyCode.Q) && !isProcessing) 
+                {
+                    //Debug.Log("Q pressed"); 
+                    Processor processor = (Processor)interactedObject;
+                    processor.Process(this);
+                }
+                if (Input.GetKeyUp(KeyCode.Q) && isProcessing) 
+                { 
+                    Debug.Log("Q released"); 
+                }
+            }
         }
     }
 
     public bool IsHolding() => isHolding;
-    public Item GetHeldItem()
+    public Item GetHeldItem() => heldItem;
+    public Item TakeHeldItem()
     {
         var temp = heldItem;
         heldItem = null;
@@ -43,7 +68,7 @@ public class PlayerAction : MonoBehaviour
 
         return temp;
     }
-    public void SetHeldItem(Item input) { 
+    public void GiveItemToHold(Item input) { 
         heldItem = input;
         heldItem.MoveToPivot(holdingPivot);
         UpdateIsHolding();
@@ -53,4 +78,14 @@ public class PlayerAction : MonoBehaviour
         isHolding = (heldItem ? true : false);
         playerAnimator.SetBool("isHolding", isHolding);
     }
+
+    public void HideHeldItem() { heldItem.gameObject.SetActive(false); }
+    public void ShowHeldItem() { heldItem.gameObject.SetActive(true); }
+    public void SetIsProcessing(bool value) 
+    { 
+        isProcessing = value;
+        playerMovement.SetIsAbleToMove(!value);
+    }
+    public PlayerMovement GetPlayerMovement() => playerMovement;
+
 }

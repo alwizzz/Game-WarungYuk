@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float rotateSpeed = 0.1f;
 
     [SerializeField] bool isMoving;
+    [SerializeField] bool isAbleToMove;
 
     [SerializeField] bool blockedForward;
     [SerializeField] bool blockedBackward;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         blockedRight = false;
 
         isMoving = false;
+        isAbleToMove = true;
 
         //playerRigidbody = playerBody.GetComponent<Rigidbody>();
         playerAnimator = playerBody.GetComponentInChildren<Animator>();
@@ -35,7 +37,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        if (isAbleToMove)
+        {
+            Move();
+        }
         //RigidbodyMove();
 
 
@@ -128,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
     public void SetBlockedBackward(bool value) { blockedBackward = value; }
     public void SetBlockedLeft(bool value) { blockedLeft = value; }
     public void SetBlockedRight(bool value) { blockedRight = value; }
+    public void SetIsAbleToMove(bool value) { isAbleToMove = value; }
 
     void UpdateIsMoving(Vector3 movementVector)
     {

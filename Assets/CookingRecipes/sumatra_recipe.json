@@ -1,0 +1,137 @@
+{
+    "region": "sumatra",
+    "completedDishes": [
+        "mie_aceh", "soto_medan", "rendang"
+    ],
+    "rawIngredients": [
+        "daging", "mie", "ayam", "santan"
+    ],
+    "processedIngredients": null,
+    "processes": [
+        "rebus"
+    ], 
+    "dishProcessTransitions":[
+        {
+            "process": "REBUS",
+            "input": "mangkok_mie_daging",
+            "output": "mie_aceh"
+        },
+        {
+            "process": "REBUS",
+            "input": "mangkok_mie_ayam",
+            "output": "soto_medan"
+        },
+        {
+            "process": "REBUS",
+            "input": "piring_daging_santan",
+            "output": "rendang"
+        }
+    ],
+    "ingredientProcessTransitions" : null,
+    "bowlDishStates": [
+        {
+            "name": "mangkok",
+            "transitions": [
+                {
+                    "input": "daging",
+                    "nextState": "mangkok_daging",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "ayam",
+                    "nextState": "mangkok_ayam",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "mie",
+                    "nextState": "mangkok_mie",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_daging",
+            "transitions": [
+                {
+                    "input": "mie",
+                    "nextState": "mangkok_mie_daging",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_mie",
+            "transitions":[
+                {
+                    "input": "daging",
+                    "nextState": "mangkok_mie_daging",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "ayam",
+                    "nextState": "mangkok_mie_ayam",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_ayam",
+            "transitions": [
+                {
+                    "input": "mie",
+                    "nextState": "mangkok_mie_ayam",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_mie_daging",
+            "transitions": null
+        },
+        {
+            "name": "mangkok_mie_ayam",
+            "transitions": null
+        }
+    ],
+    "plateDishStates": [
+        {
+            "name": "piring",
+            "transitions": [
+                {
+                    "input": "daging",
+                    "nextState": "piring_daging",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "santan",
+                    "nextState": "piring_santan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_daging",
+            "transitions": [
+                {
+                    "input": "santan",
+                    "nextState": "piring_daging_santan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_santan",
+            "transitions": [
+                {
+                    "input": "daging",
+                    "nextState": "piring_daging_santan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_daging_santan",
+            "transitions": null
+        }
+    ]
+}

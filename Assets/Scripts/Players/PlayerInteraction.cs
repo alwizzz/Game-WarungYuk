@@ -132,6 +132,5 @@ public class PlayerInteraction : MonoBehaviour
         distanceToTertiaryInteractedObject = 0;
     }
 
-    public bool HasInteractedObject() { return primaryInteractedObject; }
-    public Interactable GetInteractedObject() { return primaryInteractedObject; }
+    public Interactable GetInteractedObject() => primaryInteractedObject;
 }

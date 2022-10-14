@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class Dish : Item
 {
-
+    [SerializeField] protected CookingRecipe.DishState currentDishState;
 }
