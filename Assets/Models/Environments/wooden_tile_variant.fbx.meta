@@ -3,12 +3,7 @@ guid: 9c356cce630d1cb4bb18218e38c0eec9
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: wooden_tile_variant
-    second: {fileID: 2800000, guid: 2475bc8b37cd9f64984273a5e6b57db7, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

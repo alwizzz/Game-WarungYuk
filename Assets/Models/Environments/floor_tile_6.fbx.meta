@@ -3,22 +3,7 @@ guid: 21fa8c659d6b4c74f82ee2296569591e
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: floor_tiles_08_diff_1k
-    second: {fileID: 2800000, guid: 0897d8d1501930b4ba08233b261bfcce, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: floor_tiles_08_nor_gl_1k
-    second: {fileID: 2800000, guid: ad32cecf797b69342b4eaac215409ef0, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: floor_tiles_08_rough_1k
-    second: {fileID: 2800000, guid: 2c977404c01245442bbaad925742080d, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

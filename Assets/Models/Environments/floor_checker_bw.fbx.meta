@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 142b764eb6af6da42aa2891a3c7cb443
+guid: ad315f12fcab77540bd03917d615ad38
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: checker_bw_baked
+    second: {fileID: 2800000, guid: ee77bd4637bce0448bac32cd6c3e64ca, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

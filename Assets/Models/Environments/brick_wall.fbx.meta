@@ -3,22 +3,7 @@ guid: 0ffe318849268934b9fff39f5b39fb0f
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: red_brick_03_diff_1k
-    second: {fileID: 2800000, guid: 77206cd83039f4a48976261bdbdfd5b6, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: red_brick_03_nor_dx_1k
-    second: {fileID: 2800000, guid: 69012bcaee3e4554890abbf5a4999ea5, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: red_brick_03_rough_1k
-    second: {fileID: 2800000, guid: 85c9534370e0a6e4598dc7cf90ae2575, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
