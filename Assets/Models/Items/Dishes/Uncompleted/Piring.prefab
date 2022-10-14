@@ -314,6 +314,7 @@ MonoBehaviour:
   currentDishState:
     name: 
     transitions: []
+  baseDish: 0
   emptyPrefab: {fileID: 4398922897282872736}
   mixturePrefab: {fileID: 4398922897588920421}
   mixedIngredientStash: {fileID: 2088626760507946276}

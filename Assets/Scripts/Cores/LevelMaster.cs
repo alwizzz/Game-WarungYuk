@@ -14,7 +14,7 @@ public class LevelMaster : MonoBehaviour
     private void Awake()
     {
         cookingRecipe = JsonUtility.FromJson<CookingRecipe>(jsonFile.ToString());
-        Debug.Log(cookingRecipe);
+        //Debug.Log(cookingRecipe);
     }
 
     public CookingRecipe GetCookingRecipe() => cookingRecipe;
@@ -22,7 +22,9 @@ public class LevelMaster : MonoBehaviour
     public CompletedDish GetCompletedDishPrefab(string codeName)
     {
         var cDish = completedDishPrefabs.Find((cd) => cd.GetCodeName() == codeName);
-        Debug.Log(cDish);
+
+        //Debug.Log(codeName + " " + cDish);
+        //completedDishPrefabs.ForEach((x) => Debug.Log(x.GetCodeName()));
         return cDish ? cDish : null;
     }
 }

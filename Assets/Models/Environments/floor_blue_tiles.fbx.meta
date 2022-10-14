@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: floor_blue_tile
-    second: {fileID: 2800000, guid: 17d4f6dce70a2d94e82503256516ab0f, type: 3}
+    second: {fileID: 2800000, guid: 6e2713dd0dc397d46a1927f5089c484f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

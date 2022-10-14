@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: synthetic_wood_diff_1k
-    second: {fileID: 2800000, guid: e0935bd441204564b86877742275963b, type: 3}
+    second: {fileID: 2800000, guid: 5133308299333bf4193f14976c57ecce, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: synthetic_wood_nor_dx_1k
-    second: {fileID: 2800000, guid: 31ad58cc274fbc84089af57ba4a795e3, type: 3}
+    second: {fileID: 2800000, guid: 07e721b7ed0237f4eb8a628fa8d1219e, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: synthetic_wood_rough_1k
-    second: {fileID: 2800000, guid: 43181804aab5095408f568c0e824b191, type: 3}
+    second: {fileID: 2800000, guid: 14d40f2798204b34987d227fa7fe0d71, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

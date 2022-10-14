@@ -7,7 +7,7 @@ public abstract class Interactable : MonoBehaviour
 {
     public void Interact(PlayerAction playerAction)
     {
-        Debug.Log("player attempts to interact with " + this);
+        //Debug.Log("player attempts to interact with " + this);
         if (playerAction.IsHolding())
         {
             InteractionWhenPlayerHoldingItem(playerAction);

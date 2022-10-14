@@ -3,12 +3,7 @@ guid: 769bb5c2567fd3c47a1155043e4ccc2e
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: wooden_variant_baked
-    second: {fileID: 2800000, guid: 14f3808c1c393c44b9a3fe2b68fd0e1a, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
