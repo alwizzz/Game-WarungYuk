@@ -6,11 +6,13 @@ public class UncompletedDish : Dish
 {
     [SerializeField] GameObject emptyPrefab;
     [SerializeField] GameObject mixturePrefab;
+    [SerializeField] Transform mixedIngredientStash;
 
     public enum ContentState { Empty, Mixture }
     [SerializeField] ContentState currentContentState;
 
     [SerializeField] List<CookingRecipe.DishState> dishStates;
+    [SerializeField] CookingRecipe.DishState baseDishState;
     //[SerializeField] CookingRecipe.DishState currentDishState;
 
     [SerializeField] List<Ingredient> mixedIngredients; //kepake buat ngasi info window
@@ -36,7 +38,8 @@ public class UncompletedDish : Dish
         { 
             dishStates = cookingRecipe.GetPlateDishStates(); 
         }
-        currentDishState = dishStates.Find((ds) => ds.name == codeName);
+        baseDishState = dishStates.Find((ds) => ds.name == codeName);
+        currentDishState = baseDishState;
 
         UpdateContentState();
     }
@@ -98,8 +101,20 @@ public class UncompletedDish : Dish
             UpdateContentState();
         }
 
-        ingredient.MoveToPivot(transform);
+        ingredient.HideTo(mixedIngredientStash);
         ingredient.gameObject.SetActive(false);
-
     }
+
+    public void ClearMixedIngredient()
+    {
+        currentDishState = baseDishState;
+        mixedIngredients.Clear();
+        foreach(Transform child in mixedIngredientStash)
+        {
+            Destroy(child.gameObject);
+        }
+        UpdateContentState();
+    }
+
+    public CookingRecipe.DishState GetCurrentDishState() => currentDishState;
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class CookingRecipe 
+public class CookingRecipe
 {
     public string region;
     public List<string> completedDishes;
@@ -32,22 +32,23 @@ public class CookingRecipe
         }
     }
 
-    [System.Serializable]
-    public class DishProcessTransition
-    {
+
+    public abstract class ProcessTransition {
         public string process;
         public string input;
         public string output;
-        public bool isSynchronous;
     }
 
     [System.Serializable]
-    public class IngredientProcessTransition
+    public class DishProcessTransition : ProcessTransition
     {
-        public string process;
-        public string input;
-        public string output;
-        public bool isSynchronous;
+
+    }
+
+    [System.Serializable]
+    public class IngredientProcessTransition : ProcessTransition
+    {
+
     }
 
     public List<DishProcessTransition> GetDishProcessTransitions(string name)

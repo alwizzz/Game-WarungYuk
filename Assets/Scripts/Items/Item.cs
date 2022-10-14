@@ -11,5 +11,13 @@ public abstract class Item : MonoBehaviour
         transform.position = pivotObject.position; 
     }
 
+    public void HideTo(Transform obj)
+    {
+        gameObject.SetActive(false);
+        transform.parent = obj;
+    }
+
     public string GetCodeName() => codeName;
+
+
 }

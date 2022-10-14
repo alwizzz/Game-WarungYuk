@@ -14,20 +14,17 @@
         {
             "process": "REBUS",
             "input": "mangkok_mie_daging",
-            "output": "mie_aceh",
-            "isSynchronous": true
+            "output": "mie_aceh"
         },
         {
             "process": "REBUS",
             "input": "mangkok_mie_ayam",
-            "output": "soto_medan",
-            "isSynchronous": true
+            "output": "soto_medan"
         },
         {
             "process": "REBUS",
-            "input": "daging_santan",
-            "output": "rendang",
-            "isSynchronous": false
+            "input": "piring_daging_santan",
+            "output": "rendang"
         }
     ],
     "ingredientProcessTransitions" : null,

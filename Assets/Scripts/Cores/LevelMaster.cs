@@ -6,9 +6,9 @@ public class LevelMaster : MonoBehaviour
 {
     [SerializeField] TextAsset jsonFile;
     [SerializeField] CookingRecipe cookingRecipe;
-    [SerializeField] CompletedDish[] completedDishPrefabs;
-    [SerializeField] RawIngredient[] rawIngredientPrefabs;
-    [SerializeField] ProcessedIngredient[] processedIngredientPrefabs;
+    [SerializeField] List<CompletedDish> completedDishPrefabs;
+    [SerializeField] List<RawIngredient> rawIngredientPrefabs;
+    [SerializeField] List<ProcessedIngredient> processedIngredientPrefabs;
 
 
     private void Awake()
@@ -19,4 +19,10 @@ public class LevelMaster : MonoBehaviour
 
     public CookingRecipe GetCookingRecipe() => cookingRecipe;
 
+    public CompletedDish GetCompletedDishPrefab(string codeName)
+    {
+        var cDish = completedDishPrefabs.Find((cd) => cd.GetCodeName() == codeName);
+        Debug.Log(cDish);
+        return cDish ? cDish : null;
+    }
 }
