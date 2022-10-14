@@ -7,7 +7,9 @@ public class TrashBin : Interactable
 
     [SerializeField] LevelMaster levelMaster;
     [SerializeField] CookingRecipe cookingRecipe;
+    [SerializeField] UncompletedDish basePlateDishPrefab;
     [SerializeField] CookingRecipe.DishState basePlateDishState;
+    [SerializeField] UncompletedDish baseBowlDishPrefab;
     [SerializeField] CookingRecipe.DishState baseBowlDishState;
 
     private void Awake()
@@ -18,7 +20,7 @@ public class TrashBin : Interactable
     private void Start()
     {
         cookingRecipe = levelMaster.GetCookingRecipe();
-        basePlateDishState = cookingRecipe.GetBowlDishStates().Find((ds) => ds.name == "mangkok");
+        baseBowlDishState = cookingRecipe.GetBowlDishStates().Find((ds) => ds.name == "mangkok");
         basePlateDishState = cookingRecipe.GetPlateDishStates().Find((ds) => ds.name == "piring");
     }
 
@@ -28,9 +30,25 @@ public class TrashBin : Interactable
         var playerItemTypeString = playerHeldItem.GetType().ToString();
         if(playerItemTypeString == "UncompletedDish")
         {
-            UncompletedDish playerUDish = (UncompletedDish)playerHeldItem;
-            playerUDish.ClearMixedIngredient();
+            ((UncompletedDish)playerHeldItem).ClearMixedIngredient();
             Debug.Log("mubazir bro");
+        }
+        else if(playerItemTypeString == "CompletedDish")
+        {
+            CompletedDish cDish = (CompletedDish)playerAction.TakeHeldItem();
+            var cDishBase = cDish.GetBaseDish();
+            //Debug.Log(cDishBase);
+            Destroy(cDish.gameObject);
+            Item spawn = null;
+            if(cDishBase == Dish.BaseDish.Bowl)
+            {
+                spawn = Instantiate(baseBowlDishPrefab, transform.position, Quaternion.identity);
+            }
+            else if(cDishBase == Dish.BaseDish.Plate)
+            {
+                spawn = Instantiate(basePlateDishPrefab, transform.position, Quaternion.identity);
+            }
+            playerAction.GiveItemToHold(spawn);
         }
         else if(playerItemTypeString == "RawIngredient" || playerItemTypeString == "ProcessedIngredient")
         {

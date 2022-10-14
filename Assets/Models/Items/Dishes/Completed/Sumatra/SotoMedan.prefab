@@ -130,6 +130,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: soto_medan
+  currentDishState:
+    name: 
+    transitions: []
+  baseDish: 1
 --- !u!1001 &2834802839650709261
 PrefabInstance:
   m_ObjectHideFlags: 0

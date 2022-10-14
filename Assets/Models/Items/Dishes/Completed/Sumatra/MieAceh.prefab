@@ -47,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: mie_aceh
+  currentDishState:
+    name: 
+    transitions: []
+  baseDish: 1
 --- !u!1 &6788360574955462557
 GameObject:
   m_ObjectHideFlags: 0

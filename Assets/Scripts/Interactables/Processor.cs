@@ -56,7 +56,7 @@ public class Processor : Interactable
     {
         var playerHeldItem = playerAction.GetHeldItem();
         var playerHeldItemTypeString = playerHeldItem.GetType().ToString();
-        Debug.Log("held item is " + playerHeldItemTypeString);
+        //Debug.Log("held item is " + playerHeldItemTypeString);
         if (playerHeldItemTypeString == "RawIngredient")
         {
             AttemptToProcessIngredient(playerAction, (Ingredient)playerHeldItem);
@@ -84,7 +84,7 @@ public class Processor : Interactable
 
     IEnumerator ProcessDish(PlayerAction playerAction, CookingRecipe.DishProcessTransition dpt)
     {
-        Debug.Log("oyoyoy");
+        //Debug.Log("oyoyoy");
         playerAction.SetIsProcessing(true);
         playerAction.HideHeldItem();
 
@@ -105,10 +105,12 @@ public class Processor : Interactable
         playerAction.SetIsProcessing(false);
         inProcessItem = null;
         UpdateIsProcessing();
+        ResetCounter();
     }
 
-    void GiveCompletedDishToPlayer(PlayerAction playerAction, CompletedDish cDish)
+    void GiveCompletedDishToPlayer(PlayerAction playerAction, CompletedDish cDishPrefab)
     {
+        CompletedDish cDish = Instantiate(cDishPrefab, transform.position, Quaternion.identity);
         playerAction.GiveItemToHold(cDish);
     }
 
