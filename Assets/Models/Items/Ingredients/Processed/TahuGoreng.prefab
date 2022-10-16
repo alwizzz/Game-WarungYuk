@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3509feda10294a4bbadd30f97598df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  codeName: tahugorang
+  codeName: tahugoreng
 --- !u!1 &5887118679440969350
 GameObject:
   m_ObjectHideFlags: 0

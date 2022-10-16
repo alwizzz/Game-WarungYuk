@@ -71,7 +71,12 @@ public class Processor : Interactable
 
     void AttemptToProcessIngredient(PlayerAction playerAction, Ingredient ing)
     {
-        Debug.Log("process ingredient");
+        var ipt = ingredientProcessTransitions.Find((ipt) => ipt.input == ing.GetCodeName());
+        if(ipt != null)
+        {
+            processDishHandler = Processing(playerAction, ipt, false);
+            StartCoroutine(processDishHandler);
+        }
     }
 
     void AttemptToProcessDish(PlayerAction playerAction, UncompletedDish uDish)
@@ -80,15 +85,15 @@ public class Processor : Interactable
         var dpt = dishProcessTransitions.Find((dpt) => dpt.input == uDishState);
         if(dpt != null)
         {
-            processDishHandler = ProcessDish(playerAction, dpt);
+            processDishHandler = Processing(playerAction, dpt, true);
             StartCoroutine(processDishHandler);
         }
     }
 
-    IEnumerator ProcessDish(PlayerAction playerAction, CookingRecipe.DishProcessTransition dpt)
+    IEnumerator Processing(PlayerAction playerAction, CookingRecipe.ProcessTransition pt, bool isProcessingDish)
     {
         //Debug.Log("oyoyoy");
-        BeforeProcess(playerAction, dpt);
+        BeforeProcess(playerAction, pt.output, isProcessingDish);
 
         while(timeCounter < processDuration)
         {
@@ -98,17 +103,23 @@ public class Processor : Interactable
         Debug.Log("progress done...");
 
         Destroy(playerAction.TakeHeldItem().gameObject);
-        GiveCompletedDishToPlayer(playerAction, (CompletedDish)inProcessItem);
-
+        GiveProcessorOutputToPlayer(playerAction, inProcessItem, isProcessingDish);
 
         AfterProcess(playerAction);
     }
 
-    void BeforeProcess(PlayerAction playerAction, CookingRecipe.DishProcessTransition dpt)
+    void BeforeProcess(PlayerAction playerAction, string ptOutput, bool isProcessingDish)
     {
         playerAction.SetIsUsingProcessor(true);
         playerAction.HideHeldItem();
-        inProcessItem = levelMaster.GetCompletedDishPrefab(dpt.output);
+        if (isProcessingDish)
+        {
+            inProcessItem = levelMaster.GetCompletedDishPrefab(ptOutput);
+        } 
+        else // is processing ingredient
+        {
+            inProcessItem = levelMaster.GetProcessedIngredientPrefab(ptOutput);
+        }
         UpdateIsProcessing();
     }
 
@@ -126,14 +137,24 @@ public class Processor : Interactable
     {
         StopCoroutine(processDishHandler);
         playerAction.ShowHeldItem();
+
         AfterProcess(playerAction);
         Debug.Log("process aborted");
     }
 
-    void GiveCompletedDishToPlayer(PlayerAction playerAction, CompletedDish cDishPrefab)
+    void GiveProcessorOutputToPlayer(PlayerAction playerAction, Item processorOutputPrefab, bool isProcessingDish)
     {
-        CompletedDish cDish = Instantiate(cDishPrefab, transform.position, Quaternion.identity);
-        playerAction.GiveItemToHold(cDish);
+
+        Item output = Instantiate(processorOutputPrefab, transform.position, Quaternion.identity);
+
+        if (isProcessingDish)
+        {
+            playerAction.GiveItemToHold((CompletedDish)output);
+        }
+        else // is processing ingredient
+        {
+            playerAction.GiveItemToHold((ProcessedIngredient)output);
+        }
     }
 
     void UpdateIsProcessing() { isProcessing = (inProcessItem ? true : false); }
