@@ -4,9 +4,24 @@ using UnityEngine;
 
 public class CustomerTable : Table
 {
+    [SerializeField] Customer customer;
+    [SerializeField] bool hasCustomer;
+
+    [SerializeField] UncompletedDish basePlateDishPrefab;
+    [SerializeField] UncompletedDish baseBowlDishPrefab;
+
+    private void Start()
+    {
+        UpdateHasCustomer();
+    }
+
+
     public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)
     {
-        if (!hasItemOnTable && playerAction.GetHeldItem().GetType().ToString() == "CompletedDish")
+        if (!hasItemOnTable &&
+            hasCustomer &&
+            playerAction.GetHeldItem().GetType().ToString() == "CompletedDish" 
+        )
         {
             TakeItemFromPlayer(playerAction);
         }
@@ -16,4 +31,12 @@ public class CustomerTable : Table
         if (!hasItemOnTable) { return; } // do nothing if there's nothing on table
         GiveItemToPlayer(playerAction);
     }
+
+    public void Order(Customer customer)
+    {
+        this.customer = customer;
+        UpdateHasCustomer();
+    }
+
+    void UpdateHasCustomer() { hasCustomer = (customer ? true : false); }
 }
