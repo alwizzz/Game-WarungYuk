@@ -27,4 +27,12 @@ public class LevelMaster : MonoBehaviour
         //completedDishPrefabs.ForEach((x) => Debug.Log(x.GetCodeName()));
         return cDish ? cDish : null;
     }
+    public ProcessedIngredient GetProcessedIngredientPrefab(string codeName)
+    {
+        var pIng = processedIngredientPrefabs.Find((pIng) => pIng.GetCodeName() == codeName);
+
+        //Debug.Log(codeName + " " + pIng);
+        //completedDishPrefabs.ForEach((x) => Debug.Log(x.GetCodeName()));
+        return pIng ? pIng : null;
+    }
 }

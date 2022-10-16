@@ -5,39 +5,25 @@ using UnityEngine;
 
 public class Table : Interactable
 {
-    [SerializeField] Transform placingPivot;
-    [SerializeField] Item itemOnTable;
-    [SerializeField] bool hasItemOnTable;
+    [SerializeField] protected Transform placingPivot;
+    [SerializeField] protected Item itemOnTable;
+    [SerializeField] protected bool hasItemOnTable;
+
+    [SerializeField] LevelMaster levelMaster;
+
+    private void Awake()
+    {
+        levelMaster = FindObjectOfType<LevelMaster>();
+    }
 
     private void Start()
     {
         UpdateHasItemOnTable();
-        if (hasItemOnTable) { itemOnTable.MoveToPivot(placingPivot); }
+        if (hasItemOnTable) {
+            itemOnTable = Instantiate(itemOnTable, transform.position, Quaternion.identity);
+            itemOnTable.MoveToPivot(placingPivot); 
+        }
     }
-
-    //public override void Interact(PlayerAction playerAction)
-    //{
-    //    if (hasItemOnTable)
-    //    {
-    //        if (playerAction.IsHolding())
-    //        {
-    //            Debug.Log("player attempts to put item to table but there's something on top of table!");
-    //        } else
-    //        {
-    //            Debug.Log("player attempts to take item from table and it works");
-    //        }
-    //    } else
-    //    {
-    //        if (playerAction.IsHolding())
-    //        {
-    //            Debug.Log("player attempts to put item to table and it works");
-    //        }
-    //        else
-    //        {
-    //            Debug.Log("player attempts to take item from table but there's nothing on top of table!");
-    //        }
-    //    }
-    //}
 
     public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)
     {
@@ -67,10 +53,29 @@ public class Table : Interactable
             {
                 var temp = playerAction.TakeHeldItem();
                 Ingredient ingredientToMix = (Ingredient) temp;
-                uDish.Mix(ingredientToMix);
+                uDish.Mix(ingredientToMix, this);
             }
         }
     }
+
+    public void ConvertIntoCompletedDish(string cDishCodeName)
+    {
+        Destroy(itemOnTable.gameObject);
+
+        var cDishPrefab = levelMaster.GetCompletedDishPrefab(cDishCodeName);
+        CompletedDish cDish = Instantiate(
+            cDishPrefab,
+            transform.position,
+            Quaternion.identity
+        );
+
+        cDish.MoveToPivot(placingPivot);
+        itemOnTable = cDish;
+        UpdateHasItemOnTable();
+    }
+
+
+
 
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {
@@ -78,32 +83,20 @@ public class Table : Interactable
         GiveItemToPlayer(playerAction);
     }
 
-    void TakeItemFromPlayer(PlayerAction playerAction)
+    protected void TakeItemFromPlayer(PlayerAction playerAction)
     {
         itemOnTable = playerAction.TakeHeldItem();
         itemOnTable.MoveToPivot(placingPivot);
         UpdateHasItemOnTable();
     }
 
-    // => NYOBA2
-    //public override void TakeItemFromPlayer(PlayerAction playerAction, ref Item item)
-    //{
-    //    base.TakeItemFromPlayer(playerAction, ref item);
-
-    //    item.MoveToPivot(placingPivot);
-    //    UpdateHasItemOnTable();
-    //}
-
-    void GiveItemToPlayer(PlayerAction playerAction)
+    protected void GiveItemToPlayer(PlayerAction playerAction)
     {
         playerAction.GiveItemToHold(itemOnTable);
         itemOnTable = null;
         UpdateHasItemOnTable();
     }
 
-
-
-    public Vector3 GetPlacingPivot() => placingPivot.position;
     void UpdateHasItemOnTable() { hasItemOnTable = (itemOnTable ? true : false); }
 
 
