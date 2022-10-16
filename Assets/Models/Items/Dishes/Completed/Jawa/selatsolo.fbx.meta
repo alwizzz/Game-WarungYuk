@@ -5,6 +5,56 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carrot.001
+    second: {fileID: 2100000, guid: dbd89dbc00b393148849c8038c3b63c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carrot2
+    second: {fileID: 2100000, guid: 2a41dedd9a2a1094588f60daadae7795, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: galantin
+    second: {fileID: 2100000, guid: ec536df36e8410f4282e2d28b970f017, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: galantin.001
+    second: {fileID: 2100000, guid: b05dd66d4c89e0644bdbee2640dbafa9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: greens
+    second: {fileID: 2100000, guid: 8f7cd53f403695843bd4fd649f10067f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kentang
+    second: {fileID: 2100000, guid: c72079a6c77134c49add9ddb7e417fd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kkuah
+    second: {fileID: 2100000, guid: dbec07b03e276f4428f997de933205bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lettuce
+    second: {fileID: 2100000, guid: e23c1a108c46d39419dabf2a927d3f93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plate
+    second: {fileID: 2100000, guid: f7e09fd83b4bb5d4cbcf617af1e049d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: telor
+    second: {fileID: 2100000, guid: 9d1631fe2fabcfc40be3d23c425841b6, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: NicePng_lettuce-png_4378461
