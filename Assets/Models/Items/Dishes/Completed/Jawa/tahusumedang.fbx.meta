@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: sumedang_baked
-    second: {fileID: 2800000, guid: 26f6ca5f1e70e5d46b48b0eb7c12e0df, type: 3}
+    second: {fileID: 2800000, guid: ba94d1e70d9a8ec4986ffe8b9ac22ff7, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

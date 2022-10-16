@@ -64,16 +64,6 @@ public class UncompletedDish : Dish
     {
         var isMixable = false;
         var ingredientCodeName = ingredient.GetCodeName();
-        //currentDishState.transitions.ForEach(
-        //    (dt) =>
-        //    {
-        //        if(i.getCodeName() == dt.input)
-        //        {
-        //            isMixable = true;
-        //            break;
-        //        }
-        //    }    
-        //);
         foreach(CookingRecipe.DishState.DishTransition dt in currentDishState.transitions)
         {
             if(ingredientCodeName == dt.input)
@@ -86,13 +76,12 @@ public class UncompletedDish : Dish
         return isMixable;
     }
 
-    public void Mix(Ingredient ingredient)
+    public void Mix(Ingredient ingredient, Table table)
     {
         var dt = currentDishState.transitions.Find((dt) => dt.input == ingredient.GetCodeName());
         if (dt.intoCompletedDish)
         {
-            //TODO
-            Debug.Log("Welosssssss");
+            table.ConvertIntoCompletedDish(dt.nextState);
         }
         else
         {
