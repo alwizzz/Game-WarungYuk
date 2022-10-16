@@ -8,9 +8,9 @@ public class TrashBin : Interactable
     [SerializeField] LevelMaster levelMaster;
     [SerializeField] CookingRecipe cookingRecipe;
     [SerializeField] UncompletedDish basePlateDishPrefab;
-    [SerializeField] CookingRecipe.DishState basePlateDishState;
+    //[SerializeField] CookingRecipe.DishState basePlateDishState;
     [SerializeField] UncompletedDish baseBowlDishPrefab;
-    [SerializeField] CookingRecipe.DishState baseBowlDishState;
+    //[SerializeField] CookingRecipe.DishState baseBowlDishState;
 
     private void Awake()
     {
@@ -20,8 +20,8 @@ public class TrashBin : Interactable
     private void Start()
     {
         cookingRecipe = levelMaster.GetCookingRecipe();
-        baseBowlDishState = cookingRecipe.GetBowlDishStates().Find((ds) => ds.name == "mangkok");
-        basePlateDishState = cookingRecipe.GetPlateDishStates().Find((ds) => ds.name == "piring");
+        //baseBowlDishState = cookingRecipe.GetBowlDishStates().Find((ds) => ds.name == "mangkok");
+        //basePlateDishState = cookingRecipe.GetPlateDishStates().Find((ds) => ds.name == "piring");
     }
 
     public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)
