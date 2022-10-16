@@ -24,6 +24,7 @@ public class CustomerTable : Table
         )
         {
             TakeItemFromPlayer(playerAction);
+            GiveOrderedDishToCustomer((CompletedDish)itemOnTable);
         }
     }
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
@@ -36,6 +37,11 @@ public class CustomerTable : Table
     {
         this.customer = customer;
         UpdateHasCustomer();
+    }
+
+    void GiveOrderedDishToCustomer(CompletedDish cDish)
+    {
+
     }
 
     void UpdateHasCustomer() { hasCustomer = (customer ? true : false); }

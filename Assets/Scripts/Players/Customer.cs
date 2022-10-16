@@ -6,5 +6,14 @@ public class Customer : MonoBehaviour
 {
     [SerializeField] CompletedDish orderedDish;
 
+    public void TakeOrderedDishFromTable(CompletedDish givenDish)
+    {
+        if(givenDish.GetCodeName() == orderedDish.GetCodeName())
+        {
+
+        }
+    }
+
+
     public CompletedDish GetOrderedDish() => orderedDish;
 }

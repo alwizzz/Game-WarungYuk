@@ -128,7 +128,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3147862673954758653
 MonoBehaviour:
@@ -389,7 +389,7 @@ MonoBehaviour:
   playerInteraction: {fileID: 3147862673979737109}
   playerAnimator: {fileID: 8846725279346354061}
   isHolding: 0
-  isProcessing: 0
+  isUsingProcessor: 0
   heldItem: {fileID: 0}
   holdingPivot: {fileID: 106253816}
 --- !u!1 &3147862674785094359
@@ -489,7 +489,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3147862674785094356
 MonoBehaviour:
@@ -655,7 +655,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3147862675791355077
 MonoBehaviour:
@@ -787,7 +787,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 0.5, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3147862675850930344
 MonoBehaviour:
