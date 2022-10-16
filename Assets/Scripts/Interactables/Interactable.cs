@@ -35,18 +35,4 @@ public abstract class Interactable : MonoBehaviour
     {
         Debug.Log(gameObject + " left by player");
     }
-
-    // ==> NYOBA2
-    //public virtual void TakeItemFromPlayer(PlayerAction playerAction, ref Item item)
-    //{
-    //    item = playerAction.GetHeldItem();
-    //}
-
-    //public virtual void GiveItemToPlayer(PlayerAction playerAction, ref Item item)
-    //{
-    //    playerAction.SetHeldItem(item);
-    //    item = null;
-    //}
-
-
 }

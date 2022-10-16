@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Table : Interactable
 {
-    [SerializeField] Transform placingPivot;
-    [SerializeField] Item itemOnTable;
-    [SerializeField] bool hasItemOnTable;
+    [SerializeField] protected Transform placingPivot;
+    [SerializeField] protected Item itemOnTable;
+    [SerializeField] protected bool hasItemOnTable;
 
     [SerializeField] LevelMaster levelMaster;
 
@@ -19,7 +19,10 @@ public class Table : Interactable
     private void Start()
     {
         UpdateHasItemOnTable();
-        if (hasItemOnTable) { itemOnTable.MoveToPivot(placingPivot); }
+        if (hasItemOnTable) {
+            itemOnTable = Instantiate(itemOnTable, transform.position, Quaternion.identity);
+            itemOnTable.MoveToPivot(placingPivot); 
+        }
     }
 
     public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)
@@ -80,23 +83,20 @@ public class Table : Interactable
         GiveItemToPlayer(playerAction);
     }
 
-    void TakeItemFromPlayer(PlayerAction playerAction)
+    protected void TakeItemFromPlayer(PlayerAction playerAction)
     {
         itemOnTable = playerAction.TakeHeldItem();
         itemOnTable.MoveToPivot(placingPivot);
         UpdateHasItemOnTable();
     }
 
-    void GiveItemToPlayer(PlayerAction playerAction)
+    protected void GiveItemToPlayer(PlayerAction playerAction)
     {
         playerAction.GiveItemToHold(itemOnTable);
         itemOnTable = null;
         UpdateHasItemOnTable();
     }
 
-
-
-    public Vector3 GetPlacingPivot() => placingPivot.position;
     void UpdateHasItemOnTable() { hasItemOnTable = (itemOnTable ? true : false); }
 
 
