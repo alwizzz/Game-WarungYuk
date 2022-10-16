@@ -16,7 +16,9 @@ public class Processor : Interactable
 
     [SerializeField] float processDuration;
     [SerializeField] float timeCounter;
-    
+
+    IEnumerator processDishHandler;
+
 
     private void Awake()
     {
@@ -78,34 +80,54 @@ public class Processor : Interactable
         var dpt = dishProcessTransitions.Find((dpt) => dpt.input == uDishState);
         if(dpt != null)
         {
-            StartCoroutine(ProcessDish(playerAction, dpt));
+            processDishHandler = ProcessDish(playerAction, dpt);
+            StartCoroutine(processDishHandler);
         }
     }
 
     IEnumerator ProcessDish(PlayerAction playerAction, CookingRecipe.DishProcessTransition dpt)
     {
         //Debug.Log("oyoyoy");
-        playerAction.SetIsProcessing(true);
-        playerAction.HideHeldItem();
-
-        inProcessItem = levelMaster.GetCompletedDishPrefab(dpt.output);
-        UpdateIsProcessing();
+        BeforeProcess(playerAction, dpt);
 
         while(timeCounter < processDuration)
         {
             timeCounter += Time.deltaTime;
             yield return null;
         }
-
-
+        Debug.Log("progress done...");
 
         Destroy(playerAction.TakeHeldItem().gameObject);
         GiveCompletedDishToPlayer(playerAction, (CompletedDish)inProcessItem);
 
-        playerAction.SetIsProcessing(false);
+
+        AfterProcess(playerAction);
+    }
+
+    void BeforeProcess(PlayerAction playerAction, CookingRecipe.DishProcessTransition dpt)
+    {
+        playerAction.SetIsUsingProcessor(true);
+        playerAction.HideHeldItem();
+        inProcessItem = levelMaster.GetCompletedDishPrefab(dpt.output);
+        UpdateIsProcessing();
+    }
+
+    void AfterProcess(PlayerAction playerAction)
+    {
         inProcessItem = null;
         UpdateIsProcessing();
         ResetCounter();
+        playerAction.SetIsUsingProcessor(false);
+
+        processDishHandler = null;
+    }
+
+    public void AbortProcess(PlayerAction playerAction)
+    {
+        StopCoroutine(processDishHandler);
+        playerAction.ShowHeldItem();
+        AfterProcess(playerAction);
+        Debug.Log("process aborted");
     }
 
     void GiveCompletedDishToPlayer(PlayerAction playerAction, CompletedDish cDishPrefab)

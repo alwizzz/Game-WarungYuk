@@ -10,7 +10,7 @@ public class PlayerAction : MonoBehaviour
     [SerializeField] Animator playerAnimator;
 
     [SerializeField] bool isHolding;
-    [SerializeField] bool isProcessing;
+    [SerializeField] bool isUsingProcessor;
 
     [SerializeField] Item heldItem;
     [SerializeField] Transform holdingPivot;
@@ -44,15 +44,14 @@ public class PlayerAction : MonoBehaviour
             //}
             if(interactedObject.GetType().ToString() == "Processor")
             {
-                if (Input.GetKeyDown(KeyCode.Q) && !isProcessing) 
+                if (Input.GetKeyDown(KeyCode.Q) && !isUsingProcessor) 
                 {
                     //Debug.Log("Q pressed"); 
-                    Processor processor = (Processor)interactedObject;
-                    processor.Process(this);
+                    ((Processor)interactedObject).Process(this);
                 }
-                if (Input.GetKeyUp(KeyCode.Q) && isProcessing) 
-                { 
-                    Debug.Log("Q released"); 
+                if (Input.GetKeyUp(KeyCode.Q) && isUsingProcessor) 
+                {
+                    ((Processor)interactedObject).AbortProcess(this);
                 }
             }
         }
@@ -81,9 +80,9 @@ public class PlayerAction : MonoBehaviour
 
     public void HideHeldItem() { heldItem.gameObject.SetActive(false); }
     public void ShowHeldItem() { heldItem.gameObject.SetActive(true); }
-    public void SetIsProcessing(bool value) 
+    public void SetIsUsingProcessor(bool value) 
     { 
-        isProcessing = value;
+        isUsingProcessor = value;
         playerMovement.SetIsAbleToMove(!value);
     }
     public PlayerMovement GetPlayerMovement() => playerMovement;
