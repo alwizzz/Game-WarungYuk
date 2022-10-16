@@ -2,49 +2,13 @@ fileFormatVersion: 2
 guid: 482310a454d20734cbb8398cae9bb37a
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable:
-  - first:
-      74: -2770946415552320045
-    second: tahu|CubeAction
-  - first:
-      74: 6021462287429217390
-    second: tahu.001|CubeAction
-  - first:
-      74: -4036426637120435010
-    second: tahu.002|CubeAction
-  - first:
-      74: -7057661858345341626
-    second: tahu.003|CubeAction
-  - first:
-      74: -9082571488199299220
-    second: tahu.004|CubeAction
-  - first:
-      74: -5591638129669129083
-    second: tahu.005|CubeAction
-  - first:
-      74: -4764707744406013274
-    second: tahu.006|CubeAction
-  - first:
-      74: 6751483189719370056
-    second: tahu.007|CubeAction
-  - first:
-      74: -2668264970011836172
-    second: tahu.008|CubeAction
-  - first:
-      74: 3935154835200843528
-    second: tahu.009|CubeAction
-  - first:
-      74: 1258513738014320759
-    second: tahu.010|CubeAction
-  - first:
-      74: 5659704037981933678
-    second: tahu.011|CubeAction
+  internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: sumedang_baked
-    second: {fileID: 2800000, guid: 138c8ea2699399548895cebf1f1fc426, type: 3}
+    second: {fileID: 2800000, guid: 26f6ca5f1e70e5d46b48b0eb7c12e0df, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
