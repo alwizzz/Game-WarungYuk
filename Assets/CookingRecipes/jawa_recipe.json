@@ -1,0 +1,112 @@
+{
+    "region": "jawa",
+    "completedDishes": [
+        "rawon", "selat_solo", "tahu_sumedang"
+    ],
+    "rawIngredients": [
+        "nasi", "daging", "sayuran", "tahu"
+    ],
+    "processedIngredients": [
+        "tahugoreng"
+    ],
+    "processes": [
+        "REBUS", "GORENG"
+    ],
+    "dishProcessTransitions":[
+        {
+            "process": "REBUS",
+            "input": "mangkok_nasi_daging",
+            "output": "rawon"
+        },
+        {
+            "process": "REBUS",
+            "input": "mangkok_daging_sayuran",
+            "output": "selat_solo"
+        }
+    ],
+    "ingredientProcessTransitions" : [
+        {
+            "process": "GORENG",
+            "input": "tahu",
+            "output": "tahugoreng"
+        }
+    ],
+    "bowlDishStates": [
+        {
+            "name": "mangkok",
+            "transitions": [
+                {
+                    "input": "nasi",
+                    "nextState": "mangkok_nasi",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "daging",
+                    "nextState": "mangkok_daging",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "sayuran",
+                    "nextState": "mangkok_sayuran",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_nasi",
+            "transitions": [
+                {
+                    "input": "daging",
+                    "nextState": "mangkok_nasi_daging",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_daging",
+            "transitions": [
+                {
+                    "input": "nasi",
+                    "nextState": "mangkok_nasi_daging",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "sayuran",
+                    "nextState": "mangkok_daging_sayuran",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_sayuran",
+            "transitions": [
+                {
+                    "input": "daging",
+                    "nextState": "mangkok_daging_sayuran",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_nasi_daging",
+            "transitions": null
+        },
+        {
+            "name": "mangkok_daging_sayuran",
+            "transitions": null
+        }
+    ],
+
+    "plateDishStates": [
+        {
+            "name": "piring",
+            "transitions": [
+                {
+                    "input": "tahugoreng",
+                    "nextState": "tahu_sumedang",
+                    "intoCompletedDish": true
+                }
+            ]
+        }
+    ]
+}
