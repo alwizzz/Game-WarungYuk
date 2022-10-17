@@ -1,0 +1,167 @@
+{
+    "region": "kalimantan",
+    "completedDishes": [
+        "sate_payau", "kerupuk_basah", "soto_banjar"
+    ],
+    "rawIngredients": [
+        "daging",
+        "adonan",
+        "ikan",
+        "ayam",
+        "nasi",
+        "sambalkacang"
+    ],
+    "processedIngredients": [
+        "dagingpotong",
+        "ikanpotong"
+    ],
+    "processes": [
+        "REBUS", "POTONG", "BAKAR"
+    ],
+    "dishProcessTransitions":[
+        {
+            "process": "BAKAR",
+            "input": "piring_dagingpotong_sambalkacang",
+            "output": "sate_payau"
+        },
+        {
+            "process": "REBUS",
+            "input": "piring_adonan_ikanpotong",
+            "output": "kerupuk_basah"
+        },
+        {
+            "process": "REBUS",
+            "input": "mangkok_nasi_ayam",
+            "output": "soto_banjar"
+        }
+    ],
+    "ingredientProcessTransitions" : [
+        {
+            "process": "POTONG",
+            "input": "daging",
+            "output": "dagingpotong"
+        },
+        {
+            "process": "POTONG",
+            "input": "ikan",
+            "output": "ikanpotong"
+        }
+    ],
+    "bowlDishStates": [
+        {
+            "name": "mangkok",
+            "transitions": [
+                {
+                    "input": "ayam",
+                    "nextState": "mangkok_ayam",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "nasi",
+                    "nextState": "mangkok_nasi",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_ayam",
+            "transitions": [
+                {
+                    "input": "nasi",
+                    "nextState": "mangkok_nasi_ayam",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_nasi",
+            "transitions": [
+                {
+                    "input": "ayam",
+                    "nextState": "mangkok_nasi_ayam",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_nasi_ayam",
+            "transitions": null
+        }
+    ],
+
+    "plateDishStates": [
+        {
+            "name": "piring",
+            "transitions": [
+                {
+                    "input": "sambalkacang",
+                    "nextState": "piring_sambalkacang",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "dagingpotong",
+                    "nextState": "piring_dagingpotong",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "adonan",
+                    "nextState": "piring_adonan",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "ikanpotong",
+                    "nextState": "piring_ikanpotong",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_sambalkacang",
+            "transitions": [
+                {
+                    "input": "dagingpotong",
+                    "nextState": "piring_dagingpotong_sambalkacang",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_dagingpotong",
+            "transitions": [
+                {
+                    "input": "sambalkacang",
+                    "nextState": "piring_dagingpotong_sambalkacang",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_adonan",
+            "transitions": [
+                {
+                    "input": "ikanpotong",
+                    "nextState": "piring_adonan_ikanpotong",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_ikanpotong",
+            "transitions": [
+                {
+                    "input": "adonan",
+                    "nextState": "piring_adonan_ikanpotong",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_dagingpotong_sambalkacang",
+            "transitions": null
+        },
+        {
+            "name": "piring_adonan_ikanpotong",
+            "transitions": null
+        }
+    ]
+}

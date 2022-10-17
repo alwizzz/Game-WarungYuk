@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6282775670692175017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6282775670692175019}
+  - component: {fileID: 6282775670692175016}
+  m_Layer: 0
+  m_Name: LevelMasterPapua
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6282775670692175019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6282775670692175017}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6282775670692175016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6282775670692175017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9baa938b5e7816469f9adb620c73039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: 663cf2e91ea2dc845bfdac02be4dad9b, type: 3}
+  cookingRecipe:
+    region: 
+    completedDishes: []
+    rawIngredients: []
+    processedIngredients: []
+    processes: []
+    dishProcessTransitions: []
+    ingredientProcessTransitions: []
+    plateDishStates: []
+    bowlDishStates: []
+  completedDishPrefabs:
+  - {fileID: 2153133960984068443, guid: 56ed9e3ca154e024bade825fa4ff43fa, type: 3}
+  - {fileID: 6172901618513381197, guid: 80fbae18667f18943a56bd07a055063f, type: 3}
+  - {fileID: 6153512278743477665, guid: 2d03ff3d613cdc24582e36bc3ddb05f9, type: 3}
+  processedIngredientPrefabs:
+  - {fileID: 2002762994699007735, guid: 1c5fab68389aed446bea6a34125b4a78, type: 3}
