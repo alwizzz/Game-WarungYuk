@@ -5,7 +5,7 @@ using UnityEngine;
 public class CustomerAction : MonoBehaviour
 {
     [SerializeField] CustomerMovement customerMovement;
-    [SerializeField] Animator customerAnimator;
+    Animator customerAnimator;
     [SerializeField] bool isHolding;
     [SerializeField] CompletedDish orderedDish;
 
@@ -19,6 +19,11 @@ public class CustomerAction : MonoBehaviour
     private void Awake()
     {
         levelMaster = FindObjectOfType<LevelMaster>();
+    }
+
+    private void Start()
+    {
+        customerAnimator = customerMovement.GetCustomerAnimator();
     }
 
 

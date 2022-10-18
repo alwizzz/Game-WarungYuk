@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 1014438697965318164}
   - component: {fileID: 1014438697965318162}
   m_Layer: 0
-  m_Name: Customer
+  m_Name: CustomerM1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -195,9 +195,10 @@ MonoBehaviour:
   customerBody: {fileID: 1014438696247668796}
   moveSpeed: 0.5
   rotateSpeed: 720
-  moveInsideVector: {x: 0, y: 0, z: 0}
+  moveInsideVector: {x: 0, y: 0, z: -1}
   moveOutsideVector: {x: 0, y: 0, z: 0}
   isMoving: 0
+  customerSpawner: {fileID: 0}
   currentOrderState: 0
 --- !u!114 &1014438697965318162
 MonoBehaviour:
@@ -212,7 +213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerMovement: {fileID: 1014438697965318164}
-  customerAnimator: {fileID: 1998555478465349618}
   isHolding: 0
   orderedDish: {fileID: 7113344472446065084, guid: ed7477aee3286c643bbde9c72c86b82f, type: 3}
   heldItem: {fileID: 0}

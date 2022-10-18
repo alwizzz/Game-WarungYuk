@@ -1770,6 +1770,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerPrefabs:
   - {fileID: 1014438697965318162, guid: 591770eab6104f3428490e538461fdfa, type: 3}
+  - {fileID: 2867694766949928718, guid: 83041f0ed4132e9428bf0d1bcea31f79, type: 3}
+  - {fileID: 6699270190910945653, guid: 8d93897a03a04ad43935141623cb0562, type: 3}
+  - {fileID: 7780845328850008481, guid: 56e54da190bc8bc4b967b45bdc0f808c, type: 3}
+  previousSpawnedPrefab: {fileID: 0}
   hasExistingSpawn: 0
   hasArrived: 0
   spawnDelay: 1

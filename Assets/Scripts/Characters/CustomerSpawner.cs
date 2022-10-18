@@ -5,6 +5,7 @@ using UnityEngine;
 public class CustomerSpawner : MonoBehaviour
 {
     [SerializeField] List<CustomerAction> customerPrefabs;
+    [SerializeField] CustomerAction previousSpawnedPrefab;
     [SerializeField] bool hasExistingSpawn;
     [SerializeField] bool hasArrived;
     [SerializeField] float spawnDelay;
@@ -26,24 +27,30 @@ public class CustomerSpawner : MonoBehaviour
     IEnumerator Spawn(float delay)
     {
         SetHasExistingSpawn(true);
+        var prefabToBeSpawned = GetRandomizedPrefab(); ;
+        
         yield return new WaitForSecondsRealtime(delay);
         var spawn = Instantiate(
-            customerPrefabs[0],
+            prefabToBeSpawned,
             transform.position,
             Quaternion.identity
         );
         spawn.GetCustomerMovement().SetCustomerSpawner(this);
+        spawn.transform.SetParent(transform);
+
         
     }
 
-    //public void Despawn(GameObject go)
-    //{
-    //    if (hasExistingSpawn)
-    //    {
-    //        Destroy(go);
-    //        hasExistingSpawn = false;
-    //    }
-    //}
+    CustomerAction GetRandomizedPrefab()
+    {
+        CustomerAction prefabToBeSpawned;
+        do {
+            prefabToBeSpawned = customerPrefabs[Random.Range(0, customerPrefabs.Count)];
+        } while (prefabToBeSpawned == previousSpawnedPrefab);
+
+        previousSpawnedPrefab = prefabToBeSpawned;
+        return prefabToBeSpawned;
+    }
 
     public bool HasArrived() => hasArrived;
     public void SetHasArrived(bool value) { hasArrived = value; }

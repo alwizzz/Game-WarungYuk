@@ -5,8 +5,8 @@ using UnityEngine;
 public class CustomerMovement : MonoBehaviour
 {
     [SerializeField] GameObject customerBody;
-    [SerializeField] float moveSpeed = 0.1f;
-    [SerializeField] float rotateSpeed = 0.1f;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float rotateSpeed;
     [SerializeField] Vector3 moveInsideVector;
     [SerializeField] Vector3 moveOutsideVector;
 
@@ -20,8 +20,8 @@ public class CustomerMovement : MonoBehaviour
     private void Start()
     {
         customerAnimator = customerBody.GetComponentInChildren<Animator>();
-        moveInsideVector = new Vector3(0f, 0f, -1f * moveSpeed * Time.deltaTime);
-        moveOutsideVector = new Vector3(0f, 0f, 1f * moveSpeed * Time.deltaTime);
+        moveInsideVector *= moveSpeed * Time.fixedDeltaTime; 
+        moveOutsideVector = new Vector3(0f, 0f, 1f * moveSpeed * Time.fixedDeltaTime);
 
         currentOrderState = OrderState.GoInside;
     }
@@ -69,4 +69,5 @@ public class CustomerMovement : MonoBehaviour
     }
 
     public void SetCustomerSpawner(CustomerSpawner cs) { customerSpawner = cs; }
+    public Animator GetCustomerAnimator() => customerAnimator;
 }
