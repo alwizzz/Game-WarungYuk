@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isAbleToMove)
         {
@@ -45,10 +45,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
+        // "actual" movement vector is affected by blocker, while the other is not
 
-        float xValue = Input.GetAxis("Horizontal");
-        float zValue = Input.GetAxis("Vertical");
+        float xValue = Input.GetAxisRaw("Horizontal");
+        float zValue = Input.GetAxisRaw("Vertical");
 
+        // continous movement
         var actualXValue = xValue;
         var actualZValue = zValue;
 

@@ -193,13 +193,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   customerBody: {fileID: 1014438696247668796}
-  moveSpeed: 0.5
+  moveSpeed: 1.5
   rotateSpeed: 720
   moveInsideVector: {x: 0, y: 0, z: -1}
   moveOutsideVector: {x: 0, y: 0, z: 0}
   isMoving: 0
   customerSpawner: {fileID: 0}
   currentOrderState: 0
+  angryCounter: 0
+  toBeAngryDuration: 10
+  isAngry: 0
 --- !u!114 &1014438697965318162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +220,6 @@ MonoBehaviour:
   orderedDish: {fileID: 7113344472446065084, guid: ed7477aee3286c643bbde9c72c86b82f, type: 3}
   heldItem: {fileID: 0}
   holdingPivot: {fileID: 2718897583038669015}
-  penaltyMultiplier: 0.25
 --- !u!1 &2718897583038669016
 GameObject:
   m_ObjectHideFlags: 0

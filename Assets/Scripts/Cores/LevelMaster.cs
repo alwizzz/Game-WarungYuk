@@ -12,12 +12,16 @@ public class LevelMaster : MonoBehaviour
     [SerializeField] bool stillHasCounters;
 
     [SerializeField] int totalPoint;
+    [SerializeField] float wrongDishPenaltyMultiplier;
+    [SerializeField] float customerIsAngryPenaltyMultiplier;
 
 
     [SerializeField] float initialSpawnDelayMin;
     [SerializeField] float initialSpawnDelayMax;
     [SerializeField] float spawnDelayMin;
     [SerializeField] float spawnDelayMax;
+
+    [SerializeField] float toBeAngryDuration;
 
     private void Awake()
     {
@@ -42,10 +46,28 @@ public class LevelMaster : MonoBehaviour
         return pIng ? pIng : null;
     }
 
-    public void IncreasePoint(int value) { totalPoint += value; }
-    public void DecreasePoint(int value)
+    public void IncreasePoint(int dishPoint, bool customerIsAngry) 
     {
-        totalPoint -= value;
+        if (customerIsAngry)
+        {
+            float temp = (customerIsAngryPenaltyMultiplier * dishPoint);
+            temp /= 100f;
+            int penaltiedPoint = Mathf.RoundToInt(temp) * 100;
+
+            totalPoint += penaltiedPoint;
+        }
+        else
+        {
+            totalPoint += dishPoint; 
+        }
+    }
+    public void DecreasePoint(int dishPoint)
+    {
+        float temp = (wrongDishPenaltyMultiplier * dishPoint);
+        temp /= 100f;
+        int penaltiedPoint = Mathf.RoundToInt(temp) * 100;
+
+        totalPoint -= penaltiedPoint;
         totalPoint = (totalPoint >= 0 ? totalPoint : 0);
     }
 
@@ -54,6 +76,8 @@ public class LevelMaster : MonoBehaviour
     public float GetInitialSpawnDelayMax() => initialSpawnDelayMax;
     public float GetSpawnDelayMin() => spawnDelayMin;
     public float GetSpawnDelayMax() => spawnDelayMax;
+    public float GetToBeAngryDuration() => toBeAngryDuration;
+
     void UpdateStillHasCounters()
     {
         bool value = false;

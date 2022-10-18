@@ -17,6 +17,11 @@ public class CustomerMovement : MonoBehaviour
     public enum OrderState { GoInside, Wait, GoOutside}
     [SerializeField] OrderState currentOrderState;
 
+    IEnumerator AngryProgressHandler;
+    [SerializeField] float angryCounter;
+    [SerializeField] float toBeAngryDuration;
+    [SerializeField] bool isAngry;
+
     private void Start()
     {
         customerAnimator = customerBody.GetComponentInChildren<Animator>();
@@ -24,9 +29,21 @@ public class CustomerMovement : MonoBehaviour
         moveOutsideVector = new Vector3(0f, 0f, 1f * moveSpeed * Time.fixedDeltaTime);
 
         currentOrderState = OrderState.GoInside;
+
+        AngryProgressHandler = AngryProgress();
     }
 
-    private void Update()
+    IEnumerator AngryProgress()
+    {
+        while(angryCounter > 0)
+        {
+            yield return null;
+            angryCounter -= Time.deltaTime;
+        }
+        isAngry = true;
+    }
+
+    private void FixedUpdate()
     {
         if(currentOrderState == OrderState.GoInside)
         {
@@ -55,10 +72,13 @@ public class CustomerMovement : MonoBehaviour
     {
         currentOrderState = OrderState.Wait;
         customerSpawner.SetHasArrived(true);
+
+        StartCoroutine(AngryProgressHandler);
     }
 
     public void FinishedOrdering()
     {
+        StopCoroutine(AngryProgressHandler);
         currentOrderState = OrderState.GoOutside;
     }
 
@@ -70,4 +90,12 @@ public class CustomerMovement : MonoBehaviour
 
     public void SetCustomerSpawner(CustomerSpawner cs) { customerSpawner = cs; }
     public Animator GetCustomerAnimator() => customerAnimator;
+    public void SetAngryConfig(float duration)
+    {
+        toBeAngryDuration = duration;
+        isAngry = false;
+        angryCounter = toBeAngryDuration;
+    }
+
+    public bool IsAngry() => isAngry;
 }
