@@ -13,7 +13,6 @@ public class UncompletedDish : Dish
 
     [SerializeField] List<CookingRecipe.DishState> dishStates;
     [SerializeField] CookingRecipe.DishState baseDishState;
-    //[SerializeField] CookingRecipe.DishState currentDishState;
 
     [SerializeField] List<Ingredient> mixedIngredients; //kepake buat ngasi info window
 
@@ -42,6 +41,8 @@ public class UncompletedDish : Dish
         currentDishState = baseDishState;
 
         UpdateContentState();
+        
+        if(currentContentState == ContentState.Empty) { } // dummy so that currentContentState not marked as unused
     }
 
     void UpdateContentState()

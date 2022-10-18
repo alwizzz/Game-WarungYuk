@@ -1,0 +1,141 @@
+{
+    "region": "papua",
+    "completedDishes": [
+        "telur_balado_sorong", 
+        "ikan_bakar_manokwari", 
+        "abon_gulung"
+    ],
+    "rawIngredients": [
+        "telur", "sambal", "ikan", "abon", "adonan"
+    ],
+    "processedIngredients": [
+        "telurrebus"
+    ],
+    "processes": [
+        "GORENG", "BAKAR", "REBUS"
+    ],
+    "dishProcessTransitions":[
+        {
+            "process": "GORENG",
+            "input": "piring_sambal_telurrebus",
+            "output": "telur_balado_sorong"
+        },
+        {
+            "process": "BAKAR",
+            "input": "piring_sambal_ikan",
+            "output": "ikan_bakar_manokwari"
+        },
+        {
+            "process": "GORENG",
+            "input": "piring_abon_adonan",
+            "output": "abon_gulung"
+        }
+    ],
+    "ingredientProcessTransitions" : [
+        {
+            "process": "REBUS",
+            "input": "telur",
+            "output": "telurrebus"
+        }
+    ],
+    "bowlDishStates": null,
+    "plateDishStates": [
+        {
+            "name": "piring",
+            "transitions": [
+                {                                                   
+                    "input": "telurrebus",
+                    "nextState": "piring_telurrebus",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "sambal",
+                    "nextState": "piring_sambal",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "ikan",
+                    "nextState": "piring_ikan",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "abon",
+                    "nextState": "piring_abon",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "adonan",
+                    "nextState": "piring_adonan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_telurrebus",
+            "transitions": [
+                {
+                    "input": "sambal",
+                    "nextState": "piring_sambal_telurrebus",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_sambal",
+            "transitions": [
+                {
+                    "input": "telurrebus",
+                    "nextState": "piring_sambal_telurrebus",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "ikan",
+                    "nextState": "piring_sambal_ikan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_ikan",
+            "transitions": [
+                {
+                    "input": "sambal",
+                    "nextState": "piring_sambal_ikan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_abon",
+            "transitions": [
+                {
+                    "input": "adonan",
+                    "nextState": "piring_abon_adonan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_adonan",
+            "transitions": [
+                {
+                    "input": "abon",
+                    "nextState": "piring_abon_adonan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_sambal_telurrebus",
+            "transitions": null
+        },
+        {
+            "name": "piring_sambal_ikan",
+            "transitions": null
+        },
+        {
+            "name": "piring_abon_adonan",
+            "transitions": null
+        }
+    ]
+}

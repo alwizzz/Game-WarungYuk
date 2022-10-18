@@ -1,0 +1,189 @@
+{
+    "region": "sulawesi",
+    "completedDishes": [
+        "pisang_ijo", "cucuru", "jalangkote"
+    ],
+    "rawIngredients": [
+        "pisang", "santan", "adonan", "sayuran", "gula"
+    ],
+    "processedIngredients": null,
+    "processes": [
+        "REBUS", "GORENG"
+    ],
+    "dishProcessTransitions":[
+        {
+            "process": "REBUS",
+            "input": "piring_adonan_gula",
+            "output": "cucuru"
+        },
+        {
+            "process": "GORENG",
+            "input": "piring_adonan_sayuran",
+            "output": "jalangkote"
+        }
+    ],
+    "ingredientProcessTransitions" : null,
+    "bowlDishStates": [
+        {
+            "name": "mangkok",
+            "transitions": [
+                {
+                    "input": "pisang",
+                    "nextState": "mangkok_pisang",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "santan",
+                    "nextState": "mangkok_santan",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "adonan",
+                    "nextState": "mangkok_adonan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_pisang",
+            "transitions": [
+                {
+                    "input": "adonan",
+                    "nextState": "mangkok_adonan_pisang",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "santan",
+                    "nextState": "mangkok_pisang_santan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_santan",
+            "transitions": [
+                {
+                    "input": "pisang",
+                    "nextState": "mangkok_pisang_santan",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "adonan",
+                    "nextState": "mangkok_adonan_santan",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_adonan",
+            "transitions": [
+                {
+                    "input": "santan",
+                    "nextState": "mangkok_adonan_santan",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "pisang",
+                    "nextState": "mangkok_adonan_pisang",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "mangkok_adonan_pisang",
+            "transitions": [
+                {
+                    "input": "santan",
+                    "nextState": "pisang_ijo",
+                    "intoCompletedDish": true
+                }
+            ]
+        },
+        {
+            "name": "mangkok_pisang_santan",
+            "transitions": [
+                {
+                    "input": "adonan",
+                    "nextState": "pisang_ijo",
+                    "intoCompletedDish": true
+                }
+            ]
+        },
+        {
+            "name": "mangkok_adonan_santan",
+            "transitions": [
+                {
+                    "input": "pisang",
+                    "nextState": "pisang_ijo",
+                    "intoCompletedDish": true
+                }
+            ]
+        }
+    ],
+
+    "plateDishStates": [
+        {
+            "name": "piring",
+            "transitions": [
+                {
+                    "input": "gula",
+                    "nextState": "piring_gula",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "adonan",
+                    "nextState": "piring_adonan",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "sayuran",
+                    "nextState": "piring_sayuran",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_gula",
+            "transitions": [
+                {
+                    "input": "adonan",
+                    "nextState": "piring_adonan_gula",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_adonan",
+            "transitions": [
+                {
+                    "input": "gula",
+                    "nextState": "piring_adonan_gula",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "sayuran",
+                    "nextState": "piring_adonan_sayuran",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_sayuran",
+            "transitions": [
+                {
+                    "input": "adonan",
+                    "nextState": "piring_adonan_sayuran",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_adonan_gula",
+            "transitions": null
+        },
+        {
+            "name": "piring_adonan_sayuran",
+            "transitions": null
+        }
+    ]
+}

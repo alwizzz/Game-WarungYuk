@@ -16,8 +16,8 @@ TagManager:
   - PlayerStopper
   - Interactable
   - PlayerInteraction
-  - 
-  - 
+  - CustomerInteraction
+  - CustomerDespawner
   - 
   - 
   - 
