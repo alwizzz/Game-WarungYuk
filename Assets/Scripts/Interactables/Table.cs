@@ -97,7 +97,7 @@ public class Table : Interactable
         UpdateHasItemOnTable();
     }
 
-    void UpdateHasItemOnTable() { hasItemOnTable = (itemOnTable ? true : false); }
+    protected void UpdateHasItemOnTable() { hasItemOnTable = (itemOnTable ? true : false); }
 
 
 

@@ -5,9 +5,11 @@ using UnityEngine;
 public class LevelMaster : MonoBehaviour
 {
     [SerializeField] TextAsset jsonFile;
-    [SerializeField] CookingRecipe cookingRecipe;
+    CookingRecipe cookingRecipe;
     [SerializeField] List<CompletedDish> completedDishPrefabs;
     [SerializeField] List<ProcessedIngredient> processedIngredientPrefabs;
+
+    [SerializeField] int totalPoint;
 
 
     private void Awake()
@@ -26,5 +28,12 @@ public class LevelMaster : MonoBehaviour
     {
         var pIng = processedIngredientPrefabs.Find((pIng) => pIng.GetCodeName() == codeName);
         return pIng ? pIng : null;
+    }
+
+    public void IncreasePoint(int value) { totalPoint += value; }
+    public void DecreasePoint(int value)
+    {
+        totalPoint -= value;
+        totalPoint = (totalPoint >= 0 ? totalPoint : 0);
     }
 }

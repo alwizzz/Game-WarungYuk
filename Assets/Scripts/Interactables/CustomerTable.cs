@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CustomerTable : Table
 {
-    [SerializeField] Customer customer;
+    [SerializeField] CustomerAction customerAction;
     [SerializeField] bool hasCustomer;
 
     [SerializeField] UncompletedDish basePlateDishPrefab;
@@ -24,25 +24,41 @@ public class CustomerTable : Table
         )
         {
             TakeItemFromPlayer(playerAction);
-            GiveOrderedDishToCustomer((CompletedDish)itemOnTable);
+            customerAction.TakeOrderedDishFromTable((CompletedDish)itemOnTable);
+            UpdateHasItemOnTable();
+
+            customerAction = null;
+            UpdateHasCustomer();
         }
     }
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {
         if (!hasItemOnTable) { return; } // do nothing if there's nothing on table
         GiveItemToPlayer(playerAction);
+        UpdateHasItemOnTable();
     }
 
-    public void Order(Customer customer)
+    public void Order(CustomerAction customerAction)
     {
-        this.customer = customer;
+        this.customerAction = customerAction;
         UpdateHasCustomer();
+
+        SpawnBaseDishToTable(customerAction.GetOrderedDish().GetBaseDish());
     }
 
-    void GiveOrderedDishToCustomer(CompletedDish cDish)
+    void SpawnBaseDishToTable(Dish.BaseDish baseDish)
     {
+        UncompletedDish uDish = Instantiate(
+            (baseDish == Dish.BaseDish.Plate ? basePlateDishPrefab : baseBowlDishPrefab),
+            transform.position,
+            Quaternion.identity
+        );
 
+        itemOnTable = uDish;
+        itemOnTable.MoveToPivot(placingPivot);
+        UpdateHasItemOnTable();
     }
 
-    void UpdateHasCustomer() { hasCustomer = (customer ? true : false); }
+
+    void UpdateHasCustomer() { hasCustomer = (customerAction ? true : false); }
 }
