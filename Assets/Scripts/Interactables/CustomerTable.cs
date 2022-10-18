@@ -13,6 +13,8 @@ public class CustomerTable : Table
     private void Start()
     {
         UpdateHasCustomer();
+
+        modelRenderers = GetComponentInChildren<RendererMaster>().GetRenderers();
     }
 
 

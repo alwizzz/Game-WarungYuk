@@ -6,6 +6,10 @@ public class Spawner : Interactable
 {
     [SerializeField] RawIngredient rawIngredientPrefab;
 
+    private void Start()
+    {
+        modelRenderers = GetComponentInChildren<RendererMaster>().GetRenderers();
+    }
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {
         SpawnItemToPlayer(playerAction);

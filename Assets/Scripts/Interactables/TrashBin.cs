@@ -20,8 +20,7 @@ public class TrashBin : Interactable
     private void Start()
     {
         cookingRecipe = levelMaster.GetCookingRecipe();
-        //baseBowlDishState = cookingRecipe.GetBowlDishStates().Find((ds) => ds.name == "mangkok");
-        //basePlateDishState = cookingRecipe.GetPlateDishStates().Find((ds) => ds.name == "piring");
+        modelRenderers = GetComponentInChildren<RendererMaster>().GetRenderers();
     }
 
     public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)

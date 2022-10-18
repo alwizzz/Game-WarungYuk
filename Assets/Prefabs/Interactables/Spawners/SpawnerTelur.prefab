@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afe4dc1338c60d478fd13eb1ae284b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modelRenderers: []
   rawIngredientPrefab: {fileID: 6210016390915761635, guid: 8e64cfbb4434e1f42acc97083ef59bc9, type: 3}
 --- !u!54 &8352800782635543035
 Rigidbody:

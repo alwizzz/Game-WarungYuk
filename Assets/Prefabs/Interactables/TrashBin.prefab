@@ -76,6 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 605bc2e0944f95b46b2b8be8b43e86ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modelRenderers: []
   levelMaster: {fileID: 0}
   cookingRecipe:
     region: 
@@ -88,13 +89,7 @@ MonoBehaviour:
     plateDishStates: []
     bowlDishStates: []
   basePlateDishPrefab: {fileID: 4398922898976434207, guid: 4e059530d08924e43bd79af197679c7d, type: 3}
-  basePlateDishState:
-    name: 
-    transitions: []
   baseBowlDishPrefab: {fileID: 2356047074040780409, guid: 08169df88f58f57409dc5b9127652326, type: 3}
-  baseBowlDishState:
-    name: 
-    transitions: []
 --- !u!1001 &8450396732929886432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157,3 +152,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1d8f89d9d7b081448a74b0fca29e83df, type: 3}
   m_PrefabInstance: {fileID: 8450396732929886432}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8756333442941416881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1d8f89d9d7b081448a74b0fca29e83df, type: 3}
+  m_PrefabInstance: {fileID: 8450396732929886432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2104870245459473320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8756333442941416881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d1330076a642c45906dfeaacba0e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasChildren: 0
+  childrenRenderer: []

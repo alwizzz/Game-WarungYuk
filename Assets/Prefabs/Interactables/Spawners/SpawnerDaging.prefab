@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afe4dc1338c60d478fd13eb1ae284b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modelRenderers: []
   rawIngredientPrefab: {fileID: 5078364162554411496, guid: e4ab379cc7810244b9c62a22b81819cf, type: 3}
 --- !u!54 &8512134125094823859
 Rigidbody:
@@ -151,6 +152,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36f7f295d61839c4cb3c2c74a995663b, type: 3}
+--- !u!1 &3760137722001341561 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 36f7f295d61839c4cb3c2c74a995663b, type: 3}
+  m_PrefabInstance: {fileID: 4102735863889428776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9010129210835657306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3760137722001341561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d1330076a642c45906dfeaacba0e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasChildren: 0
+  childrenRenderer: []
 --- !u!4 &4568165125837547203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36f7f295d61839c4cb3c2c74a995663b, type: 3}

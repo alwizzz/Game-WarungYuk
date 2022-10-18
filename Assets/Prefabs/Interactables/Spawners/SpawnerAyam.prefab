@@ -61,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afe4dc1338c60d478fd13eb1ae284b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modelRenderers: []
   rawIngredientPrefab: {fileID: 1836874741278688989, guid: d13ad86d60185e3489c826def831ba7b, type: 3}
 --- !u!54 &420204578771424211
 Rigidbody:
@@ -222,3 +223,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8118949f9ce3ad44290954a9b92ba841, type: 3}
   m_PrefabInstance: {fileID: 3949513673109503674}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4183303176871494635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8118949f9ce3ad44290954a9b92ba841, type: 3}
+  m_PrefabInstance: {fileID: 3949513673109503674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8417552676354934337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4183303176871494635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81d1330076a642c45906dfeaacba0e69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasChildren: 0
+  childrenRenderer: []
