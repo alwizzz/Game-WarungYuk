@@ -83,7 +83,7 @@ MonoBehaviour:
   isProcessing: 0
   inProcessItem: {fileID: 0}
   progressBar: {fileID: 0}
-  processDuration: 0
+  processDuration: 3
   timeCounter: 0
 --- !u!1001 &3197990475514440934
 PrefabInstance:

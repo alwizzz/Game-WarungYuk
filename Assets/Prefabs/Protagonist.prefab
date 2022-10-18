@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBody: {fileID: 3147862675378527507}
-  moveSpeed: 1.5
+  moveSpeed: 5.25
   rotateSpeed: 720
   isMoving: 0
   isAbleToMove: 0
