@@ -8,11 +8,32 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] CustomerAction previousSpawnedPrefab;
     [SerializeField] bool hasExistingSpawn;
     [SerializeField] bool hasArrived;
-    [SerializeField] float spawnDelay;
+    [SerializeField] float initialSpawnDelayMin;
+    [SerializeField] float initialSpawnDelayMax;
+    [SerializeField] float spawnDelayMin;
+    [SerializeField] float spawnDelayMax;
+
+    LevelMaster levelMaster;
+
+    private void Awake()
+    {
+        levelMaster = FindObjectOfType<LevelMaster>();
+    }
 
     private void Start()
     {
-        StartCoroutine(Spawn(0f));
+        Setup();
+        StartCoroutine(
+            Spawn( Random.Range(initialSpawnDelayMin, initialSpawnDelayMax))
+        );
+    }
+
+    void Setup()
+    {
+        initialSpawnDelayMin = levelMaster.GetInitialSpawnDelayMin();
+        initialSpawnDelayMax = levelMaster.GetInitialSpawnDelayMax();
+        spawnDelayMin = levelMaster.GetSpawnDelayMin();
+        spawnDelayMax = levelMaster.GetSpawnDelayMax();
     }
 
     private void Update()
@@ -20,7 +41,9 @@ public class CustomerSpawner : MonoBehaviour
         if (!hasExistingSpawn)
         {
             Debug.Log("spawning..");
-            StartCoroutine(Spawn(spawnDelay));
+            StartCoroutine(
+                Spawn( Random.Range(spawnDelayMin, spawnDelayMax))
+            );
         }
     }
 
@@ -35,6 +58,8 @@ public class CustomerSpawner : MonoBehaviour
             transform.position,
             Quaternion.identity
         );
+
+        spawn.SetOrderedDish(levelMaster.GetRandomCompletedDishPrefab());
         spawn.GetCustomerMovement().SetCustomerSpawner(this);
         spawn.transform.SetParent(transform);
 

@@ -6,15 +6,27 @@ public class LevelMaster : MonoBehaviour
 {
     [SerializeField] TextAsset jsonFile;
     CookingRecipe cookingRecipe;
-    [SerializeField] List<CompletedDish> completedDishPrefabs;
     [SerializeField] List<ProcessedIngredient> processedIngredientPrefabs;
+    [SerializeField] List<CompletedDish> completedDishPrefabs;
+    [SerializeField] List<int> completedDishSpawnCounters;
+    [SerializeField] bool stillHasCounters;
 
     [SerializeField] int totalPoint;
 
 
+    [SerializeField] float initialSpawnDelayMin;
+    [SerializeField] float initialSpawnDelayMax;
+    [SerializeField] float spawnDelayMin;
+    [SerializeField] float spawnDelayMax;
+
     private void Awake()
     {
         cookingRecipe = JsonUtility.FromJson<CookingRecipe>(jsonFile.ToString());
+    }
+
+    private void Start()
+    {
+        UpdateStillHasCounters();
     }
 
     public CookingRecipe GetCookingRecipe() => cookingRecipe;
@@ -36,4 +48,41 @@ public class LevelMaster : MonoBehaviour
         totalPoint -= value;
         totalPoint = (totalPoint >= 0 ? totalPoint : 0);
     }
+
+    public List<CompletedDish> GetCompletedDishPrefabs() => completedDishPrefabs;
+    public float GetInitialSpawnDelayMin() => initialSpawnDelayMin;
+    public float GetInitialSpawnDelayMax() => initialSpawnDelayMax;
+    public float GetSpawnDelayMin() => spawnDelayMin;
+    public float GetSpawnDelayMax() => spawnDelayMax;
+    void UpdateStillHasCounters()
+    {
+        bool value = false;
+        foreach (int x in completedDishSpawnCounters)
+        {
+            if(x > 0) {
+                value = true;    
+                break; 
+            }
+
+        }
+        stillHasCounters = value;
+    }
+
+    public CompletedDish GetRandomCompletedDishPrefab()
+    {
+        int randomIndex = Random.Range(0, completedDishPrefabs.Count);
+        if (stillHasCounters)
+        {
+            while(completedDishSpawnCounters[randomIndex] == 0)
+            {
+                randomIndex = Random.Range(0, completedDishPrefabs.Count);
+            } 
+
+            completedDishSpawnCounters[randomIndex] -= 1;
+            UpdateStillHasCounters();
+        }
+
+        return completedDishPrefabs[randomIndex];
+    }
+
 }

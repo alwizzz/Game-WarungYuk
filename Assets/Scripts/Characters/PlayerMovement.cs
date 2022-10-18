@@ -58,15 +58,15 @@ public class PlayerMovement : MonoBehaviour
         if (blockedLeft && actualXValue < 0) { actualXValue = 0; }
 
         var movementVector = new Vector3(
-            xValue * moveSpeed * Time.deltaTime,
+            xValue * moveSpeed * Time.fixedDeltaTime,
             0f,
-            zValue * moveSpeed * Time.deltaTime
+            zValue * moveSpeed * Time.fixedDeltaTime
         );
 
         var actualMovementVector = new Vector3(
-            actualXValue * moveSpeed * Time.deltaTime,
+            actualXValue * moveSpeed * Time.fixedDeltaTime,
             0f,
-            actualZValue * moveSpeed * Time.deltaTime
+            actualZValue * moveSpeed * Time.fixedDeltaTime
         );
 
 
@@ -78,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
             playerBody.transform.rotation = Quaternion.RotateTowards(
                 playerBody.transform.rotation,
                 toRotation,
-                rotateSpeed * Time.deltaTime
+                rotateSpeed * Time.fixedDeltaTime
             );
         }
 

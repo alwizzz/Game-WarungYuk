@@ -61,4 +61,5 @@ public class CustomerAction : MonoBehaviour
     }
 
     public CustomerMovement GetCustomerMovement() => customerMovement;
+    public void SetOrderedDish(CompletedDish cDish) { orderedDish = cDish; }
 }

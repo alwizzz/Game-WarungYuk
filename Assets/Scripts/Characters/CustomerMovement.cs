@@ -47,7 +47,7 @@ public class CustomerMovement : MonoBehaviour
         customerBody.transform.rotation = Quaternion.RotateTowards(
             customerBody.transform.rotation,
             toRotation,
-            rotateSpeed * Time.deltaTime
+            rotateSpeed * Time.fixedDeltaTime
         );
     }
 
