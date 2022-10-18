@@ -12,8 +12,6 @@ public class CustomerAction : MonoBehaviour
     [SerializeField] CompletedDish heldItem;
     [SerializeField] Transform holdingPivot;
 
-    [SerializeField] float penaltyMultiplier = 0.25f;
-
     LevelMaster levelMaster;
 
     private void Awake()
@@ -32,15 +30,12 @@ public class CustomerAction : MonoBehaviour
         if (givenDish.GetCodeName() == orderedDish.GetCodeName())
         {
             Debug.Log("given dish is correct");
-            levelMaster.IncreasePoint(orderedDish.GetPoint());
+            levelMaster.IncreasePoint(orderedDish.GetPoint(), customerMovement.IsAngry());
         }
         else
         {
             Debug.Log("given dish is incorrect");
-            float temp = (penaltyMultiplier * orderedDish.GetPoint());
-            temp /= 100f;
-            int penaltyPoint = Mathf.RoundToInt(temp) * 100;
-            levelMaster.DecreasePoint(penaltyPoint);
+            levelMaster.DecreasePoint(orderedDish.GetPoint());
         }
 
         heldItem = givenDish;

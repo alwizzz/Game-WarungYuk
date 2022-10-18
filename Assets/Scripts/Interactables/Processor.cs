@@ -81,8 +81,8 @@ public class Processor : Interactable
 
         while(timeCounter < processDuration)
         {
-            timeCounter += Time.deltaTime;
             yield return null;
+            timeCounter += Time.deltaTime;
         }
         Debug.Log("progress done...");
 

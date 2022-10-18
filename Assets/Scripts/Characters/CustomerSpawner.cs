@@ -60,7 +60,9 @@ public class CustomerSpawner : MonoBehaviour
         );
 
         spawn.SetOrderedDish(levelMaster.GetRandomCompletedDishPrefab());
-        spawn.GetCustomerMovement().SetCustomerSpawner(this);
+        var spawnMovement = spawn.GetCustomerMovement();
+        spawnMovement.SetCustomerSpawner(this);
+        spawnMovement.SetAngryConfig(levelMaster.GetToBeAngryDuration());
         spawn.transform.SetParent(transform);
 
         

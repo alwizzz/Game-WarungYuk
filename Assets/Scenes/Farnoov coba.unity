@@ -21146,6 +21146,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3147862674734619963, guid: 3c69058bae2be9b4aac2324f6c1ca5b5, type: 3}
+      propertyPath: moveSpeed
+      value: 5.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c69058bae2be9b4aac2324f6c1ca5b5, type: 3}
 --- !u!4 &1035895454 stripped
@@ -36861,12 +36865,24 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: toBeAngryDuration
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
       propertyPath: initialSpawnDelayMax
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
       propertyPath: initialSpawnDelayMin
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: wrongDishPenaltyMultiplier
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: customerIsAngryPenaltyMultiplier
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
       propertyPath: completedDishPrefabs.Array.data[0]
