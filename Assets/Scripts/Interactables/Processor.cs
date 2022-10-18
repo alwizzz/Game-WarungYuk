@@ -14,6 +14,7 @@ public class Processor : Interactable
     LevelMaster levelMaster;
     CookingRecipe cookingRecipe;
 
+    [SerializeField] ProgressBar progressBar;
     [SerializeField] float processDuration;
     [SerializeField] float timeCounter;
 
@@ -26,8 +27,6 @@ public class Processor : Interactable
 
     }
 
-    IEnumerator Delay(int n) { yield return new WaitForSeconds(n); }
-
     private void Start()
     {
         cookingRecipe = levelMaster.GetCookingRecipe();
@@ -38,21 +37,6 @@ public class Processor : Interactable
         UpdateIsProcessing();
         ResetCounter();
     }
-
-    //public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)
-    //{
-    //    var playerHeldItem = playerAction.GetHeldItem();
-    //    var playerHeldItemTypeString = playerHeldItem.GetType().ToString();
-    //    Debug.Log("held item is " + playerHeldItemTypeString);
-    //    if(playerHeldItemTypeString == "RawIngredient")
-    //    {
-    //        AttemptToProcessIngredient(playerAction, (Ingredient) playerHeldItem);
-    //    }
-    //    else if (playerHeldItemTypeString == "UncompletedDish")
-    //    {
-    //        AttemptToProcessDish(playerAction, (UncompletedDish)playerHeldItem);
-    //    }
-    //}
 
     public void Process(PlayerAction playerAction)
     {
@@ -157,7 +141,25 @@ public class Processor : Interactable
         }
     }
 
-    void UpdateIsProcessing() { isProcessing = (inProcessItem ? true : false); }
+    void UpdateIsProcessing() 
+    {
+        if (inProcessItem)
+        {
+            isProcessing = true;
+            progressBar.Show();
+        } 
+        else
+        {
+            isProcessing = false;
+            progressBar.Hide();
+        }
+    }
 
     void ResetCounter() { timeCounter = 0; }
+
+    public bool IsProcessing() => isProcessing;
+    public float GetTimeCounter() => timeCounter;
+    public float GetProcessDuration() => processDuration;
+    public void SetProgressBar(ProgressBar obj) { progressBar = obj; }
+
 }

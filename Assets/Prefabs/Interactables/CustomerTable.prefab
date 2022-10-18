@@ -81,7 +81,7 @@ MonoBehaviour:
   itemOnTable: {fileID: 0}
   hasItemOnTable: 0
   levelMaster: {fileID: 0}
-  customer: {fileID: 0}
+  customerAction: {fileID: 0}
   hasCustomer: 0
   basePlateDishPrefab: {fileID: 4398922898976434207, guid: 4e059530d08924e43bd79af197679c7d, type: 3}
   baseBowlDishPrefab: {fileID: 2356047074040780409, guid: 08169df88f58f57409dc5b9127652326, type: 3}
