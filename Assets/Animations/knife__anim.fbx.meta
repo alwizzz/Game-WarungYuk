@@ -1,19 +1,12 @@
 fileFormatVersion: 2
-guid: ca3ce40b5f89b3b4ab53fa4085bea77c
+guid: 5be9836c3a617e646b7b050d33a2f671
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: cardbox
-    second: {fileID: 2800000, guid: c362b01ed5cb9ac4cabd8d6d71cc1ed8, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: spawner_gula
-    second: {fileID: 2800000, guid: 65d2d17d834394d4bbed551e71b6f814, type: 3}
+      74: 6298604648490816216
+    second: knife|knifeAction
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -41,7 +34,36 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: knife|knifeAction
+      takeName: knife|knifeAction
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 7
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []

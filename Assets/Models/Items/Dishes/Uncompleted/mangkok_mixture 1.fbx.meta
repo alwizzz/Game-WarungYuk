@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca3ce40b5f89b3b4ab53fa4085bea77c
+guid: 48c164e6474227c43a55a8fbed5436c3
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
@@ -7,13 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: cardbox
-    second: {fileID: 2800000, guid: c362b01ed5cb9ac4cabd8d6d71cc1ed8, type: 3}
+      name: cp_meat_baked
+    second: {fileID: 2800000, guid: 73d36c19fce099342a81c96fb949c0d5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
-      name: spawner_gula
-    second: {fileID: 2800000, guid: 65d2d17d834394d4bbed551e71b6f814, type: 3}
+      name: ikan_ptotng_baked
+    second: {fileID: 2800000, guid: a3261e592143c704e819b34768ab264e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: mixed_tex_baked
+    second: {fileID: 2800000, guid: b32fda161d6fcbe4ea187fc4ab54e606, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
