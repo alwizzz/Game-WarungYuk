@@ -31,11 +31,9 @@ public class PlayerMovement : MonoBehaviour
 
         //playerRigidbody = playerBody.GetComponent<Rigidbody>();
         playerAnimator = playerBody.GetComponentInChildren<Animator>();
-
-
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (isAbleToMove)
         {
