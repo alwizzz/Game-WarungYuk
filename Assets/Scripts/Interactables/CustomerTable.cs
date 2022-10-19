@@ -28,6 +28,7 @@ public class CustomerTable : Table
         {
             TakeItemFromPlayer(playerAction);
             customerAction.TakeOrderedDishFromTable((CompletedDish)itemOnTable);
+            itemOnTable = null;
             UpdateHasItemOnTable();
 
             customerAction = null;
