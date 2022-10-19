@@ -8,7 +8,8 @@ public class Spawner : Interactable
 
     private void Start()
     {
-        modelRenderers = GetComponentInChildren<RendererMaster>().GetRenderers();
+        rendererMaster = GetComponentInChildren<RendererMaster>();
+        childRenderers = rendererMaster.GetChildRenderers();
     }
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {

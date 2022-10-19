@@ -5,8 +5,8 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    //[SerializeField] protected RendererMaster rendererMaster;
-    [SerializeField] protected List<Renderer> modelRenderers;
+    [SerializeField] protected RendererMaster rendererMaster;
+    [SerializeField] protected List<RendererMaster.ChildRenderer> childRenderers;
 
     public void Interact(PlayerAction playerAction)
     {
@@ -43,27 +43,43 @@ public abstract class Interactable : MonoBehaviour
     {
         if (isHighlighted)
         {
-            modelRenderers.ForEach(
-                (mr) =>
+            childRenderers.ForEach(
+                (cr) =>
                 {
-                    foreach(Material m in mr.materials)
-                    {
-                        m.color = Color.red;
-                    }
+                    //foreach(Material m in cr.materials)
+                    //{
+                    //    m.color = Color.red;
+                    //}
+                    cr.GetMaterials().ForEach(
+                        (m) =>
+                        {
+                            m.color = (rendererMaster.HasChildren() ? Color.red : Color.yellow);
+                        }
+                    );
+                
                 }    
             );
         }  
         else
         {
-            modelRenderers.ForEach(
-                (mr) =>
+            //childRenderers.ForEach(
+            //    (cr) =>
+            //    {
+            //        foreach (Material m in cr.GetMaterials())
+            //        {
+            //            m.color = Color.clear;
+            //        }
+            //    }
+            //);
+            for (int i = 0; i<childRenderers.Count; i++)
+            {
+                var childRenderer = childRenderers[i];
+                var materials = childRenderer.GetMaterials();
+                for(int j = 0; j<materials.Count; j++)
                 {
-                    foreach (Material m in mr.materials)
-                    {
-                        m.color = Color.clear;
-                    }
+                    materials[j].color = childRenderer.GetDefaultMaterialColors()[j];
                 }
-            );
+            }
         }
     }
 }

@@ -14,7 +14,8 @@ public class CustomerTable : Table
     {
         UpdateHasCustomer();
 
-        modelRenderers = GetComponentInChildren<RendererMaster>().GetRenderers();
+        rendererMaster = GetComponentInChildren<RendererMaster>();
+        childRenderers = rendererMaster.GetChildRenderers();
     }
 
 

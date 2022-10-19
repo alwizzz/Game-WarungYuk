@@ -37,7 +37,8 @@ public class Processor : Interactable
         UpdateIsProcessing();
         ResetCounter();
 
-        modelRenderers = GetComponentInChildren<RendererMaster>().GetRenderers();
+        rendererMaster = GetComponentInChildren<RendererMaster>();
+        childRenderers = rendererMaster.GetChildRenderers();
     }
 
     public void Process(PlayerAction playerAction)

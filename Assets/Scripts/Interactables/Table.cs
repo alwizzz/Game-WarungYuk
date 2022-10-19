@@ -24,7 +24,8 @@ public class Table : Interactable
             itemOnTable.MoveToPivot(placingPivot); 
         }
 
-        modelRenderers = GetComponentInChildren<RendererMaster>().GetRenderers();
+        rendererMaster = GetComponentInChildren<RendererMaster>();
+        childRenderers = rendererMaster.GetChildRenderers();
     }
 
     public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)

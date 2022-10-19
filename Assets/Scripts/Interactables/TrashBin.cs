@@ -20,7 +20,9 @@ public class TrashBin : Interactable
     private void Start()
     {
         cookingRecipe = levelMaster.GetCookingRecipe();
-        modelRenderers = GetComponentInChildren<RendererMaster>().GetRenderers();
+
+        rendererMaster = GetComponentInChildren<RendererMaster>();
+        childRenderers = rendererMaster.GetChildRenderers();
     }
 
     public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)

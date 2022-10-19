@@ -61,7 +61,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             primaryInteractedObject.SetHighlighted(false);
             primaryInteractedObject = (secondaryInteractedObject ? secondaryInteractedObject : null);
-            //primaryInteractedObject.SetHighlighted(true);
+            if (primaryInteractedObject != null) { primaryInteractedObject.SetHighlighted(true); }
 
             secondaryInteractedObject = (tertiaryInteractedObject ? tertiaryInteractedObject : null);
             tertiaryInteractedObject = null;
