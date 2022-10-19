@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: kompor_int
-    second: {fileID: 2100000, guid: 30b90d268358ce84a8f833de186dd67c, type: 2}
+    second: {fileID: 2100000, guid: 490c644164635a34e96bcd86d24ece90, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

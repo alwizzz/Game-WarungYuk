@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5509691332937525716}
   - component: {fileID: 5509691332937525715}
+  - component: {fileID: 6580302845851746793}
   m_Layer: 0
   m_Name: LevelMasterSulawesi
   m_TagString: Untagged
@@ -45,18 +46,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: e69caef2526962844a1a36e108dfe932, type: 3}
-  cookingRecipe:
-    region: 
-    completedDishes: []
-    rawIngredients: []
-    processedIngredients: []
-    processes: []
-    dishProcessTransitions: []
-    ingredientProcessTransitions: []
-    plateDishStates: []
-    bowlDishStates: []
+  processedIngredientPrefabs: []
   completedDishPrefabs:
   - {fileID: 3292810173124863970, guid: 2cc63cf7e1113564b81d9cda56726b99, type: 3}
   - {fileID: 7394709516965635833, guid: 38eb050514a93464d88556af04e25fa2, type: 3}
   - {fileID: 645017643739581219, guid: c3bbae467357da443ad12d4bba43d1bd, type: 3}
-  processedIngredientPrefabs: []
+  completedDishSpawnCounters: 020000000200000002000000
+  stillHasCounters: 0
+  totalPoint: 0
+  wrongDishPenaltyMultiplier: 0.25
+  customerIsAngryPenaltyMultiplier: 0.5
+  levelTimer: {fileID: 6580302845851746793}
+  levelDuration: 20
+  initialSpawnDelayMin: 2
+  initialSpawnDelayMax: 10
+  spawnDelayMin: 3
+  spawnDelayMax: 5
+  toBeAngryDuration: 10
+  isPaused: 0
+  gameHasStarted: 0
+--- !u!114 &6580302845851746793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5509691332937525714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f01affe5570bb4eb194a56e76680c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelDuration: 0
+  timeCounter: 0
+  isTimeUp: 0
+  isCounting: 0
+  timerString: 
