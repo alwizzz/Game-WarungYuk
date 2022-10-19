@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1296044601562826295}
   - component: {fileID: 1188035336207653608}
+  - component: {fileID: 5028966257560097899}
   m_Layer: 0
   m_Name: LevelMasterKalimantan
   m_TagString: Untagged
@@ -45,20 +46,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: 5a731533922150f4dad7f54b7e7d04c5, type: 3}
-  cookingRecipe:
-    region: 
-    completedDishes: []
-    rawIngredients: []
-    processedIngredients: []
-    processes: []
-    dishProcessTransitions: []
-    ingredientProcessTransitions: []
-    plateDishStates: []
-    bowlDishStates: []
+  processedIngredientPrefabs:
+  - {fileID: 6567178496744768802, guid: b7cfa4411dbdaa64d9562d82769f8a44, type: 3}
+  - {fileID: 1682307905447088576, guid: 02dc19aa0a8bdf741a4c975ac85c4445, type: 3}
   completedDishPrefabs:
   - {fileID: 6869692953653924037, guid: c70421b13ef794b45973a468cee2d35d, type: 3}
   - {fileID: 6582286154978679328, guid: 32513177d238bb746b09980c04375e2d, type: 3}
   - {fileID: 1136468465917218700, guid: aee90e500cd36884daa7b06a0f90a312, type: 3}
-  processedIngredientPrefabs:
-  - {fileID: 6567178496744768802, guid: b7cfa4411dbdaa64d9562d82769f8a44, type: 3}
-  - {fileID: 1682307905447088576, guid: 02dc19aa0a8bdf741a4c975ac85c4445, type: 3}
+  completedDishSpawnCounters: 020000000200000002000000
+  stillHasCounters: 0
+  totalPoint: 0
+  wrongDishPenaltyMultiplier: 0.25
+  customerIsAngryPenaltyMultiplier: 0.5
+  levelTimer: {fileID: 5028966257560097899}
+  levelDuration: 20
+  initialSpawnDelayMin: 2
+  initialSpawnDelayMax: 10
+  spawnDelayMin: 3
+  spawnDelayMax: 5
+  toBeAngryDuration: 10
+  isPaused: 0
+  gameHasStarted: 0
+--- !u!114 &5028966257560097899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5927135665229448419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f01affe5570bb4eb194a56e76680c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelDuration: 0
+  timeCounter: 0
+  isTimeUp: 0
+  isCounting: 0
+  timerString: 
