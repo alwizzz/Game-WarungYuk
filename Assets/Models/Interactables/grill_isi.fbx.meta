@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 77e4ccd8b74f70e4b98f432f86310d6c
+guid: a286b0a93598eef498ce60e5d4d918d6
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: kompor_int
-    second: {fileID: 2100000, guid: 203c6c633adf2d14aa88a726b66e5823, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: kompor_top
-    second: {fileID: 2100000, guid: 8b2880a1f53b10447b22df6fe2fdad93, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: panci
-    second: {fileID: 2100000, guid: a9109482c3a537e4f832ff50f8fbc84e, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

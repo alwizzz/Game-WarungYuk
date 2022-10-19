@@ -1,24 +1,33 @@
 fileFormatVersion: 2
-guid: 77e4ccd8b74f70e4b98f432f86310d6c
+guid: 612de1cac4b26d84aafc8cfd9872ef88
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: kompor_int
-    second: {fileID: 2100000, guid: 203c6c633adf2d14aa88a726b66e5823, type: 2}
+      74: 6021462287429217390
+    second: tahu.001|CubeAction
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: kompor_top
-    second: {fileID: 2100000, guid: 8b2880a1f53b10447b22df6fe2fdad93, type: 2}
+      74: -7106813544647789398
+    second: tahu.001|kuahAction
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: panci
-    second: {fileID: 2100000, guid: a9109482c3a537e4f832ff50f8fbc84e, type: 2}
+      74: -4036426637120435010
+    second: tahu.002|CubeAction
+  - first:
+      74: 7453366646005465368
+    second: tahu.002|kuahAction
+  - first:
+      74: -7057661858345341626
+    second: tahu.003|CubeAction
+  - first:
+      74: -8820102159545560715
+    second: tahu.003|kuahAction
+  - first:
+      74: -9082571488199299220
+    second: tahu.004|CubeAction
+  - first:
+      74: 4779636625475750510
+    second: tahu.004|kuahAction
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
