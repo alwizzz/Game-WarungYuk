@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2833983326814563753}
   - component: {fileID: 2833983326814563754}
+  - component: {fileID: 1534531902}
   m_Layer: 0
   m_Name: LevelMasterSumatra
   m_TagString: Untagged
@@ -45,19 +46,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: b9e25cd789d237344a49964e7ec4f597, type: 3}
-  cookingRecipe:
-    region: 
-    completedDishes: []
-    rawIngredients: []
-    processedIngredients: []
-    processes: []
-    dishProcessTransitions: []
-    ingredientProcessTransitions: []
-    plateDishStates: []
-    bowlDishStates: []
-  completedDishPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  rawIngredientPrefabs: []
   processedIngredientPrefabs: []
+  completedDishPrefabs:
+  - {fileID: 7113344472446065084, guid: ed7477aee3286c643bbde9c72c86b82f, type: 3}
+  - {fileID: 2747054581427084875, guid: 73590b462a82cc9489a7a7a9c7775039, type: 3}
+  - {fileID: 4086801370685077831, guid: 7a03568636df98f42bca94dcf7c1e495, type: 3}
+  completedDishSpawnCounters: 020000000200000002000000
+  stillHasCounters: 0
+  totalPoint: 0
+  wrongDishPenaltyMultiplier: 0.25
+  customerIsAngryPenaltyMultiplier: 0.5
+  levelTimer: {fileID: 1534531902}
+  levelDuration: 20
+  initialSpawnDelayMin: 2
+  initialSpawnDelayMax: 10
+  spawnDelayMin: 3
+  spawnDelayMax: 5
+  toBeAngryDuration: 10
+  isPaused: 0
+  gameHasStarted: 0
+--- !u!114 &1534531902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2833983326814563755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f01affe5570bb4eb194a56e76680c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelDuration: 0
+  timeCounter: 0
+  isTimeUp: 0
+  isCounting: 0
+  timerString: 
