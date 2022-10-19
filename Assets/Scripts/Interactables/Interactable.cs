@@ -2,9 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+
+
 
 public abstract class Interactable : MonoBehaviour
 {
+    [SerializeField] protected RendererMaster rendererMaster;
+    [SerializeField] protected List<RendererMaster.ChildRenderer> childRenderers;
+
+    //[SerializeField] protected Color32 colorForSpawner = new Color32(50, 50, 50, 50);
+    //[SerializeField] protected Color32 colorForNonSpawner = new Color32(50, 50, 50, 30);
+
+    //[SerializeField] protected Color colorForSpawner = Color.blue;
+    //[SerializeField] protected Color colorForNonSpawner = Color.cyan;
+
+    [SerializeField] protected Color emissionColor = new Color32(60, 60, 30, 0);
     public void Interact(PlayerAction playerAction)
     {
         //Debug.Log("player attempts to interact with " + this);
@@ -34,5 +47,59 @@ public abstract class Interactable : MonoBehaviour
     public void LeftByPlayer()
     {
         Debug.Log(gameObject + " left by player");
+    }
+
+    public void SetHighlighted(bool isHighlighted)
+    {
+        if (isHighlighted)
+        {
+            childRenderers.ForEach(
+                (cr) =>
+                {
+                    //foreach(Material m in cr.materials)
+                    //{
+                    //    m.color = Color.red;
+                    //}
+                    cr.GetMaterials().ForEach(
+                        (m) =>
+                        {
+                            //m.color = (rendererMaster.HasChildren() ? new Color32(50, 50, 50, 30) : new Color32(50, 50, 50, 50));
+                            //m.color += (rendererMaster.HasChildren() ? colorForNonSpawner : colorForSpawner);
+                            //m.EnableKeyword("_EMISSION");
+                            m.EnableKeyword("_EMISSION");
+                            m.SetColor("_EmissionColor", new Color32(60, 60, 30, 255));
+                            //m.SetColor("_EmissionColor", Color.yellow);
+                            //m.EnableKeyword(new LocalKeyword(m.shader, "_EMISSION"));
+
+
+                        }
+                    );
+                
+                }    
+            );
+        }  
+        else
+        {
+            //childRenderers.ForEach(
+            //    (cr) =>
+            //    {
+            //        foreach (Material m in cr.GetMaterials())
+            //        {
+            //            m.color = Color.clear;
+            //        }
+            //    }
+            //);
+            for (int i = 0; i<childRenderers.Count; i++)
+            {
+                var childRenderer = childRenderers[i];
+                var materials = childRenderer.GetMaterials();
+                for(int j = 0; j<materials.Count; j++)
+                {
+                    //materials[j].color = childRenderer.GetDefaultMaterialColors()[j];
+                    var m = materials[j];
+                    m.DisableKeyword("_EMISSION");
+                }
+            }
+        }
     }
 }

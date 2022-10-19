@@ -23,6 +23,9 @@ public class Table : Interactable
             itemOnTable = Instantiate(itemOnTable, transform.position, Quaternion.identity);
             itemOnTable.MoveToPivot(placingPivot); 
         }
+
+        rendererMaster = GetComponentInChildren<RendererMaster>();
+        childRenderers = rendererMaster.GetChildRenderers();
     }
 
     public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)

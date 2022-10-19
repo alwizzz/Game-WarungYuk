@@ -13,6 +13,9 @@ public class CustomerTable : Table
     private void Start()
     {
         UpdateHasCustomer();
+
+        rendererMaster = GetComponentInChildren<RendererMaster>();
+        childRenderers = rendererMaster.GetChildRenderers();
     }
 
 
@@ -25,6 +28,7 @@ public class CustomerTable : Table
         {
             TakeItemFromPlayer(playerAction);
             customerAction.TakeOrderedDishFromTable((CompletedDish)itemOnTable);
+            itemOnTable = null;
             UpdateHasItemOnTable();
 
             customerAction = null;

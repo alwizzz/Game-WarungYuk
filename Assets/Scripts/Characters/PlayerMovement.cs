@@ -31,8 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
         //playerRigidbody = playerBody.GetComponent<Rigidbody>();
         playerAnimator = playerBody.GetComponentInChildren<Animator>();
-
-
     }
 
     private void FixedUpdate()
@@ -92,11 +90,14 @@ public class PlayerMovement : MonoBehaviour
     public void SetBlockedBackward(bool value) { blockedBackward = value; }
     public void SetBlockedLeft(bool value) { blockedLeft = value; }
     public void SetBlockedRight(bool value) { blockedRight = value; }
-    public void SetIsAbleToMove(bool value) { isAbleToMove = value; }
+    public void SetIsAbleToMove(bool value) 
+    { 
+        isAbleToMove = value;
+        if (!value) { UpdateIsMoving(Vector3.zero); } //force isMoving to be false
+    }
 
     void UpdateIsMoving(Vector3 movementVector)
     {
-
         isMoving = (movementVector == Vector3.zero ? false : true);
         playerAnimator.SetBool("isMoving", isMoving);
     }

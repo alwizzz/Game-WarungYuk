@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerLocalPositionFreezer : MonoBehaviour
 {
     
-    void Update()
+    void FixedUpdate()
     {
         transform.localPosition = Vector3.zero;
         transform.localEulerAngles = Vector3.zero;

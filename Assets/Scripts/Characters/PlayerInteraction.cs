@@ -13,10 +13,13 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] float distanceToPrimaryInteractedObject;
     [SerializeField] float distanceToSecondaryInteractedObject;
     [SerializeField] float distanceToTertiaryInteractedObject;
+    [SerializeField] GameMaster gameMaster;
 
 
     private void Start()
     {
+        gameMaster = FindObjectOfType<GameMaster>();
+
         touchedInteractableCounter = 0;
         UpdateIsMultiTouching();
         ResetDistances();
@@ -24,15 +27,10 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (isMultiTouching)
+        if (isMultiTouching && !gameMaster.IsPaused())
         {
             DecideInteractedObjectPriority();
         }
-
-        //if (Input.GetKeyDown(KeyCode.Space) && primaryInteractedObject != null)
-        //{
-        //    Debug.Log("Player interacts with " + primaryInteractedObject.name);
-        //}
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,6 +43,7 @@ public class PlayerInteraction : MonoBehaviour
         if (!isMultiTouching)
         {
             primaryInteractedObject = theInteractable;
+            primaryInteractedObject.SetHighlighted(true);
         } else
         {
             if(touchedInteractableCounter == 2) { secondaryInteractedObject = theInteractable; }
@@ -63,7 +62,10 @@ public class PlayerInteraction : MonoBehaviour
         //theInteractable.LeftByPlayer();
         if(theInteractable == primaryInteractedObject)
         {
-            primaryInteractedObject = secondaryInteractedObject;
+            primaryInteractedObject.SetHighlighted(false);
+            primaryInteractedObject = (secondaryInteractedObject ? secondaryInteractedObject : null);
+            if (primaryInteractedObject != null) { primaryInteractedObject.SetHighlighted(true); }
+
             secondaryInteractedObject = (tertiaryInteractedObject ? tertiaryInteractedObject : null);
             tertiaryInteractedObject = null;
         } else if(theInteractable == secondaryInteractedObject)
@@ -107,10 +109,9 @@ public class PlayerInteraction : MonoBehaviour
 
         if (distanceToSecondaryInteractedObject < distanceToPrimaryInteractedObject && distanceToSecondaryInteractedObject != 0f)
         {
-            //Debug.Log("before swap: " + primaryInteractedObject + " " + secondaryInteractedObject);
+            primaryInteractedObject.SetHighlighted(false);
             SwapInteractedObjects(ref primaryInteractedObject, ref secondaryInteractedObject);
-            //Debug.Log("after swap: " + primaryInteractedObject + " " + secondaryInteractedObject);
-
+            primaryInteractedObject.SetHighlighted(true);
         }
     }
 

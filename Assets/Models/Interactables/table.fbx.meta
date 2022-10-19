@@ -3,7 +3,27 @@ guid: db866ee80ea3b6b45989795a11fb0890
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: drawerhandle
+    second: {fileID: 2100000, guid: 2e841461c00461c4db2a13201765c254, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kompor_int
+    second: {fileID: 2100000, guid: 30b90d268358ce84a8f833de186dd67c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tabledrawer
+    second: {fileID: 2100000, guid: 7060284804950c14a80a9e72b3d5ca90, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tabletop
+    second: {fileID: 2100000, guid: 76ade4dcc336cc84dbe57fc02a2c3ad7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
