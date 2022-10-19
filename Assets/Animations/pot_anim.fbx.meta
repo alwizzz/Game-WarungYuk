@@ -1,24 +1,27 @@
 fileFormatVersion: 2
-guid: 77e4ccd8b74f70e4b98f432f86310d6c
+guid: 6e7b6ca10ca78134fb232e9d5fc0d467
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: kompor_int
-    second: {fileID: 2100000, guid: 203c6c633adf2d14aa88a726b66e5823, type: 2}
+      74: -7103897684396471936
+    second: panci.001|Cube.011Action
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: kompor_top
-    second: {fileID: 2100000, guid: 8b2880a1f53b10447b22df6fe2fdad93, type: 2}
+      74: 3244849911577520008
+    second: panci.001|kuah.001Action
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: panci
-    second: {fileID: 2100000, guid: a9109482c3a537e4f832ff50f8fbc84e, type: 2}
+      74: -8030007598094252936
+    second: kuah.001|Cube.011Action
+  - first:
+      74: 3326285273527947562
+    second: pot_kuah
+  - first:
+      74: -4869403039331326923
+    second: pot_aduk
+  - first:
+      74: 3368902256133708117
+    second: Cube.011|kuah.001Action
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -46,7 +49,65 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: pot_kuah
+      takeName: kuah.001|kuah.001Action
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: pot_aduk
+      takeName: Cube.011|Cube.011Action
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
