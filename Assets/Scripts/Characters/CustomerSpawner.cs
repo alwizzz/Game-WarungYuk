@@ -8,6 +8,7 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] CustomerAction previousSpawnedPrefab;
     [SerializeField] bool hasExistingSpawn;
     [SerializeField] bool hasArrived;
+    [SerializeField] bool hasSpawnedInitial;
     [SerializeField] float initialSpawnDelayMin;
     [SerializeField] float initialSpawnDelayMax;
     [SerializeField] float spawnDelayMin;
@@ -23,9 +24,6 @@ public class CustomerSpawner : MonoBehaviour
     private void Start()
     {
         Setup();
-        StartCoroutine(
-            Spawn( Random.Range(initialSpawnDelayMin, initialSpawnDelayMax))
-        );
     }
 
     void Setup()
@@ -34,16 +32,30 @@ public class CustomerSpawner : MonoBehaviour
         initialSpawnDelayMax = levelMaster.GetInitialSpawnDelayMax();
         spawnDelayMin = levelMaster.GetSpawnDelayMin();
         spawnDelayMax = levelMaster.GetSpawnDelayMax();
+
+        hasExistingSpawn = false;
+        hasSpawnedInitial = false;
     }
 
     private void Update()
     {
-        if (!hasExistingSpawn)
+        if (levelMaster.GameHasStarted())
         {
-            Debug.Log("spawning..");
-            StartCoroutine(
-                Spawn( Random.Range(spawnDelayMin, spawnDelayMax))
-            );
+            if (!hasSpawnedInitial)
+            {
+                InitialSpawn();
+                hasSpawnedInitial = true;
+            }
+            else
+            {
+                if (!hasExistingSpawn)
+                {
+                    Debug.Log("spawning..");
+                    StartCoroutine(
+                        Spawn(Random.Range(spawnDelayMin, spawnDelayMax))
+                    );
+                }
+            }
         }
     }
 
@@ -66,6 +78,13 @@ public class CustomerSpawner : MonoBehaviour
         spawn.transform.SetParent(transform);
 
         
+    }
+
+    public void InitialSpawn()
+    {
+        StartCoroutine(
+            Spawn(Random.Range(initialSpawnDelayMin, initialSpawnDelayMax))
+        );
     }
 
     CustomerAction GetRandomizedPrefab()

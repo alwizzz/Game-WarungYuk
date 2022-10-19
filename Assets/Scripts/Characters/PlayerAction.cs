@@ -14,18 +14,18 @@ public class PlayerAction : MonoBehaviour
 
     [SerializeField] Item heldItem;
     [SerializeField] Transform holdingPivot;
-    [SerializeField] GameMaster gameMaster;
+    LevelMaster levelMaster;
 
     private void Start()
     {
-        gameMaster = FindObjectOfType<GameMaster>();
+        levelMaster = FindObjectOfType<LevelMaster>();
         UpdateIsHolding();
     }
 
     private void Update()
     {
         var interactedObject = playerInteraction.GetInteractedObject();
-        if (interactedObject != null && !gameMaster.IsPaused())
+        if (interactedObject != null && !levelMaster.IsPaused())
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {

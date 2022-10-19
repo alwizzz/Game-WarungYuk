@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Rigidbody playerRigidbody;
     Animator playerAnimator;
+    LevelMaster levelMaster;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
         //playerRigidbody = playerBody.GetComponent<Rigidbody>();
         playerAnimator = playerBody.GetComponentInChildren<Animator>();
+        levelMaster = FindObjectOfType<LevelMaster>();
     }
 
     private void FixedUpdate()
@@ -74,6 +76,8 @@ public class PlayerMovement : MonoBehaviour
 
         if(movementVector != Vector3.zero)
         {
+            if (!levelMaster.GameHasStarted()) { levelMaster.StartGame(); }
+
             var toRotation = Quaternion.LookRotation(movementVector, Vector3.up);
             playerBody.transform.rotation = Quaternion.RotateTowards(
                 playerBody.transform.rotation,
