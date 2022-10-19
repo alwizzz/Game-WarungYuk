@@ -25,26 +25,48 @@ public class LevelMaster : MonoBehaviour
     [SerializeField] float spawnDelayMax;
 
     [SerializeField] float toBeAngryDuration;
+    [SerializeField] bool isPaused;
+    [SerializeField] bool gameHasStarted;
+
 
     private void Awake()
     {
         cookingRecipe = JsonUtility.FromJson<CookingRecipe>(jsonFile.ToString());
+        gameHasStarted = false;
+        levelTimer.SetLevelDuration(levelDuration);
+        isPaused = false;
     }
 
     private void Start()
     {
         UpdateStillHasCounters();
-        levelTimer.SetLevelDuration(levelDuration);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!levelTimer.IsCounting()) { levelTimer.ContinueTimer(); }
-            else { levelTimer.PauseTimer(); }
+            isPaused = !isPaused;
+            if (isPaused)
+            {
+                Time.timeScale = 0f;
+                levelTimer.PauseTimer();
+            } 
+            else
+            {
+                Time.timeScale = 1f;
+                levelTimer.ContinueTimer();
+            }
         }
+
+        // test level timer
+        //if (Input.GetKeyDown(KeyCode.P) && !isPaused)
+        //{
+        //    if (!levelTimer.IsCounting()) { levelTimer.ContinueTimer(); }
+        //    else { levelTimer.PauseTimer(); }
+        //}
     }
+    public bool IsPaused() => isPaused;
 
     public CookingRecipe GetCookingRecipe() => cookingRecipe;
 
@@ -122,4 +144,10 @@ public class LevelMaster : MonoBehaviour
         return completedDishPrefabs[randomIndex];
     }
 
+    public bool GameHasStarted() => gameHasStarted;
+    public void StartGame()
+    {
+        gameHasStarted = true;
+        levelTimer.ContinueTimer();
+    }
 }
