@@ -13,10 +13,13 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] float distanceToPrimaryInteractedObject;
     [SerializeField] float distanceToSecondaryInteractedObject;
     [SerializeField] float distanceToTertiaryInteractedObject;
+    [SerializeField] GameMaster gameMaster;
 
 
     private void Start()
     {
+        gameMaster = FindObjectOfType<GameMaster>();
+
         touchedInteractableCounter = 0;
         UpdateIsMultiTouching();
         ResetDistances();
@@ -24,7 +27,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (isMultiTouching)
+        if (isMultiTouching && !gameMaster.IsPaused())
         {
             DecideInteractedObjectPriority();
         }

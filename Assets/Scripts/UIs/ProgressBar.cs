@@ -15,7 +15,7 @@ public class ProgressBar : MonoBehaviour
         processDuration = processor.GetProcessDuration();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (processor.IsProcessing())
         {

@@ -14,6 +14,9 @@ public class LevelMaster : MonoBehaviour
     [SerializeField] int totalPoint;
     [SerializeField] float wrongDishPenaltyMultiplier;
     [SerializeField] float customerIsAngryPenaltyMultiplier;
+    
+    [SerializeField] LevelTimer levelTimer;
+    [SerializeField] float levelDuration;
 
 
     [SerializeField] float initialSpawnDelayMin;
@@ -31,6 +34,16 @@ public class LevelMaster : MonoBehaviour
     private void Start()
     {
         UpdateStillHasCounters();
+        levelTimer.SetLevelDuration(levelDuration);
+    }
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (!levelTimer.IsCounting()) { levelTimer.ContinueTimer(); }
+            else { levelTimer.PauseTimer(); }
+        }
     }
 
     public CookingRecipe GetCookingRecipe() => cookingRecipe;

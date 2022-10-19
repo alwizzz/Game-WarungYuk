@@ -14,46 +14,39 @@ public class PlayerAction : MonoBehaviour
 
     [SerializeField] Item heldItem;
     [SerializeField] Transform holdingPivot;
-
-    [SerializeField] Color color;
-
-
-    private void Awake()
-    {
-        //playerMovement = GetComponent<PlayerMovement>();
-        //playerInteraction = GetComponentInChildren<PlayerInteraction>();
-        //playerAnimator = playerBody.GetComponentInChildren<Animator>();
-    }
+    [SerializeField] GameMaster gameMaster;
 
     private void Start()
     {
+        gameMaster = FindObjectOfType<GameMaster>();
         UpdateIsHolding();
     }
 
     private void Update()
     {
         var interactedObject = playerInteraction.GetInteractedObject();
-        if (interactedObject)
+        if (interactedObject != null && !gameMaster.IsPaused())
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 interactedObject.Interact(this);
             } 
-            //else if(Input.GetKeyDown(KeyCode.Q) && interactedObject.GetType().ToString() == "Processor" && isHolding)
-            //{
-            //    Processor processor = (Processor)interactedObject;
-            //    processor.Process(this);
-            //}
+
             if(interactedObject.GetType().ToString() == "Processor")
             {
-                if (Input.GetKeyDown(KeyCode.Q) && !isUsingProcessor) 
+                // if (Input.GetKeyDown(KeyCode.Q) && !isUsingProcessor ) 
+                // {
+                //     //Debug.Log("Q pressed"); 
+                //     ((Processor)interactedObject).Process(this);
+                // }
+                // if (Input.GetKeyUp(KeyCode.Q) && isUsingProcessor) 
+                // {
+                //     ((Processor)interactedObject).AbortProcess(this);
+                // }
+                if (Input.GetKeyDown(KeyCode.LeftShift)) 
                 {
-                    //Debug.Log("Q pressed"); 
-                    ((Processor)interactedObject).Process(this);
-                }
-                if (Input.GetKeyUp(KeyCode.Q) && isUsingProcessor) 
-                {
-                    ((Processor)interactedObject).AbortProcess(this);
+                    if(isUsingProcessor){ ((Processor)interactedObject).AbortProcess(this); }
+                    else {((Processor)interactedObject).Process(this);}
                 }
             }
         }
