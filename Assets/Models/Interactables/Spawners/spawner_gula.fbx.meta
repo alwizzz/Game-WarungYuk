@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: cardbox
-    second: {fileID: 2800000, guid: 7a42240333108f4449d72a7789e11723, type: 3}
+    second: {fileID: 2800000, guid: c362b01ed5cb9ac4cabd8d6d71cc1ed8, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: spawner_gula
-    second: {fileID: 2800000, guid: 929f166f19436184382e3e4c37973ce3, type: 3}
+    second: {fileID: 2800000, guid: 65d2d17d834394d4bbed551e71b6f814, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
