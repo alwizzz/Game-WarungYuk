@@ -21098,6 +21098,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 200086994, guid: 3c69058bae2be9b4aac2324f6c1ca5b5, type: 3}
+      propertyPath: color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 200086994, guid: 3c69058bae2be9b4aac2324f6c1ca5b5, type: 3}
+      propertyPath: color.b
+      value: 0.18867922
+      objectReference: {fileID: 0}
+    - target: {fileID: 200086994, guid: 3c69058bae2be9b4aac2324f6c1ca5b5, type: 3}
+      propertyPath: color.g
+      value: 0.18867922
+      objectReference: {fileID: 0}
+    - target: {fileID: 200086994, guid: 3c69058bae2be9b4aac2324f6c1ca5b5, type: 3}
+      propertyPath: color.r
+      value: 0.18867922
+      objectReference: {fileID: 0}
     - target: {fileID: 3147862674734619940, guid: 3c69058bae2be9b4aac2324f6c1ca5b5, type: 3}
       propertyPath: m_Name
       value: Protagonist
@@ -22653,7 +22669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasChildren: 0
-  childrenRenderer: []
+  childRenderers: []
 --- !u!1001 &1088044556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44628,7 +44644,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7afe4dc1338c60d478fd13eb1ae284b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelRenderers: []
+  rendererMaster: {fileID: 0}
+  childRenderers: []
+  emissionColor: {r: 0, g: 0, b: 0, a: 0}
   rawIngredientPrefab: {fileID: 5078364162554411496, guid: e4ab379cc7810244b9c62a22b81819cf, type: 3}
 --- !u!1001 &5888925944625132783
 PrefabInstance:
@@ -44767,7 +44785,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0fb65bfdf47cf40bbfdca488d76d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelRenderers: []
+  rendererMaster: {fileID: 0}
+  childRenderers: []
+  emissionColor: {r: 0, g: 0, b: 0, a: 0}
   placingPivot: {fileID: 5888925945125007689}
   itemOnTable: {fileID: 0}
   hasItemOnTable: 0

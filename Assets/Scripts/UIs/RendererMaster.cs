@@ -15,20 +15,20 @@ public class RendererMaster : MonoBehaviour
     {
         Renderer thisRenderer;
         [SerializeField] List<Material> materials;
-        [SerializeField] List<Color> defaultMaterialColors = new List<Color>();
+        //[SerializeField] List<Color> defaultMaterialColors = new List<Color>();
 
         public ChildRenderer(Renderer renderer)
         {
             thisRenderer = renderer;
             materials = new List<Material>(renderer.materials);
-            foreach(Material m in materials){
-                defaultMaterialColors.Add(m.color);
-            }
+            //foreach(Material m in materials){
+            //    defaultMaterialColors.Add(m.color);
+            //}
         }
 
         public Renderer GetRenderer() => thisRenderer;
         public List<Material> GetMaterials() => materials;
-        public List<Color> GetDefaultMaterialColors() => defaultMaterialColors;
+        //public List<Color> GetDefaultMaterialColors() => defaultMaterialColors;
     }
 
     void Awake()

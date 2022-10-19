@@ -23,6 +23,8 @@ public class TrashBin : Interactable
 
         rendererMaster = GetComponentInChildren<RendererMaster>();
         childRenderers = rendererMaster.GetChildRenderers();
+
+        //Debug.Log(colorForNonSpawner + " " + colorForSpawner);
     }
 
     public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)

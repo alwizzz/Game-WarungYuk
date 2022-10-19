@@ -15,6 +15,8 @@ public class PlayerAction : MonoBehaviour
     [SerializeField] Item heldItem;
     [SerializeField] Transform holdingPivot;
 
+    [SerializeField] Color color;
+
 
     private void Awake()
     {
