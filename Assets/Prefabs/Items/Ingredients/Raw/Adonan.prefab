@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: adonan
+  mixtureIconPrefab: {fileID: 1623397793724496099, guid: 802e4fce0318cbd4eb522a3c4dc14876, type: 3}
 --- !u!1001 &3682464686142912251
 PrefabInstance:
   m_ObjectHideFlags: 0

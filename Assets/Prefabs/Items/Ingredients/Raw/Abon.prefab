@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: abon
+  mixtureIconPrefab: {fileID: 2708703708941763293, guid: 410b0b5d51fe4d84fb5cf8fac9285535, type: 3}
 --- !u!1 &6532628848143928119
 GameObject:
   m_ObjectHideFlags: 0

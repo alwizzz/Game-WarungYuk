@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: gula
+  mixtureIconPrefab: {fileID: 4024467685641856094, guid: b2b8c7a87907bd244b919f05d5e87527, type: 3}
 --- !u!1 &3033738315887136418
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: tahu
+  mixtureIconPrefab: {fileID: 4154587143598649575, guid: 0ed10b9ed3d6d014e90714bf09922f64, type: 3}
 --- !u!1 &7095948945423820089
 GameObject:
   m_ObjectHideFlags: 0

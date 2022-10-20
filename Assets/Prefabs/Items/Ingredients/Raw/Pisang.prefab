@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: pisang
+  mixtureIconPrefab: {fileID: 1996640190511991434, guid: a2f2370b1cb0b014b806ec5ca8ecb085, type: 3}
 --- !u!1 &8472143465445053345
 GameObject:
   m_ObjectHideFlags: 0

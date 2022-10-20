@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: telur
+  mixtureIconPrefab: {fileID: 1275175564930026870, guid: b249852fd18d88f4fb832f274ad4e79e, type: 3}
 --- !u!1 &6210016391209099476
 GameObject:
   m_ObjectHideFlags: 0

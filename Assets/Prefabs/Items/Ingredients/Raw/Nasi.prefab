@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: nasi
+  mixtureIconPrefab: {fileID: 5544572530510344383, guid: 20768d6d2f63b0248938c695ecf6a7c3, type: 3}
 --- !u!1 &2136696611849768224
 GameObject:
   m_ObjectHideFlags: 0

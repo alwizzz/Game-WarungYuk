@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: sambalkacang
+  mixtureIconPrefab: {fileID: 427048189037304302, guid: a124b371b9fe76040825a14ae28da166, type: 3}
 --- !u!1 &2755192902984147355
 GameObject:
   m_ObjectHideFlags: 0

@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: mie
+  mixtureIconPrefab: {fileID: 5144943487579009021, guid: 6b39ed229dbdf5044b73346fcdc7a9d9, type: 3}
 --- !u!1001 &4885707060364104101
 PrefabInstance:
   m_ObjectHideFlags: 0

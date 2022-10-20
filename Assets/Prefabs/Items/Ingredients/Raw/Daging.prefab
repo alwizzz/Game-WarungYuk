@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: daging
+  mixtureIconPrefab: {fileID: 3255189323169238447, guid: 7b53dc533aaf5d8469689a30dde9298b, type: 3}
 --- !u!1001 &7781086337599829986
 PrefabInstance:
   m_ObjectHideFlags: 0

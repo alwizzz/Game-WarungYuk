@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: ikanpotong
+  mixtureIconPrefab: {fileID: 1500534227415653587, guid: 82864afcbd5613f4ca39d656176a3d92, type: 3}
 --- !u!1001 &1682307904873898978
 PrefabInstance:
   m_ObjectHideFlags: 0

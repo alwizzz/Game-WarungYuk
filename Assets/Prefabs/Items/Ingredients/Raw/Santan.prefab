@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: santan
+  mixtureIconPrefab: {fileID: 6654334273671506238, guid: 673b0b55e5a5a4b448d0ad0e5d5c1950, type: 3}
 --- !u!1 &5128737717825027300
 GameObject:
   m_ObjectHideFlags: 0

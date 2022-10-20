@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: ayam
+  mixtureIconPrefab: {fileID: 7204981224341844533, guid: 76e72119b3b98cf4fb005462668c982f, type: 3}
 --- !u!1001 &1836874740135282796
 PrefabInstance:
   m_ObjectHideFlags: 0
