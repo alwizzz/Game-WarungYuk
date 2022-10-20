@@ -88,6 +88,10 @@ MonoBehaviour:
   progressBar: {fileID: 4628769990766301679}
   processDuration: 3
   timeCounter: 0
+  hasAnimation: 0
+  processorAnimator: {fileID: 6920544291883295165}
+  idleModel: {fileID: 0}
+  processingModel: {fileID: 0}
 --- !u!1001 &1752253787965598539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -164,6 +168,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasChildren: 0
   childRenderers: []
+--- !u!95 &6920544291883295165
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481728638646261274}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5d32f11b37e3d1c41ba2448e75608dd2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &2295702162782080160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8cacbf31018846848a70590fb54a21f8, type: 3}

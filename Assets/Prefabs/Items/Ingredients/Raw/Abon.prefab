@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: abon
+  mixtureIconPrefab: {fileID: 2708703708941763293, guid: 410b0b5d51fe4d84fb5cf8fac9285535, type: 3}
 --- !u!1 &6532628848143928119
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0654274459333e543b31ebafd7bcb3a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0045
+      value: 0.012
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0654274459333e543b31ebafd7bcb3a2, type: 3}
       propertyPath: m_LocalPosition.z

@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: sambalkacang
+  mixtureIconPrefab: {fileID: 427048189037304302, guid: a124b371b9fe76040825a14ae28da166, type: 3}
 --- !u!1 &2755192902984147355
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e52d2ce177cd61948b10702c538f15ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.011
+      value: 0.024
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e52d2ce177cd61948b10702c538f15ec, type: 3}
       propertyPath: m_LocalPosition.z

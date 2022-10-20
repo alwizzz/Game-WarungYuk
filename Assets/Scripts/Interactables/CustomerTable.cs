@@ -10,12 +10,18 @@ public class CustomerTable : Table
     [SerializeField] UncompletedDish basePlateDishPrefab;
     [SerializeField] UncompletedDish baseBowlDishPrefab;
 
+    [SerializeField] Vector3 bubblePosition;
+    [SerializeField] Quaternion bubbleRotation;
+    [SerializeField] RecipeBubble recipeBubble;
+
     private void Start()
     {
         UpdateHasCustomer();
 
         rendererMaster = GetComponentInChildren<RendererMaster>();
         childRenderers = rendererMaster.GetChildRenderers();
+
+        bubbleRotation = Quaternion.Euler(new Vector3(70f, 0f, 0f));
     }
 
 
@@ -33,6 +39,8 @@ public class CustomerTable : Table
 
             customerAction = null;
             UpdateHasCustomer();
+
+            DespawnRecipeBubble();
         }
     }
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
@@ -48,6 +56,10 @@ public class CustomerTable : Table
         UpdateHasCustomer();
 
         SpawnBaseDishToTable(customerAction.GetOrderedDish().GetBaseDish());
+        SpawnRecipeBubble(
+            customerAction.GetOrderedDish().GetRecipeBubblePrefab(),
+            customerAction.GetCustomerMovement()
+        );
     }
 
     void SpawnBaseDishToTable(Dish.BaseDish baseDish)
@@ -57,10 +69,28 @@ public class CustomerTable : Table
             transform.position,
             Quaternion.identity
         );
+        Debug.Log("spawned " + uDish);
 
         itemOnTable = uDish;
         itemOnTable.MoveToPivot(placingPivot);
         UpdateHasItemOnTable();
+    }
+
+    void SpawnRecipeBubble(RecipeBubble recipeBubblePrefab, CustomerMovement cm)
+    {
+        recipeBubble = Instantiate(
+            recipeBubblePrefab,
+            bubblePosition + transform.position,
+            bubbleRotation
+        );
+        recipeBubble.transform.SetParent(transform);
+        recipeBubble.Setup(cm);
+    }
+
+    void DespawnRecipeBubble()
+    {
+        Destroy(recipeBubble.gameObject);
+        recipeBubble = null;
     }
 
 

@@ -40,6 +40,8 @@ public class CustomerMovement : MonoBehaviour
             yield return null;
             angryCounter -= Time.deltaTime;
         }
+        angryCounter = 0;
+        yield return null;
         isAngry = true;
     }
 
@@ -98,4 +100,6 @@ public class CustomerMovement : MonoBehaviour
     }
 
     public bool IsAngry() => isAngry;
+    public float GetAngryCounter() => angryCounter;
+    public float GetToBeAngryDuration() => toBeAngryDuration;
 }

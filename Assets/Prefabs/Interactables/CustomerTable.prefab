@@ -77,7 +77,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf67ba77e9a2eef439e9356a094ecf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelRenderers: []
+  rendererMaster: {fileID: 0}
+  childRenderers: []
+  emissionColor: {r: 0.23529412, g: 0.23529412, b: 0.11764706, a: 0}
   placingPivot: {fileID: 2298171583248548638}
   itemOnTable: {fileID: 0}
   hasItemOnTable: 0
@@ -86,6 +88,9 @@ MonoBehaviour:
   hasCustomer: 0
   basePlateDishPrefab: {fileID: 4398922898976434207, guid: 4e059530d08924e43bd79af197679c7d, type: 3}
   baseBowlDishPrefab: {fileID: 2356047074040780409, guid: 08169df88f58f57409dc5b9127652326, type: 3}
+  bubblePosition: {x: 0, y: 0, z: 0}
+  bubbleRotation: {x: 0.57357645, y: 0, z: 0, w: 0.81915206}
+  recipeBubble: {fileID: 0}
 --- !u!1 &2298171583248548639
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasChildren: 0
-  childrenRenderer: []
+  childRenderers: []
 --- !u!4 &2227625457138987455 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9ce18d7058cc0414a84e79cbdbcdb5b2, type: 3}

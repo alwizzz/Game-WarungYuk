@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: telur
+  mixtureIconPrefab: {fileID: 1275175564930026870, guid: b249852fd18d88f4fb832f274ad4e79e, type: 3}
 --- !u!1 &6210016391209099476
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6b09ead58b8936e4c85c4f9a77b947c8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0066
+      value: 0.013
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6b09ead58b8936e4c85c4f9a77b947c8, type: 3}
       propertyPath: m_LocalPosition.z

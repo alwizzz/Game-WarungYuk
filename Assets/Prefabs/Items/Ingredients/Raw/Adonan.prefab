@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: adonan
+  mixtureIconPrefab: {fileID: 1623397793724496099, guid: 802e4fce0318cbd4eb522a3c4dc14876, type: 3}
 --- !u!1001 &3682464686142912251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11ad83575357bf74280b9c854d182c58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0031
+      value: 0.018
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 11ad83575357bf74280b9c854d182c58, type: 3}
       propertyPath: m_LocalPosition.z

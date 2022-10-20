@@ -2110,6 +2110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: sayuran
+  mixtureIconPrefab: {fileID: 7551071379208931111, guid: edaf4f20a632fbf46a8c434d5c91d648, type: 3}
 --- !u!1 &7916574546846466955
 GameObject:
   m_ObjectHideFlags: 0

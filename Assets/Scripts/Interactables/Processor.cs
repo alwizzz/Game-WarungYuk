@@ -19,12 +19,16 @@ public class Processor : Interactable
     [SerializeField] float timeCounter;
 
     IEnumerator processDishHandler;
+    [SerializeField] bool hasAnimation;
+    [SerializeField] Animator processorAnimator;
+    [SerializeField] GameObject idleModel;
+    [SerializeField] GameObject processingModel;
 
 
     private void Awake()
     {
         levelMaster = FindObjectOfType<LevelMaster>();
-
+        hasAnimation = (processorAnimator == null ? false : true);
     }
 
     private void Start()
@@ -44,7 +48,7 @@ public class Processor : Interactable
     public void Process(PlayerAction playerAction)
     {
         var playerHeldItem = playerAction.GetHeldItem();
-        var playerHeldItemTypeString = playerHeldItem.GetType().ToString();
+        var playerHeldItemTypeString = playerHeldItem?.GetType().ToString();
         //Debug.Log("held item is " + playerHeldItemTypeString);
         if (playerHeldItemTypeString == "RawIngredient")
         {
@@ -156,6 +160,9 @@ public class Processor : Interactable
             isProcessing = false;
             progressBar.Hide();
         }
+
+        if (hasAnimation) { processorAnimator.SetBool("isProcessing", isProcessing); }
+        else { UpdateActiveModel(); }
     }
 
     void ResetCounter() { timeCounter = 0; }
@@ -164,5 +171,18 @@ public class Processor : Interactable
     public float GetTimeCounter() => timeCounter;
     public float GetProcessDuration() => processDuration;
     public void SetProgressBar(ProgressBar obj) { progressBar = obj; }
+    void UpdateActiveModel()
+    {
+        if (isProcessing)
+        {
+            idleModel.SetActive(false);
+            processingModel.SetActive(true);
+        }
+        else
+        {
+            idleModel.SetActive(true);
+            processingModel.SetActive(false);
+        }
+    }
 
 }

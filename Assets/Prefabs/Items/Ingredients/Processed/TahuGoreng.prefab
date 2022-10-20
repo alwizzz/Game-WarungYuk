@@ -647,6 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: tahugoreng
+  mixtureIconPrefab: {fileID: 5702199758866748567, guid: 322ecf94a08dc0e49b62c54becd736cf, type: 3}
 --- !u!1 &5887118679440969350
 GameObject:
   m_ObjectHideFlags: 0
