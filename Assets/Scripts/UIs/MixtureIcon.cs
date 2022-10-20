@@ -7,7 +7,7 @@ public class MixtureIcon : MonoBehaviour
     Quaternion neutralRotation;
     private void Awake()
     {
-        neutralRotation = Quaternion.Euler(new Vector3(90f, 0f, 0f));
+        neutralRotation = Quaternion.Euler(new Vector3(70f, 0f, 0f));
     }
     public void MoveToPivot(Transform pivotObject)
     {

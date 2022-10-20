@@ -19,8 +19,8 @@ public class ProgressBar : MonoBehaviour
     {
         if (processor.IsProcessing())
         {
-            float normalizedProcess = (processor.GetTimeCounter() / processDuration);
-            progressPivot.localScale = new Vector3(normalizedProcess, 1f, 1f);
+            float normalizedProgress = (processor.GetTimeCounter() / processDuration);
+            progressPivot.localScale = new Vector3(normalizedProgress, 1f, 1f);
         }
     }
 

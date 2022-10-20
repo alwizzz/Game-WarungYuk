@@ -4321,8 +4321,8 @@ Transform:
   - {fileID: 219376135}
   - {fileID: 218996284}
   - {fileID: 1246954181}
-  - {fileID: 1162626208}
   - {fileID: 2053259645}
+  - {fileID: 1162626208}
   - {fileID: 791629353}
   m_Father: {fileID: 44567219}
   m_RootOrder: 2
@@ -6219,6 +6219,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 241795588}
     m_Modifications:
+    - target: {fileID: 2298171581318200755, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
+      propertyPath: bubblePosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298171581318200755, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
+      propertyPath: bubblePosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298171581318200755, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
+      propertyPath: bubblePosition.z
+      value: 2.45
+      objectReference: {fileID: 0}
     - target: {fileID: 2298171581318200764, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -8858,6 +8870,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 241795588}
     m_Modifications:
+    - target: {fileID: 2298171581318200755, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
+      propertyPath: bubblePosition.x
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298171581318200755, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
+      propertyPath: bubblePosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298171581318200755, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
+      propertyPath: bubblePosition.z
+      value: 2.45
+      objectReference: {fileID: 0}
     - target: {fileID: 2298171581318200764, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -18162,6 +18186,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 241795588}
     m_Modifications:
+    - target: {fileID: 2298171581318200755, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
+      propertyPath: bubblePosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298171581318200755, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
+      propertyPath: bubblePosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298171581318200755, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
+      propertyPath: bubblePosition.z
+      value: 2.45
+      objectReference: {fileID: 0}
     - target: {fileID: 2298171581318200764, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -24832,6 +24868,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 241795588}
     m_Modifications:
+    - target: {fileID: 2298171581318200755, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
+      propertyPath: bubblePosition.x
+      value: -0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298171581318200755, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
+      propertyPath: bubblePosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298171581318200755, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
+      propertyPath: bubblePosition.z
+      value: 2.45
+      objectReference: {fileID: 0}
     - target: {fileID: 2298171581318200764, guid: af0807285b3cc9d42baf2629ed8dece2, type: 3}
       propertyPath: m_RootOrder
       value: 27
