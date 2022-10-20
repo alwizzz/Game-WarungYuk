@@ -7,20 +7,22 @@ public class CustomerInteraction : MonoBehaviour
     [SerializeField] CustomerMovement customerMovement;
     [SerializeField] CustomerAction customerAction;
     Transform grandparent;
+    [SerializeField] bool hasInteracted;
 
     private void Start()
     {
         grandparent = transform.parent.parent;
         customerMovement = grandparent.GetComponent<CustomerMovement>();
         customerAction = grandparent.GetComponent<CustomerAction>();
-
+        
+        hasInteracted = false;
     }
     private void OnTriggerEnter(Collider other)
     {
         CustomerTable customerTable = other.transform.GetComponent<CustomerTable>();
-        if(customerTable != null)
+        if(customerTable != null && !hasInteracted)
         {
-            Debug.Log("woyyy");
+            hasInteracted = true;
             customerTable.Order(customerAction);
             customerMovement.ArrivedAtTable();
         } 
