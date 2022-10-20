@@ -50,7 +50,7 @@ public class CustomerSpawner : MonoBehaviour
             {
                 if (!hasExistingSpawn)
                 {
-                    Debug.Log("spawning..");
+                    // Debug.Log("spawning..");
                     StartCoroutine(
                         Spawn(Random.Range(spawnDelayMin, spawnDelayMax))
                     );

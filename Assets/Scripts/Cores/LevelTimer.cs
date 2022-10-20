@@ -47,7 +47,7 @@ public class LevelTimer : MonoBehaviour
             UpdateIsTimeUp();
             UpdateTimerString();
         } while (!isTimeUp);
-        Debug.Log("time counter reaches zero");
+        Debug.Log("LEVEL TIMER: TIME'S UP");
         timeCounter = 0f;
         UpdateIsTimeUp();
     }

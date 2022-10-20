@@ -17,7 +17,7 @@ public class CustomerDespawner : MonoBehaviour
     void Despawn(CustomerInteraction customerInteraction)
     {
         var customerGO = customerInteraction.GetCustomer().gameObject;
-        Debug.Log(customerGO + " despawned");
+        // Debug.Log(customerGO + " despawned");
         Destroy(customerGO);
         customerSpawner.SetHasExistingSpawn(false);
         customerSpawner.SetHasArrived(false);

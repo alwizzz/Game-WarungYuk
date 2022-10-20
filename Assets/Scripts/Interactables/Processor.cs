@@ -91,7 +91,7 @@ public class Processor : Interactable
             yield return null;
             timeCounter += Time.deltaTime;
         }
-        Debug.Log("progress done...");
+        // Debug.Log("progress done...");
 
         Destroy(playerAction.TakeHeldItem().gameObject);
         GiveProcessorOutputToPlayer(playerAction, inProcessItem, isProcessingDish);
@@ -130,7 +130,7 @@ public class Processor : Interactable
         playerAction.ShowHeldItem();
 
         AfterProcess(playerAction);
-        Debug.Log("process aborted");
+        // Debug.Log("process aborted");
     }
 
     void GiveProcessorOutputToPlayer(PlayerAction playerAction, Item processorOutputPrefab, bool isProcessingDish)
