@@ -4,29 +4,40 @@ using UnityEngine;
 
 public class LevelMaster : MonoBehaviour
 {
+    [Header("Level State")]
+    [SerializeField] bool isPaused;
+    [SerializeField] bool gameHasStarted;
+
+    [Header("Cooking Recipe")]
     [SerializeField] TextAsset jsonFile;
     CookingRecipe cookingRecipe;
     [SerializeField] List<ProcessedIngredient> processedIngredientPrefabs;
     [SerializeField] List<CompletedDish> completedDishPrefabs;
     [SerializeField] List<int> completedDishSpawnCounters;
-    [SerializeField] bool stillHasCounters;
+    bool stillHasCounters;
 
-    [SerializeField] int totalPoint;
+    [Header("Point Config")]
+    [SerializeField] int totalPoints;
+    [SerializeField] int oneStarMinimumPoints;
+    [SerializeField] int twoStarMinimumPoints;
+    [SerializeField] int threeStarMinimumPoints;
     [SerializeField] float wrongDishPenaltyMultiplier;
     [SerializeField] float customerIsAngryPenaltyMultiplier;
-    
-    [SerializeField] LevelTimer levelTimer;
-    [SerializeField] float levelDuration;
 
+    [Header("Level Statistic")]
+    [SerializeField] int successfulOrders;
+    [SerializeField] int failedOrders;
 
+    [Header("Spawn Config")]
     [SerializeField] float initialSpawnDelayMin;
     [SerializeField] float initialSpawnDelayMax;
     [SerializeField] float spawnDelayMin;
     [SerializeField] float spawnDelayMax;
-
+    
+    [Header("Duration Config")]
+    [SerializeField] LevelTimer levelTimer;
+    [SerializeField] float levelDuration;
     [SerializeField] float toBeAngryDuration;
-    [SerializeField] bool isPaused;
-    [SerializeField] bool gameHasStarted;
 
 
     private void Awake()
@@ -40,6 +51,9 @@ public class LevelMaster : MonoBehaviour
     private void Start()
     {
         UpdateStillHasCounters();
+
+        successfulOrders = 0;
+        failedOrders = 0;
     }
 
     private void Update()
@@ -59,12 +73,6 @@ public class LevelMaster : MonoBehaviour
             }
         }
 
-        // test level timer
-        //if (Input.GetKeyDown(KeyCode.P) && !isPaused)
-        //{
-        //    if (!levelTimer.IsCounting()) { levelTimer.ContinueTimer(); }
-        //    else { levelTimer.PauseTimer(); }
-        //}
     }
     public bool IsPaused() => isPaused;
 
@@ -83,27 +91,35 @@ public class LevelMaster : MonoBehaviour
 
     public void IncreasePoint(int dishPoint, bool customerIsAngry) 
     {
+        successfulOrders++;
+
         if (customerIsAngry)
         {
             float temp = (customerIsAngryPenaltyMultiplier * dishPoint);
             temp /= 100f;
             int penaltiedPoint = Mathf.RoundToInt(temp) * 100;
 
-            totalPoint += penaltiedPoint;
+            totalPoints += penaltiedPoint;
+            Debug.Log("Increased point by " + penaltiedPoint);
         }
         else
         {
-            totalPoint += dishPoint; 
+            totalPoints += dishPoint;
+            Debug.Log("Increased point by " + dishPoint);
         }
     }
     public void DecreasePoint(int dishPoint)
     {
+        failedOrders++;
+
         float temp = (wrongDishPenaltyMultiplier * dishPoint);
         temp /= 100f;
         int penaltiedPoint = Mathf.RoundToInt(temp) * 100;
 
-        totalPoint -= penaltiedPoint;
-        totalPoint = (totalPoint >= 0 ? totalPoint : 0);
+        totalPoints -= penaltiedPoint;
+        totalPoints = (totalPoints >= 0 ? totalPoints : 0);
+
+        Debug.Log("Decreased point by " + penaltiedPoint);
     }
 
     public List<CompletedDish> GetCompletedDishPrefabs() => completedDishPrefabs;
@@ -122,7 +138,6 @@ public class LevelMaster : MonoBehaviour
                 value = true;    
                 break; 
             }
-
         }
         stillHasCounters = value;
     }
@@ -149,5 +164,6 @@ public class LevelMaster : MonoBehaviour
     {
         gameHasStarted = true;
         levelTimer.ContinueTimer();
+        Debug.Log("LEVEL TIMER: GAME STARTED");
     }
 }

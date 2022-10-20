@@ -69,7 +69,7 @@ public class CustomerTable : Table
             transform.position,
             Quaternion.identity
         );
-        Debug.Log("spawned " + uDish);
+        // Debug.Log("spawned " + uDish);
 
         itemOnTable = uDish;
         itemOnTable.MoveToPivot(placingPivot);

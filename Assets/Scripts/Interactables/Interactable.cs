@@ -39,16 +39,6 @@ public abstract class Interactable : MonoBehaviour
         return;
     }
 
-
-    public void TouchedByPlayer()
-    {
-        Debug.Log(gameObject + " touched by player");
-    }
-    public void LeftByPlayer()
-    {
-        Debug.Log(gameObject + " left by player");
-    }
-
     public void SetHighlighted(bool isHighlighted)
     {
         if (isHighlighted)

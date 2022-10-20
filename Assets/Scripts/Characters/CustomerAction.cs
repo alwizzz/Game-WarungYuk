@@ -29,12 +29,12 @@ public class CustomerAction : MonoBehaviour
     {
         if (givenDish.GetCodeName() == orderedDish.GetCodeName())
         {
-            Debug.Log("given dish is correct");
+            // Debug.Log("given dish is correct");
             levelMaster.IncreasePoint(orderedDish.GetPoint(), customerMovement.IsAngry());
         }
         else
         {
-            Debug.Log("given dish is incorrect");
+            // Debug.Log("given dish is incorrect");
             levelMaster.DecreasePoint(orderedDish.GetPoint());
         }
 
