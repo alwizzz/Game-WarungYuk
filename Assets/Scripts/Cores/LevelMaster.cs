@@ -100,12 +100,12 @@ public class LevelMaster : MonoBehaviour
             int penaltiedPoint = Mathf.RoundToInt(temp) * 100;
 
             totalPoints += penaltiedPoint;
-            Debug.Log("Increased point by " + penaltiedPoint);
+            Debug.Log("Increased point by " + penaltiedPoint.ToString("n0"));
         }
         else
         {
             totalPoints += dishPoint;
-            Debug.Log("Increased point by " + dishPoint);
+            Debug.Log("Increased point by " + dishPoint.ToString("n0"));
         }
     }
     public void DecreasePoint(int dishPoint)
@@ -119,7 +119,7 @@ public class LevelMaster : MonoBehaviour
         totalPoints -= penaltiedPoint;
         totalPoints = (totalPoints >= 0 ? totalPoints : 0);
 
-        Debug.Log("Decreased point by " + penaltiedPoint);
+        Debug.Log("Decreased point by " + penaltiedPoint.ToString("n0"));
     }
 
     public List<CompletedDish> GetCompletedDishPrefabs() => completedDishPrefabs;
