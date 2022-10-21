@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class LevelMaster : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class LevelMaster : MonoBehaviour
     bool stillHasCounters;
 
     [Header("Point Config")]
+    [SerializeField] TextMeshProUGUI pointText;
     [SerializeField] int totalPoints;
     [SerializeField] int oneStarMinimumPoints;
     [SerializeField] int twoStarMinimumPoints;
@@ -51,6 +54,7 @@ public class LevelMaster : MonoBehaviour
     private void Start()
     {
         UpdateStillHasCounters();
+        UpdateDisplayPoint();
 
         successfulOrders = 0;
         failedOrders = 0;
@@ -107,6 +111,8 @@ public class LevelMaster : MonoBehaviour
             totalPoints += dishPoint;
             Debug.Log("Increased point by " + dishPoint.ToString("n0"));
         }
+
+        UpdateDisplayPoint();
     }
     public void DecreasePoint(int dishPoint)
     {
@@ -120,6 +126,12 @@ public class LevelMaster : MonoBehaviour
         totalPoints = (totalPoints >= 0 ? totalPoints : 0);
 
         Debug.Log("Decreased point by " + penaltiedPoint.ToString("n0"));
+        UpdateDisplayPoint();
+    }
+
+    void UpdateDisplayPoint()
+    {
+        pointText.text = "Rp" + totalPoints.ToString();
     }
 
     public List<CompletedDish> GetCompletedDishPrefabs() => completedDishPrefabs;
