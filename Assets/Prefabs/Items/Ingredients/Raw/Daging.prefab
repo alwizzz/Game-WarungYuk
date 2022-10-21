@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7273172972295386277}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6431234847312253370
 MeshFilter:
@@ -112,8 +112,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3762951880679152562}
   - {fileID: 7814099057767682057}
+  - {fileID: 3762951880679152562}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: daging
+  mixtureIconPrefab: {fileID: 3255189323169238447, guid: 7b53dc533aaf5d8469689a30dde9298b, type: 3}
 --- !u!1001 &7781086337599829986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -139,7 +140,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 593e310562245e74ebc6746df894ef83, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e310562245e74ebc6746df894ef83, type: 3}
       propertyPath: m_LocalPosition.x
@@ -147,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e310562245e74ebc6746df894ef83, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.006
+      value: 0.016
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 593e310562245e74ebc6746df894ef83, type: 3}
       propertyPath: m_LocalPosition.z

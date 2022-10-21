@@ -51,6 +51,8 @@ MonoBehaviour:
     name: 
     transitions: []
   baseDish: 0
+  point: 15000
+  recipeBubblePrefab: {fileID: 932591833044564249, guid: 32dd408f20499e34a94f128195f07b62, type: 3}
 --- !u!1 &7688609106427480699
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: dagingpotong
+  mixtureIconPrefab: {fileID: 2464522822317556310, guid: e1fb9cb8106f4f344b9d06ee79673b7a, type: 3}
 --- !u!1 &6567178496889382391
 GameObject:
   m_ObjectHideFlags: 0

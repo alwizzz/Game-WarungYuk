@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: telurrebus
+  mixtureIconPrefab: {fileID: 2033542537569333277, guid: c32999796d7d1b9448af1f74d7f412e4, type: 3}
 --- !u!1 &2002762996117907945
 GameObject:
   m_ObjectHideFlags: 0

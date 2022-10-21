@@ -34,7 +34,7 @@ public class TrashBin : Interactable
         if(playerItemTypeString == "UncompletedDish")
         {
             ((UncompletedDish)playerHeldItem).ClearMixedIngredient();
-            Debug.Log("mubazir bro");
+            // Debug.Log("mubazir bro");
         }
         else if(playerItemTypeString == "CompletedDish")
         {

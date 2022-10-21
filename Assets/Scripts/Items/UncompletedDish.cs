@@ -7,6 +7,7 @@ public class UncompletedDish : Dish
     [SerializeField] GameObject emptyPrefab;
     [SerializeField] GameObject mixturePrefab;
     [SerializeField] Transform mixedIngredientStash;
+    [SerializeField] MixtureIconMaster icons;
 
     public enum ContentState { Empty, Mixture }
     [SerializeField] ContentState currentContentState;
@@ -89,6 +90,7 @@ public class UncompletedDish : Dish
             currentDishState = dishStates.Find((ds) => ds.name == dt.nextState);
             mixedIngredients.Add(ingredient);
             UpdateContentState();
+            icons.AddIcon(ingredient.GetMixtureIconPrefab());
         }
 
         ingredient.HideTo(mixedIngredientStash);
@@ -104,6 +106,7 @@ public class UncompletedDish : Dish
             Destroy(child.gameObject);
         }
         UpdateContentState();
+        icons.ClearIcon();
     }
 
     public CookingRecipe.DishState GetCurrentDishState() => currentDishState;

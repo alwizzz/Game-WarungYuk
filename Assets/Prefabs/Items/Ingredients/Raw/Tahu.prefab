@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   codeName: tahu
+  mixtureIconPrefab: {fileID: 4154587143598649575, guid: 0ed10b9ed3d6d014e90714bf09922f64, type: 3}
 --- !u!1 &7095948945423820089
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa7b67eb25c67cc46a36903c97b39625, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0051
+      value: 0.017
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa7b67eb25c67cc46a36903c97b39625, type: 3}
       propertyPath: m_LocalPosition.z
