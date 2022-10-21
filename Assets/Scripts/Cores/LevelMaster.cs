@@ -42,6 +42,9 @@ public class LevelMaster : MonoBehaviour
     [SerializeField] float levelDuration;
     [SerializeField] float toBeAngryDuration;
 
+    [Header("UI Cache")]
+    [SerializeField] GameObject modalPause;
+
 
     private void Awake()
     {
@@ -49,6 +52,7 @@ public class LevelMaster : MonoBehaviour
         gameHasStarted = false;
         levelTimer.SetLevelDuration(levelDuration);
         isPaused = false;
+        modalPause.SetActive(false);
     }
 
     private void Start()
@@ -64,16 +68,14 @@ public class LevelMaster : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            isPaused = !isPaused;
-            if (isPaused)
+            //isPaused = !isPaused;
+            if (!isPaused)
             {
-                Time.timeScale = 0f;
-                levelTimer.PauseTimer();
+                Pause();
             } 
             else
             {
-                Time.timeScale = 1f;
-                levelTimer.ContinueTimer();
+                Unpause();
             }
         }
 
@@ -177,5 +179,26 @@ public class LevelMaster : MonoBehaviour
         gameHasStarted = true;
         levelTimer.ContinueTimer();
         Debug.Log("LEVEL TIMER: GAME STARTED");
+    }
+
+
+    // ======================== UI
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        levelTimer.PauseTimer();
+
+        modalPause.SetActive(true);
+        isPaused = true;
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1f;
+        levelTimer.ContinueTimer();
+
+        modalPause.SetActive(false);
+        isPaused = false;
     }
 }
