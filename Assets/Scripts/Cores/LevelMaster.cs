@@ -44,6 +44,7 @@ public class LevelMaster : MonoBehaviour
 
     [Header("UI Cache")]
     [SerializeField] GameObject modalPause;
+    [SerializeField] GameObject modalCookingGuide;
 
 
     private void Awake()
@@ -219,5 +220,15 @@ public class LevelMaster : MonoBehaviour
     {
         if (isPaused) { Time.timeScale = 1f; }
         FindObjectOfType<SceneLoader>().LoadMapScene();
+    }
+
+    public void OpenCookingGuide()
+    {
+        modalCookingGuide.SetActive(true);
+    }
+
+    public void CloseCookingGuide()
+    {
+        modalCookingGuide.SetActive(false);
     }
 }
