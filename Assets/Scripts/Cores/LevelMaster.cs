@@ -230,5 +230,6 @@ public class LevelMaster : MonoBehaviour
     public void CloseCookingGuide()
     {
         modalCookingGuide.SetActive(false);
+        if (!gameHasStarted) { StartLevel(); }
     }
 }
