@@ -15,7 +15,6 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] string codeLevelKalimantanScene;
 
 
-
     public void LoadMapScene()
     {
         SceneManager.LoadScene(codeMapScene);

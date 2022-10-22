@@ -30,7 +30,7 @@ public class GameMaster : MonoBehaviour
             this.obtainedStar = obtainedStar;
         }
 
-        public bool GetHasBeenCompleted() => hasBeenCompleted;
+        public bool HasBeenCompleted() => hasBeenCompleted;
         public int GetHighscore() => highscore;
         public int GetObtainedStar() => obtainedStar;
 
@@ -95,10 +95,10 @@ public class GameMaster : MonoBehaviour
 
     private void Awake()
     {
-        CheckIfGameDataExists();
+        UpdateHasGameData();
     }
 
-    void CheckIfGameDataExists()
+    void UpdateHasGameData()
     {
         hasGameData = File.Exists(Application.persistentDataPath + "/" + dataName);
     }
@@ -127,9 +127,10 @@ public class GameMaster : MonoBehaviour
         bf.Serialize(file, data);
         file.Close();
         Debug.Log("Game data saved");
+        UpdateHasGameData();
     }
 
-    void LoadGame()
+    public void LoadGame()
     {
         if (hasGameData)
         {
@@ -151,6 +152,12 @@ public class GameMaster : MonoBehaviour
         {
             Debug.LogError("Game data doesn't exist");
         }
+    }
+
+    public void ResetAndLoadGame()
+    {
+        SaveGame(true);
+        LoadGame();
     }
 
     public void UpdateLevelData(string levelName, bool hasBeenCompleted, int highscore, int obtainedStar)

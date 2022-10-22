@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class ButtonContinue : MonoBehaviour
 {
-    [SerializeField] GameMaster gameMaster;
+    [SerializeField] SceneLoader sceneLoader;
     [SerializeField] Button button;
 
     private void Start()
     {
-        gameMaster = FindObjectOfType<GameMaster>();
-
-        if (gameMaster.HasGameData())
+        if (FindObjectOfType<GameMaster>().HasGameData())
         {
             button.interactable = true;
         } 
@@ -20,5 +18,11 @@ public class ButtonContinue : MonoBehaviour
         {
             button.interactable = false;
         }
+    }
+
+    public void OnClick()
+    {
+        FindObjectOfType<GameMaster>().LoadGame();
+        sceneLoader.LoadMapScene();
     }
 }
