@@ -56,8 +56,9 @@ public class MixtureIconMaster : MonoBehaviour
     public void ClearIcon()
     {
         icons.Clear();
-        foreach(Transform child in singleIcons.transform) { Destroy(child.gameObject); }
-        foreach(Transform child in doubleIcons.transform) { Destroy(child.gameObject); }
+        foreach (Transform child in singleIconPivot) { Destroy(child.gameObject); }
+        foreach (Transform child in leftIconPivot) { Destroy(child.gameObject); }
+        foreach (Transform child in rightIconPivot) { Destroy(child.gameObject); }
 
         UpdateShownIcon();
     }

@@ -43325,12 +43325,40 @@ PrefabInstance:
       objectReference: {fileID: 1796508574}
     - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
       propertyPath: levelDuration
-      value: 30
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: spawnDelayMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: spawnDelayMin
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
       propertyPath: modalCookingGuide
       value: 
       objectReference: {fileID: 1796508575}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: toBeAngryDuration
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: initialSpawnDelayMax
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: oneStarMinimumPoints
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: twoStarMinimumPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: threeStarMinimumPoints
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 2833983326814563755, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
       propertyPath: m_Name
       value: LevelMasterSumatra

@@ -10725,12 +10725,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2042131296}
     - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
+      propertyPath: levelDuration
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
       propertyPath: spawnDelayMax
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
       propertyPath: spawnDelayMin
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
       propertyPath: modalCookingGuide
@@ -10738,15 +10742,27 @@ PrefabInstance:
       objectReference: {fileID: 756155264}
     - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
       propertyPath: toBeAngryDuration
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
       propertyPath: initialSpawnDelayMax
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
       propertyPath: initialSpawnDelayMin
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
+      propertyPath: oneStarMinimumPoints
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
+      propertyPath: twoStarMinimumPoints
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
+      propertyPath: threeStarMinimumPoints
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
       propertyPath: wrongDishPenaltyMultiplier

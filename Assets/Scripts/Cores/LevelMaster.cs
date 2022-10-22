@@ -200,11 +200,15 @@ public class LevelMaster : MonoBehaviour
 
     public void Pause()
     {
+        if (!gameHasStarted) { return; }
+
         Time.timeScale = 0f;
         levelTimer.PauseTimer();
 
         modalPause.SetActive(true);
         isPaused = true;
+
+        CloseCookingGuide();
     }
 
     public void Unpause()
