@@ -95,22 +95,7 @@ public class GameMaster : MonoBehaviour
 
     private void Awake()
     {
-        Singleton();
         CheckIfGameDataExists();
-    }
-
-    void Singleton()
-    {
-        var thisScriptCount = FindObjectsOfType<GameMaster>().Length;
-        if (thisScriptCount > 1)
-        {
-            gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
     }
 
     void CheckIfGameDataExists()
