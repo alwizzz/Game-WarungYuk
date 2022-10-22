@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using TMPro;
 
-public class LevelHoverCard : MonoBehaviour
+public class LevelHoverCard : MonoBehaviour, IPointerExitHandler
 {
+    [SerializeField] LevelFlag levelFlag;
     [SerializeField] string levelName;
     [SerializeField] GameMaster.LevelData levelData;
     [SerializeField] GameObject star1;
@@ -20,7 +22,7 @@ public class LevelHoverCard : MonoBehaviour
 
     void Setup()
     {
-        highscoreText.text = levelData.GetHighscore().ToString();
+        SetupHighscore();
         SetupStars();
     }
 
@@ -30,16 +32,24 @@ public class LevelHoverCard : MonoBehaviour
         if (obtainedStar > 0)
         {
             star1.SetActive(true);
+            if (obtainedStar > 1)
+            {
+                star2.SetActive(true);
+                if (obtainedStar > 2)
+                {
+                    star3.SetActive(true);
+                }
+            }
         }
+    }
 
-        if (obtainedStar > 1)
-        {
-            star2.SetActive(true);
-        }
+    void SetupHighscore()
+    {
+        highscoreText.text = levelData.GetHighscore().ToString();
+    }
 
-        if (obtainedStar > 2)
-        {
-            star3.SetActive(true);
-        }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        levelFlag.HideHoverCard();
     }
 }
