@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelTimer : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class LevelTimer : MonoBehaviour
     IEnumerator startTimerHandler;
     [SerializeField] bool isTimeUp;
     [SerializeField] bool isCounting;
-    [SerializeField] string timerString;
+    [SerializeField] TextMeshProUGUI timerText;
 
 
     private void Awake()
@@ -31,9 +32,9 @@ public class LevelTimer : MonoBehaviour
     }
 
     void UpdateIsTimeUp() { isTimeUp = timeCounter > 0 ? false : true; }
-    void UpdateTimerString()
+    void UpdateTimerDisplay()
     {
-        timerString = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(timeCounter / 60), Mathf.FloorToInt(timeCounter % 60));
+        timerText.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(timeCounter / 60), Mathf.FloorToInt(timeCounter % 60));
     }
     public bool IsTimeUp() => isTimeUp;
     public bool IsCounting() => isCounting;
@@ -45,13 +46,14 @@ public class LevelTimer : MonoBehaviour
             yield return null;
             timeCounter -= Time.deltaTime;
             UpdateIsTimeUp();
-            UpdateTimerString();
+            UpdateTimerDisplay();
         } while (!isTimeUp);
         Debug.Log("LEVEL TIMER: TIME'S UP");
         timeCounter = 0f;
         UpdateIsTimeUp();
+        UpdateTimerDisplay();
     }
-    
+
     public void ResetCounter()
     {
         timeCounter = levelDuration;

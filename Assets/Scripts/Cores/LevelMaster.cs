@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class LevelMaster : MonoBehaviour
 {
@@ -17,6 +19,7 @@ public class LevelMaster : MonoBehaviour
     bool stillHasCounters;
 
     [Header("Point Config")]
+    [SerializeField] TextMeshProUGUI pointText;
     [SerializeField] int totalPoints;
     [SerializeField] int oneStarMinimumPoints;
     [SerializeField] int twoStarMinimumPoints;
@@ -39,6 +42,9 @@ public class LevelMaster : MonoBehaviour
     [SerializeField] float levelDuration;
     [SerializeField] float toBeAngryDuration;
 
+    [Header("UI Cache")]
+    [SerializeField] GameObject modalPause;
+
 
     private void Awake()
     {
@@ -46,11 +52,13 @@ public class LevelMaster : MonoBehaviour
         gameHasStarted = false;
         levelTimer.SetLevelDuration(levelDuration);
         isPaused = false;
+        modalPause.SetActive(false);
     }
 
     private void Start()
     {
         UpdateStillHasCounters();
+        UpdateDisplayPoint();
 
         successfulOrders = 0;
         failedOrders = 0;
@@ -60,16 +68,14 @@ public class LevelMaster : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            isPaused = !isPaused;
-            if (isPaused)
+            //isPaused = !isPaused;
+            if (!isPaused)
             {
-                Time.timeScale = 0f;
-                levelTimer.PauseTimer();
+                Pause();
             } 
             else
             {
-                Time.timeScale = 1f;
-                levelTimer.ContinueTimer();
+                Unpause();
             }
         }
 
@@ -107,6 +113,8 @@ public class LevelMaster : MonoBehaviour
             totalPoints += dishPoint;
             Debug.Log("Increased point by " + dishPoint.ToString("n0"));
         }
+
+        UpdateDisplayPoint();
     }
     public void DecreasePoint(int dishPoint)
     {
@@ -120,6 +128,12 @@ public class LevelMaster : MonoBehaviour
         totalPoints = (totalPoints >= 0 ? totalPoints : 0);
 
         Debug.Log("Decreased point by " + penaltiedPoint.ToString("n0"));
+        UpdateDisplayPoint();
+    }
+
+    void UpdateDisplayPoint()
+    {
+        pointText.text = "Rp" + totalPoints.ToString();
     }
 
     public List<CompletedDish> GetCompletedDishPrefabs() => completedDishPrefabs;
@@ -165,5 +179,26 @@ public class LevelMaster : MonoBehaviour
         gameHasStarted = true;
         levelTimer.ContinueTimer();
         Debug.Log("LEVEL TIMER: GAME STARTED");
+    }
+
+
+    // ======================== UI
+
+    public void Pause()
+    {
+        Time.timeScale = 0f;
+        levelTimer.PauseTimer();
+
+        modalPause.SetActive(true);
+        isPaused = true;
+    }
+
+    public void Unpause()
+    {
+        Time.timeScale = 1f;
+        levelTimer.ContinueTimer();
+
+        modalPause.SetActive(false);
+        isPaused = false;
     }
 }
