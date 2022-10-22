@@ -214,4 +214,10 @@ public class LevelMaster : MonoBehaviour
         modalPause.SetActive(false);
         isPaused = false;
     }
+
+    public void BackToMap()
+    {
+        if (isPaused) { Time.timeScale = 1f; }
+        FindObjectOfType<SceneLoader>().LoadMapScene();
+    }
 }
