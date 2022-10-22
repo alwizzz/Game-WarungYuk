@@ -67,8 +67,8 @@ public class AfterLevel : MonoBehaviour
 
     void SetupTexts()
     {
-        successfulOrdersText.text = successfulOrders.ToString();
-        failedOrdersText.text = failedOrders.ToString();
+        successfulOrdersText.text = "x" + successfulOrders.ToString();
+        failedOrdersText.text = "x" + failedOrders.ToString();
         totalPointsText.text = totalPoints.ToString();
     }
 

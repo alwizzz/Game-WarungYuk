@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isAbleToMove)
+        if (isAbleToMove && levelMaster.GameHasStarted())
         {
             Move();
         }
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(movementVector != Vector3.zero)
         {
-            if (!levelMaster.GameHasStarted()) { levelMaster.StartLevel(); }
+            //if (!levelMaster.GameHasStarted()) { levelMaster.StartLevel(); }
 
             var toRotation = Quaternion.LookRotation(movementVector, Vector3.up);
             playerBody.transform.rotation = Quaternion.RotateTowards(

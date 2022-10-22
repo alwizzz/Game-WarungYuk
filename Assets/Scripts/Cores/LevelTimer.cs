@@ -65,5 +65,6 @@ public class LevelTimer : MonoBehaviour
     { 
         levelDuration = value;
         ResetCounter();
+        UpdateTimerDisplay();
     }
 }
