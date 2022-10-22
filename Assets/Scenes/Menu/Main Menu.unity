@@ -123,6 +123,77 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &515630796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515630798}
+  - component: {fileID: 515630797}
+  m_Layer: 0
+  m_Name: GameMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &515630797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515630796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1287b90394b221e479beeeb59e9e0783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataName: warungyuk.dat
+  hasGameData: 0
+  levelDataSumatra:
+    levelName: 
+    hasBeenCompleted: 0
+    highscore: 0
+    obtainedStar: 0
+  levelDataJawa:
+    levelName: 
+    hasBeenCompleted: 0
+    highscore: 0
+    obtainedStar: 0
+  levelDataPapua:
+    levelName: 
+    hasBeenCompleted: 0
+    highscore: 0
+    obtainedStar: 0
+  levelDataSulawesi:
+    levelName: 
+    hasBeenCompleted: 0
+    highscore: 0
+    obtainedStar: 0
+  levelDataKalimantan:
+    levelName: 
+    hasBeenCompleted: 0
+    highscore: 0
+    obtainedStar: 0
+--- !u!4 &515630798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515630796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &980615765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -433,6 +504,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7776324587749308103, guid: e7a10ddbfdff2e140bc00e7ed8e7aadb, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7776324588119865318, guid: e7a10ddbfdff2e140bc00e7ed8e7aadb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -531,3 +606,33 @@ PrefabInstance:
       objectReference: {fileID: 1307148675}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a10ddbfdff2e140bc00e7ed8e7aadb, type: 3}
+--- !u!1 &7776324588837933934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7776324587749308101, guid: e7a10ddbfdff2e140bc00e7ed8e7aadb, type: 3}
+  m_PrefabInstance: {fileID: 7776324588837933933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7776324588837933935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7776324587749308103, guid: e7a10ddbfdff2e140bc00e7ed8e7aadb, type: 3}
+  m_PrefabInstance: {fileID: 7776324588837933933}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7776324588837933934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7776324588837933936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7776324588837933934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f93f01bcd7dbfe449891500154e2f81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameMaster: {fileID: 0}
+  button: {fileID: 7776324588837933935}
