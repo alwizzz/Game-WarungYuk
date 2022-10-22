@@ -22,8 +22,8 @@ public class LevelHoverCard : MonoBehaviour, IPointerExitHandler
 
     void Setup()
     {
-        SetupHighscore();
         SetupStars();
+        SetupHighscore();
     }
 
     void SetupStars()
