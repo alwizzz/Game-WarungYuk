@@ -7,7 +7,7 @@ using System.IO;
 
 public class GameMaster : MonoBehaviour
 {
-    [Serializable] 
+    [Serializable]
     public class LevelData
     {
         [SerializeField] string levelName;
@@ -30,7 +30,7 @@ public class GameMaster : MonoBehaviour
             this.obtainedStar = obtainedStar;
         }
 
-        public bool GetHasBeenCompleted() => hasBeenCompleted;
+        public bool HasBeenCompleted() => hasBeenCompleted;
         public int GetHighscore() => highscore;
         public int GetObtainedStar() => obtainedStar;
 
@@ -93,12 +93,18 @@ public class GameMaster : MonoBehaviour
     [SerializeField] LevelData levelDataSulawesi;
     [SerializeField] LevelData levelDataKalimantan;
 
+    [Header("Level Progress Cache")]
+    [SerializeField] int successfulOrders;
+    [SerializeField] int failedOrders;
+    [SerializeField] int totalPoints;
+    [SerializeField] int obtainedStars;
+
     private void Awake()
     {
-        CheckIfGameDataExists();
+        UpdateHasGameData();
     }
 
-    void CheckIfGameDataExists()
+    void UpdateHasGameData()
     {
         hasGameData = File.Exists(Application.persistentDataPath + "/" + dataName);
     }
@@ -127,9 +133,10 @@ public class GameMaster : MonoBehaviour
         bf.Serialize(file, data);
         file.Close();
         Debug.Log("Game data saved");
+        UpdateHasGameData();
     }
 
-    void LoadGame()
+    public void LoadGame()
     {
         if (hasGameData)
         {
@@ -153,14 +160,22 @@ public class GameMaster : MonoBehaviour
         }
     }
 
-    public void UpdateLevelData(string levelName, bool hasBeenCompleted, int highscore, int obtainedStar)
+    public void ResetAndLoadGame()
     {
-        if(levelName == "Sumatra") { levelDataSumatra.Update(hasBeenCompleted, highscore, obtainedStar); }
-        else if(levelName == "Jawa") { levelDataJawa.Update(hasBeenCompleted, highscore, obtainedStar); }
-        else if(levelName == "Papua") { levelDataPapua.Update(hasBeenCompleted, highscore, obtainedStar); }
-        else if(levelName == "Sulawesi") { levelDataSulawesi.Update(hasBeenCompleted, highscore, obtainedStar); }
-        else if(levelName == "Kalimantan") { levelDataKalimantan.Update(hasBeenCompleted, highscore, obtainedStar); }
+        SaveGame(true);
+        LoadGame();
+    }
+
+    public void UpdateLevelDataAndSaveGame(string levelName, bool hasBeenCompleted, int highscore, int obtainedStar)
+    {
+        if (levelName == "Sumatra") { levelDataSumatra.Update(hasBeenCompleted, highscore, obtainedStar); }
+        else if (levelName == "Jawa") { levelDataJawa.Update(hasBeenCompleted, highscore, obtainedStar); }
+        else if (levelName == "Papua") { levelDataPapua.Update(hasBeenCompleted, highscore, obtainedStar); }
+        else if (levelName == "Sulawesi") { levelDataSulawesi.Update(hasBeenCompleted, highscore, obtainedStar); }
+        else if (levelName == "Kalimantan") { levelDataKalimantan.Update(hasBeenCompleted, highscore, obtainedStar); }
         else { Debug.Log("invalid levelName"); }
+
+        SaveGame();
     }
 
     public LevelData GetLevelData(string levelName)
@@ -175,5 +190,37 @@ public class GameMaster : MonoBehaviour
 
     public bool HasGameData() => hasGameData;
 
+    // ========================= Cache
+    public void SetLevelProgressCache(int successfulOrders, int failedOrders, int totalPoints, int obtainedStars)
+    {
+        this.successfulOrders = successfulOrders;
+        this.failedOrders = failedOrders;
+        this.totalPoints = totalPoints;
+        this.obtainedStars = obtainedStars;
+    }
 
+    public int GetAndResetSuccessfulOrders()
+    {
+        var temp = successfulOrders;
+        successfulOrders = 0;
+        return temp;
+    }
+    public int GetAndResetFailedOrders() 
+    {
+        var temp = failedOrders;
+        failedOrders = 0;
+        return temp;
+    }
+    public int GetAndResetTotalPoints()
+    {
+        var temp = totalPoints;
+        totalPoints = 0;
+        return temp;
+    }
+    public int GetAndResetObtainedStars()
+    {
+        var temp = obtainedStars;
+        obtainedStars = 0;
+        return temp;
+    }
 }
