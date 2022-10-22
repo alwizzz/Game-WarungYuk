@@ -134,7 +134,7 @@ MonoBehaviour:
     name: 
     transitions: []
   baseDish: 0
-  point: 15000
+  point: 21
   recipeBubblePrefab: {fileID: 7780912420407848296, guid: a2b02588d26016740b1d1d53ba780ee0, type: 3}
 --- !u!1001 &7964513427920448113
 PrefabInstance:
