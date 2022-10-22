@@ -9,8 +9,8 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] bool hasExistingSpawn;
     [SerializeField] bool hasArrived;
     [SerializeField] bool hasSpawnedInitial;
-    [SerializeField] float initialSpawnDelayMin;
-    [SerializeField] float initialSpawnDelayMax;
+    //[SerializeField] float initialSpawnDelayMin;
+    //[SerializeField] float initialSpawnDelayMax;
     [SerializeField] float spawnDelayMin;
     [SerializeField] float spawnDelayMax;
 
@@ -28,8 +28,9 @@ public class CustomerSpawner : MonoBehaviour
 
     void Setup()
     {
-        initialSpawnDelayMin = levelMaster.GetInitialSpawnDelayMin();
-        initialSpawnDelayMax = levelMaster.GetInitialSpawnDelayMax();
+        //initialSpawnDelayMin = levelMaster.GetInitialSpawnDelayMin();
+        //initialSpawnDelayMax = levelMaster.GetInitialSpawnDelayMax();
+        //initialSpawnDelayMultiplier = levelMaster.GetInitialSpawnDelayMultiplier();
         spawnDelayMin = levelMaster.GetSpawnDelayMin();
         spawnDelayMax = levelMaster.GetSpawnDelayMax();
 
@@ -39,27 +40,15 @@ public class CustomerSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (levelMaster.GameHasStarted())
+        if (levelMaster.GameHasStarted() && hasSpawnedInitial && !hasExistingSpawn)
         {
-            if (!hasSpawnedInitial)
-            {
-                InitialSpawn();
-                hasSpawnedInitial = true;
-            }
-            else
-            {
-                if (!hasExistingSpawn)
-                {
-                    // Debug.Log("spawning..");
-                    StartCoroutine(
-                        Spawn(Random.Range(spawnDelayMin, spawnDelayMax))
-                    );
-                }
-            }
+            StartCoroutine(
+                Spawn(Random.Range(spawnDelayMin, spawnDelayMax))
+            );
         }
     }
 
-    IEnumerator Spawn(float delay)
+    IEnumerator Spawn(float delay, bool isSpawnInitial = false)
     {
         SetHasExistingSpawn(true);
         var prefabToBeSpawned = GetRandomizedPrefab(); ;
@@ -77,14 +66,12 @@ public class CustomerSpawner : MonoBehaviour
         spawnMovement.SetAngryConfig(levelMaster.GetToBeAngryDuration());
         spawn.transform.SetParent(transform);
 
-        
+        if (isSpawnInitial) { hasSpawnedInitial = true; }
     }
 
     public void InitialSpawn()
     {
-        StartCoroutine(
-            Spawn(Random.Range(initialSpawnDelayMin, initialSpawnDelayMax))
-        );
+        StartCoroutine(Spawn(0, true));
     }
 
     CustomerAction GetRandomizedPrefab()
