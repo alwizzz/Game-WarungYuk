@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Menu/Main Menu.unity
     guid: 96fc5e4ed00a3e3438eb1bc3bb3236ce
   - enabled: 1
@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level Papua.unity
     guid: 74e55f8bf32dcdd4cab9e995446da084
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Levels/Level Sulawesi.unity
     guid: 0dfd9481801ba9347bafa5bed3646cac
   - enabled: 1
