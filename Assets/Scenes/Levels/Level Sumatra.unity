@@ -42696,7 +42696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3715809125423914508, guid: a7efae5a1ea7fe542b7b96ad6bc5e0d2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3715809125578422444, guid: a7efae5a1ea7fe542b7b96ad6bc5e0d2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -43413,6 +43413,10 @@ PrefabInstance:
       propertyPath: modalPause
       value: 
       objectReference: {fileID: 1796508574}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: levelDuration
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2833983326814563755, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
       propertyPath: m_Name
       value: LevelMasterSumatra
