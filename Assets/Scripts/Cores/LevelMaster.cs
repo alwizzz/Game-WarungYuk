@@ -174,11 +174,24 @@ public class LevelMaster : MonoBehaviour
     }
 
     public bool GameHasStarted() => gameHasStarted;
-    public void StartGame()
+    public void StartLevel()
     {
         gameHasStarted = true;
         levelTimer.ContinueTimer();
         Debug.Log("LEVEL TIMER: GAME STARTED");
+    }
+
+    public void EndLevel()
+    {
+        Debug.Log("LEVEL TIMER: TIME'S UP");
+
+        int obtainedStars = 0;
+        if(totalPoints > oneStarMinimumPoints) { obtainedStars = 1; }
+        if(totalPoints > twoStarMinimumPoints) { obtainedStars = 2; }
+        if(totalPoints > threeStarMinimumPoints) { obtainedStars = 3; }
+
+        FindObjectOfType<GameMaster>().SetLevelProgressCache(successfulOrders, failedOrders, totalPoints, obtainedStars);
+        FindObjectOfType<SceneLoader>().LoadAfterLevel(cookingRecipe.region);
     }
 
 

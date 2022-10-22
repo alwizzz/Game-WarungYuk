@@ -48,10 +48,11 @@ public class LevelTimer : MonoBehaviour
             UpdateIsTimeUp();
             UpdateTimerDisplay();
         } while (!isTimeUp);
-        Debug.Log("LEVEL TIMER: TIME'S UP");
         timeCounter = 0f;
         UpdateIsTimeUp();
         UpdateTimerDisplay();
+
+        FindObjectOfType<LevelMaster>().EndLevel();
     }
 
     public void ResetCounter()

@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(movementVector != Vector3.zero)
         {
-            if (!levelMaster.GameHasStarted()) { levelMaster.StartGame(); }
+            if (!levelMaster.GameHasStarted()) { levelMaster.StartLevel(); }
 
             var toRotation = Quaternion.LookRotation(movementVector, Vector3.up);
             playerBody.transform.rotation = Quaternion.RotateTowards(

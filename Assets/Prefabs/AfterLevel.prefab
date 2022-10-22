@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5523583159434668650
+--- !u!1 &2811991208873061765
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,53 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5523583159434668652}
-  - component: {fileID: 5523583159434668651}
+  - component: {fileID: 2811991208873061767}
+  - component: {fileID: 2811991208873061766}
   m_Layer: 0
-  m_Name: SceneLoader
+  m_Name: AfterLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5523583159434668652
+--- !u!4 &2811991208873061767
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5523583159434668650}
+  m_GameObject: {fileID: 2811991208873061765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 348.99997, y: 206.79999, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5523583159434668651
+--- !u!114 &2811991208873061766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5523583159434668650}
+  m_GameObject: {fileID: 2811991208873061765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d71bd99c09d834d458626769c9a8d2b6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bc2920c88ab3a3438d7be5a3a7f35a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  codeMainMenuScene: Main Menu
-  codeMapScene: Map
-  codeLevelSumatraScene: Level Sumatra
-  codeAfterLevelSumatra: Afterlevel Sumatra
-  codeLevelJawaScene: Level Jawa
-  codeAfterLevelJawa: Afterlevel Jawa
-  codeLevelPapuaScene: Level Papua
-  codeAfterLevelPapua: Afterlevel Papua
-  codeLevelSulawesiScene: Level Sulawesi
-  codeAfterLevelSulawesi: Afterlevel Sulawesi
-  codeLevelKalimantanScene: Level Kalimantan
-  codeAfterLevelKalimantan: Afterlevel Kalimantan
+  levelName: Jawa
+  successfulOrders: 0
+  failedOrders: 0
+  totalPoints: 0
+  obtainedStars: 0
+  isCompleted: 0
+  successBadge: {fileID: 0}
+  failBadge: {fileID: 0}
+  star1: {fileID: 0}
+  star2: {fileID: 0}
+  star3: {fileID: 0}
+  successfulOrdersText: {fileID: 0}
+  failedOrdersText: {fileID: 0}
+  totalPointsText: {fileID: 0}
