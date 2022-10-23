@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 257091232}
   - component: {fileID: 257091231}
   m_Layer: 5
-  m_Name: ImageStar2
+  m_Name: ImageStar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1312,7 +1312,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 531547312}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2470,8 +2470,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 96401080}
-  - {fileID: 257091230}
   - {fileID: 1286947134}
+  - {fileID: 257091230}
   - {fileID: 1164540376}
   - {fileID: 1847192323}
   - {fileID: 551938840}
@@ -2597,9 +2597,9 @@ MonoBehaviour:
     hasBeenCompleted: 0
     highscore: 0
     obtainedStar: 0
-  star1: {fileID: 0}
-  star2: {fileID: 0}
-  star3: {fileID: 0}
+  star1: {fileID: 96401079}
+  star2: {fileID: 1286947133}
+  star3: {fileID: 257091229}
   highscoreText: {fileID: 135508262}
 --- !u!1 &542984516
 GameObject:
@@ -3360,7 +3360,7 @@ GameObject:
   - component: {fileID: 752783708}
   - component: {fileID: 752783707}
   m_Layer: 5
-  m_Name: ImageStar3
+  m_Name: ImageStar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3379,7 +3379,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1989777118}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3571,7 +3571,7 @@ GameObject:
   - component: {fileID: 773162257}
   - component: {fileID: 773162256}
   m_Layer: 5
-  m_Name: ImageStar3
+  m_Name: ImageStar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3584,17 +3584,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773162254}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0008422, y: 1.0008422, z: 1.0008422}
+  m_LocalScale: {x: 1.0008425, y: 1.0008425, z: 1.0008425}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1309315080}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: 32}
+  m_AnchoredPosition: {x: 9.000183, y: 31.999937}
   m_SizeDelta: {x: 194, y: 201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &773162256
@@ -4646,7 +4646,7 @@ GameObject:
   - component: {fileID: 1215392447}
   - component: {fileID: 1215392446}
   m_Layer: 5
-  m_Name: ImageStar2
+  m_Name: ImageStar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4665,7 +4665,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1309315080}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4871,7 +4871,7 @@ GameObject:
   - component: {fileID: 1286947136}
   - component: {fileID: 1286947135}
   m_Layer: 5
-  m_Name: ImageStar3
+  m_Name: ImageStar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4890,7 +4890,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 531547312}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5083,8 +5083,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1948245800}
-  - {fileID: 1215392445}
   - {fileID: 773162255}
+  - {fileID: 1215392445}
   - {fileID: 982965832}
   - {fileID: 678396913}
   - {fileID: 183061003}
@@ -5210,9 +5210,9 @@ MonoBehaviour:
     hasBeenCompleted: 0
     highscore: 0
     obtainedStar: 0
-  star1: {fileID: 0}
-  star2: {fileID: 0}
-  star3: {fileID: 0}
+  star1: {fileID: 1948245799}
+  star2: {fileID: 773162254}
+  star3: {fileID: 1215392444}
   highscoreText: {fileID: 1305304593}
 --- !u!1 &1348889295
 GameObject:
@@ -5399,7 +5399,7 @@ GameObject:
   - component: {fileID: 1464215707}
   - component: {fileID: 1464215706}
   m_Layer: 5
-  m_Name: ImageStar2
+  m_Name: ImageStar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5418,7 +5418,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1989777118}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6152,7 +6152,7 @@ GameObject:
   - component: {fileID: 1636476262}
   - component: {fileID: 1636476261}
   m_Layer: 5
-  m_Name: ImageStar2
+  m_Name: ImageStar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6171,7 +6171,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2047990215}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7720,8 +7720,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 291878652}
-  - {fileID: 1464215705}
   - {fileID: 752783706}
+  - {fileID: 1464215705}
   - {fileID: 758639514}
   - {fileID: 931308764}
   - {fileID: 1754660563}
@@ -7847,9 +7847,9 @@ MonoBehaviour:
     hasBeenCompleted: 0
     highscore: 0
     obtainedStar: 0
-  star1: {fileID: 0}
-  star2: {fileID: 0}
-  star3: {fileID: 0}
+  star1: {fileID: 291878651}
+  star2: {fileID: 752783705}
+  star3: {fileID: 1464215704}
   highscoreText: {fileID: 332298908}
 --- !u!1 &2016026317
 GameObject:
@@ -7939,7 +7939,7 @@ GameObject:
   - component: {fileID: 2046087889}
   - component: {fileID: 2046087888}
   m_Layer: 5
-  m_Name: ImageStar3
+  m_Name: ImageStar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7958,7 +7958,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2047990215}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8036,8 +8036,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 334757036}
-  - {fileID: 1636476260}
   - {fileID: 2046087887}
+  - {fileID: 1636476260}
   - {fileID: 1889355349}
   - {fileID: 2125737877}
   - {fileID: 1599377032}
@@ -8163,9 +8163,9 @@ MonoBehaviour:
     hasBeenCompleted: 0
     highscore: 0
     obtainedStar: 0
-  star1: {fileID: 0}
-  star2: {fileID: 0}
-  star3: {fileID: 0}
+  star1: {fileID: 334757035}
+  star2: {fileID: 2046087886}
+  star3: {fileID: 1636476259}
   highscoreText: {fileID: 1348889297}
 --- !u!1 &2125737876
 GameObject:

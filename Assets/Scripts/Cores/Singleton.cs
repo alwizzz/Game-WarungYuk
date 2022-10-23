@@ -14,7 +14,7 @@ public class Singleton : MonoBehaviour
     {
         int thisScriptCount;
         if(type == "GameMaster") { thisScriptCount = FindObjectsOfType<GameMaster>().Length; }
-        else if(type == "Light") { thisScriptCount = FindObjectsOfType<Light>().Length; }
+        else if(type == "SingletonLight") { thisScriptCount = FindObjectsOfType<SingletonLight>().Length; }
         else if(type == "ReflectionProbe") { thisScriptCount = FindObjectsOfType<ReflectionProbe>().Length; }
         else if (type == "AudioMaster") { thisScriptCount = FindObjectsOfType<AudioMaster>().Length; }
         else { Debug.Log("singleton error"); thisScriptCount = 99; }

@@ -223,4 +223,13 @@ public class GameMaster : MonoBehaviour
         obtainedStars = 0;
         return temp;
     }
+
+    public void DeleteGameData()
+    {
+        if (hasGameData)
+        {
+            File.Delete(Application.persistentDataPath
+                          + "/" + dataName);
+        }
+    }
 }
