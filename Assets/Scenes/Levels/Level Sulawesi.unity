@@ -13289,7 +13289,7 @@ PrefabInstance:
       objectReference: {fileID: 1771922869}
     - target: {fileID: 5509691332937525715, guid: 12340e7aab91a2e4581e7c6abf212893, type: 3}
       propertyPath: levelDuration
-      value: 210
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 5509691332937525715, guid: 12340e7aab91a2e4581e7c6abf212893, type: 3}
       propertyPath: spawnDelayMax
