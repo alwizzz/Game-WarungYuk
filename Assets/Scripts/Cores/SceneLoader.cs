@@ -22,68 +22,81 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadMapScene()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeMapScene);
     }
 
     public void LoadMainMenuScene()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeMainMenuScene);
     }
 
     public void QuitGame()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         Application.Quit();
     }
 
     public void LoadLevelSumatraScene()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeLevelSumatraScene);
     }
     public void LoadAfterLevelSumatra()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeAfterLevelSumatra);
     }
 
     public void LoadLevelJawaScene()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeLevelJawaScene);
     }
     public void LoadAfterLevelJawa()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeAfterLevelJawa);
     }
 
     public void LoadLevelPapuaScene()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeLevelPapuaScene);
     }
     public void LoadAfterLevelPapua()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeAfterLevelPapua);
     }
 
     public void LoadLevelSulawesiScene()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeLevelSulawesiScene);
     }
     public void LoadAfterLevelSulawesi()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeAfterLevelSulawesi);
     }
 
 
     public void LoadLevelKalimantanScene()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeLevelKalimantanScene);
     }
     public void LoadAfterLevelKalimantan()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeAfterLevelKalimantan);
     }
 
     public void LoadAfterLevel(string levelName)
     {
-        if(levelName == "Sumatra") { LoadAfterLevelSumatra(); }
+        if (levelName == "Sumatra") { LoadAfterLevelSumatra(); }
         else if (levelName == "Jawa") { LoadAfterLevelJawa(); }
         else if (levelName == "Papua") { LoadAfterLevelPapua(); }
         else if (levelName == "Sulawesi") { LoadAfterLevelSulawesi(); }
