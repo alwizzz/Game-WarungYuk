@@ -31,11 +31,13 @@ public class CustomerAction : MonoBehaviour
         {
             // Debug.Log("given dish is correct");
             levelMaster.IncreasePoint(orderedDish.GetPoint(), customerMovement.IsAngry());
+            FindObjectOfType<LevelSFXManager>().PlayCustomerSatisfiedSFX();
         }
         else
         {
             // Debug.Log("given dish is incorrect");
             levelMaster.DecreasePoint(orderedDish.GetPoint());
+            FindObjectOfType<LevelSFXManager>().PlayCustomerDisappointedSFX();
         }
 
         heldItem = givenDish;

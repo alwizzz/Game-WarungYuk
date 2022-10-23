@@ -15,6 +15,7 @@ public class TrashBin : Interactable
     private void Awake()
     {
         levelMaster = FindObjectOfType<LevelMaster>();
+        levelSFXManager = FindObjectOfType<LevelSFXManager>();
     }
 
     private void Start()
@@ -33,11 +34,15 @@ public class TrashBin : Interactable
         var playerItemTypeString = playerHeldItem.GetType().ToString();
         if(playerItemTypeString == "UncompletedDish")
         {
+            levelSFXManager.PlayTrashBinSFX();
+
             ((UncompletedDish)playerHeldItem).ClearMixedIngredient();
             // Debug.Log("mubazir bro");
         }
         else if(playerItemTypeString == "CompletedDish")
         {
+            levelSFXManager.PlayTrashBinSFX();
+
             CompletedDish cDish = (CompletedDish)playerAction.TakeHeldItem();
             var cDishBase = cDish.GetBaseDish();
             //Debug.Log(cDishBase);
@@ -55,6 +60,8 @@ public class TrashBin : Interactable
         }
         else if(playerItemTypeString == "RawIngredient" || playerItemTypeString == "ProcessedIngredient")
         {
+            levelSFXManager.PlayTrashBinSFX();
+
             DestroyItemFromPlayer(playerAction);
         }
     }

@@ -14,6 +14,11 @@ public class CustomerTable : Table
     [SerializeField] Quaternion bubbleRotation;
     [SerializeField] RecipeBubble recipeBubble;
 
+    private void Awake()
+    {
+        levelSFXManager = FindObjectOfType<LevelSFXManager>();
+    }
+
     private void Start()
     {
         UpdateHasCustomer();
@@ -32,6 +37,8 @@ public class CustomerTable : Table
             playerAction.GetHeldItem().GetType().ToString() == "CompletedDish" 
         )
         {
+            levelSFXManager.PlayPutdownItemSFX();            
+
             TakeItemFromPlayer(playerAction);
             customerAction.TakeOrderedDishFromTable((CompletedDish)itemOnTable);
             itemOnTable = null;
@@ -46,6 +53,9 @@ public class CustomerTable : Table
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {
         if (!hasItemOnTable) { return; } // do nothing if there's nothing on table
+
+        levelSFXManager.PlayPickupItemSFX();
+
         GiveItemToPlayer(playerAction);
         UpdateHasItemOnTable();
     }

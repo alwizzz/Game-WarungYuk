@@ -46,7 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickSFX: {fileID: 8300000, guid: e88624c3335928743a327f793bc9fffa, type: 3}
-  mainCamera: {fileID: 0}
+  boilingSFX: {fileID: 8300000, guid: af4faf21b3e5cb84988e675c525d236f, type: 3}
+  fryingSFX: {fileID: 8300000, guid: a83415a556a23a34ea66e051a7dff14b, type: 3}
+  grillingSFX: {fileID: 8300000, guid: 5736a87459e8bc24790aa9bf183ef96f, type: 3}
+  cuttingSFX: {fileID: 8300000, guid: 7fcabcee00f1d914bb3b976fdcdf6653, type: 3}
 --- !u!114 &1706090822
 MonoBehaviour:
   m_ObjectHideFlags: 0

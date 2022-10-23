@@ -11,11 +11,7 @@ public abstract class Interactable : MonoBehaviour
     [SerializeField] protected RendererMaster rendererMaster;
     [SerializeField] protected List<RendererMaster.ChildRenderer> childRenderers;
 
-    //[SerializeField] protected Color32 colorForSpawner = new Color32(50, 50, 50, 50);
-    //[SerializeField] protected Color32 colorForNonSpawner = new Color32(50, 50, 50, 30);
-
-    //[SerializeField] protected Color colorForSpawner = Color.blue;
-    //[SerializeField] protected Color colorForNonSpawner = Color.cyan;
+    [SerializeField] protected LevelSFXManager levelSFXManager;
 
     [SerializeField] protected Color emissionColor = new Color32(60, 60, 30, 0);
     public void Interact(PlayerAction playerAction)

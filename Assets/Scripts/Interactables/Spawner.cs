@@ -6,6 +6,10 @@ public class Spawner : Interactable
 {
     [SerializeField] RawIngredient rawIngredientPrefab;
 
+    private void Awake()
+    {
+        levelSFXManager = FindObjectOfType<LevelSFXManager>();
+    }
     private void Start()
     {
         rendererMaster = GetComponentInChildren<RendererMaster>();
@@ -13,6 +17,7 @@ public class Spawner : Interactable
     }
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {
+        levelSFXManager.PlayTakeItemFromSpawnerSFX();
         SpawnItemToPlayer(playerAction);
     }
 

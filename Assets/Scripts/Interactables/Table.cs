@@ -14,6 +14,7 @@ public class Table : Interactable
     private void Awake()
     {
         levelMaster = FindObjectOfType<LevelMaster>();
+        levelSFXManager = FindObjectOfType<LevelSFXManager>();
     }
 
     private void Start()
@@ -31,7 +32,8 @@ public class Table : Interactable
     public override void InteractionWhenPlayerHoldingItem(PlayerAction playerAction)
     {
         if(!hasItemOnTable) 
-        { 
+        {
+            levelSFXManager.PlayPutdownItemSFX();
             TakeItemFromPlayer(playerAction); 
         } 
         else
@@ -54,6 +56,8 @@ public class Table : Interactable
 
             if (uDish.IsMixable(playerHeldIngredient))
             {
+                levelSFXManager.PlayMixSFX();
+
                 var temp = playerAction.TakeHeldItem();
                 Ingredient ingredientToMix = (Ingredient) temp;
                 uDish.Mix(ingredientToMix, this);
@@ -83,6 +87,7 @@ public class Table : Interactable
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {
         if (!hasItemOnTable) { return; } // do nothing if there's nothing on table
+        levelSFXManager.PlayPickupItemSFX();
         GiveItemToPlayer(playerAction);
     }
 
