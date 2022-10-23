@@ -8,7 +8,14 @@ public class ButtonNewGame : MonoBehaviour
     [SerializeField] GameObject confirmationModal;
     public void OnClick()
     {
-        confirmationModal.SetActive(true);
+        if (FindObjectOfType<GameMaster>().HasGameData())
+        {
+            confirmationModal.SetActive(true);
+        }
+        else
+        {
+            OverwriteAndNewGame();
+        }
     }
 
     public void OverwriteAndNewGame()
