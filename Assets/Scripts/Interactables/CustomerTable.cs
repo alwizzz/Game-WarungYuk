@@ -37,7 +37,7 @@ public class CustomerTable : Table
             playerAction.GetHeldItem().GetType().ToString() == "CompletedDish" 
         )
         {
-            levelSFXManager.PlayPutdownItemSFX();            
+            levelSFXManager.PlayPopSFX();            
 
             TakeItemFromPlayer(playerAction);
             customerAction.TakeOrderedDishFromTable((CompletedDish)itemOnTable);
@@ -54,7 +54,7 @@ public class CustomerTable : Table
     {
         if (!hasItemOnTable) { return; } // do nothing if there's nothing on table
 
-        levelSFXManager.PlayPickupItemSFX();
+        levelSFXManager.PlayPopSFX();
 
         GiveItemToPlayer(playerAction);
         UpdateHasItemOnTable();

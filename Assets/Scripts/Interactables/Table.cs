@@ -33,7 +33,7 @@ public class Table : Interactable
     {
         if(!hasItemOnTable) 
         {
-            levelSFXManager.PlayPutdownItemSFX();
+            levelSFXManager.PlayPopSFX();
             TakeItemFromPlayer(playerAction); 
         } 
         else
@@ -87,7 +87,7 @@ public class Table : Interactable
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {
         if (!hasItemOnTable) { return; } // do nothing if there's nothing on table
-        levelSFXManager.PlayPickupItemSFX();
+        levelSFXManager.PlayPopSFX();
         GiveItemToPlayer(playerAction);
     }
 
