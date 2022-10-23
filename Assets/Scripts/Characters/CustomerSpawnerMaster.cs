@@ -23,19 +23,29 @@ public class CustomerSpawnerMaster : MonoBehaviour
         initialSpawnDelayMin = levelMaster.GetInitialSpawnDelayMin();
         initialSpawnDelayMax = levelMaster.GetInitialSpawnDelayMax();
 
-        StartCoroutine(SequentialSpawn());  
+          
+    }
+
+    private void Update()
+    {
+        if(levelMaster.GameHasStarted() && !hasEverSpawned)
+        {
+            hasEverSpawned = true;
+            StartCoroutine(SequentialSpawn());
+        }
     }
 
     IEnumerator SequentialSpawn()
     {
+        bool hasFirstSpawned = false;
         while(customerSpawnersUnspawned.Count > 0)
         {
             var randomIndex = Random.Range(0, customerSpawnersUnspawned.Count);
             float delay;
-            if (!hasEverSpawned)
+            if (!hasFirstSpawned)
             {
                 delay = Random.Range(2f, 5f);
-                hasEverSpawned = true;
+                hasFirstSpawned = true;
             }
             else
             {
