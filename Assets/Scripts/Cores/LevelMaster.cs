@@ -183,9 +183,9 @@ public class LevelMaster : MonoBehaviour
         Debug.Log("LEVEL TIMER: TIME'S UP");
 
         int obtainedStars = 0;
-        if(totalPoints > oneStarMinimumPoints) { obtainedStars = 1; }
-        if(totalPoints > twoStarMinimumPoints) { obtainedStars = 2; }
-        if(totalPoints > threeStarMinimumPoints) { obtainedStars = 3; }
+        if(totalPoints >= oneStarMinimumPoints) { obtainedStars = 1; }
+        if(totalPoints >= twoStarMinimumPoints) { obtainedStars = 2; }
+        if(totalPoints >= threeStarMinimumPoints) { obtainedStars = 3; }
 
         FindObjectOfType<GameMaster>().SetLevelProgressCache(successfulOrders, failedOrders, totalPoints, obtainedStars);
         FindObjectOfType<SceneLoader>().LoadAfterLevel(cookingRecipe.region);

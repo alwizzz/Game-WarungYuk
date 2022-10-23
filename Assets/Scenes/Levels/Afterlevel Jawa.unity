@@ -2247,6 +2247,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2038437077}
     - target: {fileID: 2811991208873061766, guid: b04ba0ce40fee654599bad1d0bc28f08, type: 3}
+      propertyPath: levelName
+      value: Jawa
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811991208873061766, guid: b04ba0ce40fee654599bad1d0bc28f08, type: 3}
       propertyPath: successBadge
       value: 
       objectReference: {fileID: 968688137}
