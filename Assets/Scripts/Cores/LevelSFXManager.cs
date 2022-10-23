@@ -16,6 +16,7 @@ public class LevelSFXManager : MonoBehaviour
     [SerializeField] AudioClip takeItemFromSpawnerSFX;
     [SerializeField] AudioClip trashBinSFX;
     [SerializeField] AudioClip mixSFX;
+    [SerializeField] AudioClip popSFX;
 
     public void PlayProcessorSFX(string processName)
     {
@@ -97,5 +98,10 @@ public class LevelSFXManager : MonoBehaviour
     public void PlayMixSFX()
     {
         audioSource.PlayOneShot(mixSFX);
+    }
+
+    public void PlayPopSFX()
+    {
+        audioSource.PlayOneShot(popSFX);
     }
 }

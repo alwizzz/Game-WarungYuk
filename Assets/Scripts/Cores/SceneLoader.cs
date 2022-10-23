@@ -18,6 +18,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] string codeAfterLevelSulawesi;
     [SerializeField] string codeLevelKalimantanScene;
     [SerializeField] string codeAfterLevelKalimantan;
+    [SerializeField] string codeHowToPlayScene;
 
 
     public void LoadMapScene()
@@ -30,6 +31,12 @@ public class SceneLoader : MonoBehaviour
     {
         FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeMainMenuScene);
+    }
+    
+    public void LoadHowToPlayScene()
+    {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
+        SceneManager.LoadScene(codeHowToPlayScene);
     }
 
     public void QuitGame()

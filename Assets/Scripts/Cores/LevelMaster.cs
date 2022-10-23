@@ -130,7 +130,7 @@ public class LevelMaster : MonoBehaviour
 
     void UpdateDisplayPoint()
     {
-        pointText.text = "Rp" + totalPoints.ToString();
+        pointText.text = totalPoints.ToString();
     }
 
     public List<CompletedDish> GetCompletedDishPrefabs() => completedDishPrefabs;

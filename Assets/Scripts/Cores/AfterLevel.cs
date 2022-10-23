@@ -25,9 +25,13 @@ public class AfterLevel : MonoBehaviour
     [SerializeField] TextMeshProUGUI failedOrdersText;
     [SerializeField] TextMeshProUGUI totalPointsText;
 
+    [SerializeField] AudioClip winTrack;
+    [SerializeField] AudioClip loseTrack;
+
     private void Start()
     {
         FetchLevelProgress();
+        PlayAfterLevelTrack();
 
         SetupBadge();
         SetupStars();
@@ -49,6 +53,20 @@ public class AfterLevel : MonoBehaviour
         this.obtainedStars = gameMaster.GetAndResetObtainedStars();
 
         isCompleted = (obtainedStars > 0 ? true : false);
+    }
+
+    void PlayAfterLevelTrack()
+    {
+        var audioSource = GetComponent<AudioSource>();
+        if (isCompleted)
+        {
+            audioSource.clip = winTrack;
+        }
+        else
+        {
+            audioSource.clip = loseTrack;
+        }
+        audioSource.Play();
     }
 
     void SetupBadge()
