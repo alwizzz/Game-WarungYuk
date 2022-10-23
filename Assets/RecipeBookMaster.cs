@@ -21,6 +21,8 @@ public class RecipeBookMaster : MonoBehaviour
     public void OpenRecipeBook()
     {
         ResetIndex();
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
+
 
         recipeBooks[currentIndex].gameObject.SetActive(true);
         isOpened = true;
@@ -32,6 +34,8 @@ public class RecipeBookMaster : MonoBehaviour
         recipeBooks[currentIndex].gameObject.SetActive(false);
         isOpened = false;
         UpdateButtons();
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
+
 
         recipeBookButton.gameObject.SetActive(true);
         gameObject.SetActive(false);
@@ -39,6 +43,8 @@ public class RecipeBookMaster : MonoBehaviour
 
     public void NextRecipeBook()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
+
         recipeBooks[currentIndex].gameObject.SetActive(false);
         currentIndex++;
         recipeBooks[currentIndex].gameObject.SetActive(true);
@@ -48,6 +54,8 @@ public class RecipeBookMaster : MonoBehaviour
 
     public void PreviousRecipeBook()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
+
         recipeBooks[currentIndex].gameObject.SetActive(false);
         currentIndex--;
         recipeBooks[currentIndex].gameObject.SetActive(true);

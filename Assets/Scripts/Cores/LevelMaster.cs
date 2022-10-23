@@ -200,6 +200,8 @@ public class LevelMaster : MonoBehaviour
 
     public void Pause()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
+
         if (!gameHasStarted) { return; }
 
         Time.timeScale = 0f;
@@ -213,26 +215,34 @@ public class LevelMaster : MonoBehaviour
 
     public void Unpause()
     {
+
         Time.timeScale = 1f;
         levelTimer.ContinueTimer();
 
         modalPause.SetActive(false);
         isPaused = false;
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
     }
 
     public void BackToMap()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
+
         if (isPaused) { Time.timeScale = 1f; }
         FindObjectOfType<SceneLoader>().LoadMapScene();
     }
 
     public void OpenCookingGuide()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
+
         modalCookingGuide.SetActive(true);
     }
 
     public void CloseCookingGuide()
     {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
+
         modalCookingGuide.SetActive(false);
         if (!gameHasStarted) { StartLevel(); }
     }
