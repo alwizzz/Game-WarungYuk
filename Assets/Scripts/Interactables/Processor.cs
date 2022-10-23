@@ -28,6 +28,7 @@ public class Processor : Interactable
     private void Awake()
     {
         levelMaster = FindObjectOfType<LevelMaster>();
+        levelSFXManager = FindObjectOfType<LevelSFXManager>();
         hasAnimation = (processorAnimator == null ? false : true);
     }
 
@@ -112,10 +113,14 @@ public class Processor : Interactable
             inProcessItem = levelMaster.GetProcessedIngredientPrefab(ptOutput);
         }
         UpdateIsProcessing();
+
+        levelSFXManager.PlayProcessorSFX(processName);
     }
 
     void AfterProcess(PlayerAction playerAction)
     {
+        levelSFXManager.StopSFX();
+
         inProcessItem = null;
         UpdateIsProcessing();
         ResetCounter();

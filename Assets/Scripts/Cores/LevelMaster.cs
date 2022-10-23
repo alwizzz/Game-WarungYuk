@@ -102,9 +102,7 @@ public class LevelMaster : MonoBehaviour
 
         if (customerIsAngry)
         {
-            float temp = (customerIsAngryPenaltyMultiplier * dishPoint);
-            temp /= 100f;
-            int penaltiedPoint = Mathf.RoundToInt(temp) * 100;
+            int penaltiedPoint = Mathf.RoundToInt(customerIsAngryPenaltyMultiplier * dishPoint);
 
             totalPoints += penaltiedPoint;
             Debug.Log("Increased point by " + penaltiedPoint.ToString("n0"));
@@ -121,9 +119,7 @@ public class LevelMaster : MonoBehaviour
     {
         failedOrders++;
 
-        float temp = (wrongDishPenaltyMultiplier * dishPoint);
-        temp /= 100f;
-        int penaltiedPoint = Mathf.RoundToInt(temp) * 100;
+        int penaltiedPoint = Mathf.RoundToInt(wrongDishPenaltyMultiplier * dishPoint);
 
         totalPoints -= penaltiedPoint;
         totalPoints = (totalPoints >= 0 ? totalPoints : 0);
