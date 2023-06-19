@@ -18,8 +18,8 @@ TagManager:
   - PlayerInteraction
   - CustomerInteraction
   - CustomerDespawner
-  - 
-  - 
+  - Pedestrian
+  - PedestrianDespawner
   - 
   - 
   - 
