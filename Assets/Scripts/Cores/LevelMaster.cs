@@ -6,6 +6,11 @@ using TMPro;
 
 public class LevelMaster : MonoBehaviour
 {
+    [Header("Enter Level Countdown")]
+    [SerializeField] private float enterLevelDuration;
+    [SerializeField] private float enterLevelCounter;
+    [SerializeField] private Slider enterLevelSlider;
+
     [Header("Level State")]
     [SerializeField] bool isPaused;
     [SerializeField] bool gameHasStarted;
@@ -63,6 +68,24 @@ public class LevelMaster : MonoBehaviour
 
         successfulOrders = 0;
         failedOrders = 0;
+
+        StartCoroutine(EnterLevelCountdown());
+    }
+
+    private IEnumerator EnterLevelCountdown()
+    {
+        enterLevelCounter = enterLevelDuration;
+        enterLevelSlider.value = 1f;
+
+        while(enterLevelCounter > 0f)
+        {
+            yield return null;
+            enterLevelCounter -= Time.deltaTime;
+
+            enterLevelSlider.value = enterLevelCounter / enterLevelDuration;
+        }
+
+        Destroy(enterLevelSlider.gameObject);
     }
 
     private void Update()
@@ -237,6 +260,9 @@ public class LevelMaster : MonoBehaviour
 
     public void CloseCookingGuide()
     {
+        // at enter level, cooking guide cant be closed until the timer runs out
+        if (enterLevelCounter > 0f) { return; } 
+
         FindObjectOfType<AudioMaster>().PlayClickSFX();
 
         modalCookingGuide.SetActive(false);

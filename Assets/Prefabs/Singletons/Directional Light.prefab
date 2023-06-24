@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2726181559424103327}
   - component: {fileID: 2726181559424103324}
   - component: {fileID: 28759097}
+  - component: {fileID: 8104059952892917067}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -45,7 +46,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.2
+  m_Intensity: 1.3
   m_Range: 83.25949
   m_SpotAngle: 164.67467
   m_InnerSpotAngle: 17.704851
@@ -107,4 +108,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c796377c1d1ea014286dbf2fdb06b2e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: Light
+  type: SingletonLight
+--- !u!114 &8104059952892917067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2726181559424103325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37698e829b92a0547ab6a38a53f34af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
