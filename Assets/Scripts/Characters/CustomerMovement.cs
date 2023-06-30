@@ -78,9 +78,11 @@ public class CustomerMovement : MonoBehaviour
         StartCoroutine(AngryProgressHandler);
     }
 
-    public void FinishedOrdering()
+    public IEnumerator FinishedOrdering()
     {
         StopCoroutine(AngryProgressHandler);
+
+        yield return new WaitForSeconds(1f);
         currentOrderState = OrderState.GoOutside;
     }
 

@@ -52,7 +52,7 @@ public class CustomerAction : MonoBehaviour
         heldItem.MoveToPivot(holdingPivot);
         UpdateIsHolding();
 
-        customerMovement.FinishedOrdering();
+        StartCoroutine(customerMovement.FinishedOrdering());
     }
 
 
