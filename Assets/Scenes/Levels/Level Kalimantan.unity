@@ -15165,6 +15165,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1192188937552561479, guid: aee76fde02a64d24d8d1a2b1179d6add, type: 3}
   m_PrefabInstance: {fileID: 982823028}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &984403529 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1229986658, guid: a7efae5a1ea7fe542b7b96ad6bc5e0d2, type: 3}
+  m_PrefabInstance: {fileID: 1094714391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &987953866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27754,6 +27765,10 @@ PrefabInstance:
       propertyPath: modalPause
       value: 
       objectReference: {fileID: 1094714394}
+    - target: {fileID: 1188035336207653608, guid: 0051ca577348ffe4c825f6e781bd8333, type: 3}
+      propertyPath: countdownText
+      value: 
+      objectReference: {fileID: 984403529}
     - target: {fileID: 1188035336207653608, guid: 0051ca577348ffe4c825f6e781bd8333, type: 3}
       propertyPath: levelDuration
       value: 210

@@ -10782,6 +10782,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2042131296}
     - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
+      propertyPath: countdownText
+      value: 
+      objectReference: {fileID: 756155266}
+    - target: {fileID: 7142304037505441986, guid: 96041bc3d4f9684409548405e112a0e5, type: 3}
       propertyPath: levelDuration
       value: 150
       objectReference: {fileID: 0}
@@ -16793,6 +16797,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &756155266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1229986658, guid: a7efae5a1ea7fe542b7b96ad6bc5e0d2, type: 3}
+  m_PrefabInstance: {fileID: 756155261}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &756589694
