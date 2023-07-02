@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17365864, g: 0.21711057, b: 0.29923105, a: 1}
+  m_IndirectSpecularColor: {r: 0.43784598, g: 0.4857688, b: 0.56604666, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13131,6 +13131,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1192188937552561479, guid: aee76fde02a64d24d8d1a2b1179d6add, type: 3}
   m_PrefabInstance: {fileID: 563030202}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &563438534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 363338012, guid: a7efae5a1ea7fe542b7b96ad6bc5e0d2, type: 3}
+  m_PrefabInstance: {fileID: 1796508571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &565452465 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6950822679139082259, guid: 6552c41c9ec373f4287ae9f82ca27a2c, type: 3}
@@ -42673,6 +42684,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1816292149}
+    - target: {fileID: 2926424545221399971, guid: a7efae5a1ea7fe542b7b96ad6bc5e0d2, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e431fe9f945c66c4f851afc33fcb449a, type: 3}
     - target: {fileID: 3715809125423914504, guid: a7efae5a1ea7fe542b7b96ad6bc5e0d2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -42811,6 +42826,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2582293013985588320, guid: a7efae5a1ea7fe542b7b96ad6bc5e0d2, type: 3}
   m_PrefabInstance: {fileID: 1796508571}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1796508576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1229986658, guid: a7efae5a1ea7fe542b7b96ad6bc5e0d2, type: 3}
+  m_PrefabInstance: {fileID: 1796508571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1801170703
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43470,6 +43496,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1796508574}
     - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: countdownText
+      value: 
+      objectReference: {fileID: 1796508576}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
       propertyPath: levelDuration
       value: 150
       objectReference: {fileID: 0}
@@ -43481,6 +43511,10 @@ PrefabInstance:
       propertyPath: spawnDelayMin
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
+      propertyPath: enterLevelSlider
+      value: 
+      objectReference: {fileID: 563438534}
     - target: {fileID: 2833983326814563754, guid: 5e135d29bf53d6d41b56dac6f92aff64, type: 3}
       propertyPath: modalCookingGuide
       value: 

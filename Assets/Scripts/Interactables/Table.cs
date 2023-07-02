@@ -9,6 +9,8 @@ public class Table : Interactable
     [SerializeField] protected Item itemOnTable;
     [SerializeField] protected bool hasItemOnTable;
 
+    [SerializeField] private ParticleSystem unmixableVFX;
+
     [SerializeField] LevelMaster levelMaster;
 
     private void Awake()
@@ -61,6 +63,10 @@ public class Table : Interactable
                 var temp = playerAction.TakeHeldItem();
                 Ingredient ingredientToMix = (Ingredient) temp;
                 uDish.Mix(ingredientToMix, this);
+            }
+            else 
+            {
+                unmixableVFX.Play();
             }
         }
     }

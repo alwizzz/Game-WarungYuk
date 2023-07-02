@@ -11,6 +11,13 @@ public class LevelMaster : MonoBehaviour
     [SerializeField] private float enterLevelCounter;
     [SerializeField] private Slider enterLevelSlider;
 
+    [Header("Start Level Countdown")]
+    [SerializeField] private float startLevelCountdown = 3f;
+    [SerializeField] private TMP_Text countdownText;
+    [SerializeField] private float startLevelCountdownCounter;
+    [SerializeField] private int startLevelCountdownCounterInt;
+
+
     [Header("Level State")]
     [SerializeField] bool isPaused;
     [SerializeField] bool gameHasStarted;
@@ -194,8 +201,30 @@ public class LevelMaster : MonoBehaviour
     }
 
     public bool GameHasStarted() => gameHasStarted;
-    public void StartLevel()
+
+    private IEnumerator StartLevel()
     {
+        // start level countdown stuffs
+        countdownText.gameObject.SetActive(true);
+
+        startLevelCountdownCounter = startLevelCountdown;
+        startLevelCountdownCounterInt = (int)startLevelCountdownCounter;
+        countdownText.text = startLevelCountdownCounterInt.ToString();
+        while(startLevelCountdownCounter > 0f)
+        {
+            startLevelCountdownCounter -= Time.deltaTime;
+            if((int)startLevelCountdownCounter < startLevelCountdownCounterInt - 1)
+            {
+                startLevelCountdownCounterInt--;
+                countdownText.text = startLevelCountdownCounterInt.ToString();
+            }
+
+            yield return null;
+        }
+
+        countdownText.gameObject.SetActive(false);
+
+
         gameHasStarted = true;
         levelTimer.ContinueTimer();
         Debug.Log("LEVEL TIMER: GAME STARTED");
@@ -266,6 +295,6 @@ public class LevelMaster : MonoBehaviour
         FindObjectOfType<AudioMaster>().PlayClickSFX();
 
         modalCookingGuide.SetActive(false);
-        if (!gameHasStarted) { StartLevel(); }
+        if (!gameHasStarted) { StartCoroutine(StartLevel()); }
     }
 }
