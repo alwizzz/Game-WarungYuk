@@ -19,47 +19,93 @@ public class LevelMaster : MonoBehaviour
 
 
     [Header("Level State")]
-    [SerializeField] bool isPaused;
-    [SerializeField] bool gameHasStarted;
+    [SerializeField] protected bool isPaused;
+    [SerializeField] protected bool gameHasStarted;
 
     [Header("Cooking Recipe")]
-    [SerializeField] TextAsset jsonFile;
-    CookingRecipe cookingRecipe;
-    [SerializeField] List<ProcessedIngredient> processedIngredientPrefabs;
-    [SerializeField] List<CompletedDish> completedDishPrefabs;
-    [SerializeField] List<int> completedDishSpawnCounters;
-    bool stillHasCounters;
+    [SerializeField] protected TextAsset jsonFile;
+    protected CookingRecipe cookingRecipe;
+    [SerializeField] protected List<ProcessedIngredient> processedIngredientPrefabs;
+    [SerializeField] protected List<CompletedDish> completedDishPrefabs;
+    [SerializeField] protected List<int> completedDishSpawnCounters;
+    protected bool stillHasCounters;
 
     [Header("Point Config")]
-    [SerializeField] TextMeshProUGUI pointText;
-    [SerializeField] int totalPoints;
-    [SerializeField] int oneStarMinimumPoints;
-    [SerializeField] int twoStarMinimumPoints;
-    [SerializeField] int threeStarMinimumPoints;
-    [SerializeField] float wrongDishPenaltyMultiplier;
-    [SerializeField] float customerIsAngryPenaltyMultiplier;
+    [SerializeField] private TextMeshProUGUI pointText;
+    [SerializeField] private int totalPoints;
+    [SerializeField] private int oneStarMinimumPoints;
+    [SerializeField] private int twoStarMinimumPoints;
+    [SerializeField] private int threeStarMinimumPoints;
+    [SerializeField] private float wrongDishPenaltyMultiplier;
+    [SerializeField] private float customerIsAngryPenaltyMultiplier;
 
     [Header("Level Statistic")]
-    [SerializeField] int successfulOrders;
-    [SerializeField] int failedOrders;
+    [SerializeField] private int successfulOrders;
+    [SerializeField] private int failedOrders;
 
     [Header("Spawn Config")]
-    [SerializeField] float initialSpawnDelayMin;
-    [SerializeField] float initialSpawnDelayMax;
-    [SerializeField] float spawnDelayMin;
-    [SerializeField] float spawnDelayMax;
+    [SerializeField] private float initialSpawnDelayMin;
+    [SerializeField] private float initialSpawnDelayMax;
+    [SerializeField] private float spawnDelayMin;
+    [SerializeField] private float spawnDelayMax;
     
     [Header("Duration Config")]
-    [SerializeField] LevelTimer levelTimer;
-    [SerializeField] float levelDuration;
-    [SerializeField] float toBeAngryDuration;
+    [SerializeField] private LevelTimer levelTimer;
+    [SerializeField] private float levelDuration;
+    [SerializeField] private float toBeAngryDuration;
 
     [Header("UI Cache")]
-    [SerializeField] GameObject modalPause;
-    [SerializeField] GameObject modalCookingGuide;
+    [SerializeField] protected GameObject modalPause;
+    [SerializeField] protected GameObject modalCookingGuide;
+
+    private GameMaster gm;
 
 
     private void Awake()
+    {
+        gm = FindObjectOfType<GameMaster>();
+
+        if (gm.OnTutorial())
+        {
+            Awake_T();
+        } else
+        {
+            Awake_N();
+        }
+    }
+
+    private void Start()
+    {
+        if (gm.OnTutorial())
+        {
+            Start_T();
+        }
+        else
+        {
+            Start_N();
+        }
+    }
+
+    protected void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //isPaused = !isPaused;
+            if (!isPaused)
+            {
+                Pause();
+            }
+            else
+            {
+                Unpause();
+            }
+        }
+
+    }
+
+    #region Normal Mechanic
+
+    private void Awake_N()
     {
         cookingRecipe = JsonUtility.FromJson<CookingRecipe>(jsonFile.ToString());
         gameHasStarted = false;
@@ -68,7 +114,7 @@ public class LevelMaster : MonoBehaviour
         modalPause.SetActive(false);
     }
 
-    private void Start()
+    private void Start_N()
     {
         UpdateStillHasCounters();
         UpdateDisplayPoint();
@@ -95,36 +141,7 @@ public class LevelMaster : MonoBehaviour
         Destroy(enterLevelSlider.gameObject);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            //isPaused = !isPaused;
-            if (!isPaused)
-            {
-                Pause();
-            } 
-            else
-            {
-                Unpause();
-            }
-        }
 
-    }
-    public bool IsPaused() => isPaused;
-
-    public CookingRecipe GetCookingRecipe() => cookingRecipe;
-
-    public CompletedDish GetCompletedDishPrefab(string codeName)
-    {
-        var cDish = completedDishPrefabs.Find((cd) => cd.GetCodeName() == codeName);
-        return cDish ? cDish : null;
-    }
-    public ProcessedIngredient GetProcessedIngredientPrefab(string codeName)
-    {
-        var pIng = processedIngredientPrefabs.Find((pIng) => pIng.GetCodeName() == codeName);
-        return pIng ? pIng : null;
-    }
 
     public void IncreasePoint(int dishPoint, bool customerIsAngry) 
     {
@@ -158,30 +175,18 @@ public class LevelMaster : MonoBehaviour
         UpdateDisplayPoint();
     }
 
-    void UpdateDisplayPoint()
+    private void UpdateDisplayPoint()
     {
         pointText.text = totalPoints.ToString();
     }
 
-    public List<CompletedDish> GetCompletedDishPrefabs() => completedDishPrefabs;
     public float GetInitialSpawnDelayMin() => initialSpawnDelayMin;
     public float GetInitialSpawnDelayMax() => initialSpawnDelayMax;
     public float GetSpawnDelayMin() => spawnDelayMin;
     public float GetSpawnDelayMax() => spawnDelayMax;
     public float GetToBeAngryDuration() => toBeAngryDuration;
 
-    void UpdateStillHasCounters()
-    {
-        bool value = false;
-        foreach (int x in completedDishSpawnCounters)
-        {
-            if(x > 0) {
-                value = true;    
-                break; 
-            }
-        }
-        stillHasCounters = value;
-    }
+
 
     public CompletedDish GetRandomCompletedDishPrefab()
     {
@@ -297,4 +302,79 @@ public class LevelMaster : MonoBehaviour
         modalCookingGuide.SetActive(false);
         if (!gameHasStarted) { StartCoroutine(StartLevel()); }
     }
+
+    #endregion
+
+
+    #region Tutorial Mechanic
+
+    private void Awake_T()
+    {
+        cookingRecipe = JsonUtility.FromJson<CookingRecipe>(jsonFile.ToString());
+        gameHasStarted = false;
+        isPaused = false;
+        modalPause.SetActive(false);
+    }
+
+    private void Start_T()
+    {
+        UpdateStillHasCounters();
+        StartLevel_T();
+    }
+
+    private void StartLevel_T()
+    {
+        gameHasStarted = true;
+        Debug.Log("TUTORIAL: GAME STARTED");
+    }
+
+    public void Pause_T()
+    {
+        isPaused = true;
+        Time.timeScale = 0f;
+    }
+
+    public void Unpause_T()
+    {
+        isPaused = false;
+        Time.timeScale = 1f;
+    }
+
+    #endregion
+
+    #region Shared between
+
+
+    public bool IsPaused() => isPaused;
+
+    public CookingRecipe GetCookingRecipe() => cookingRecipe;
+
+    public CompletedDish GetCompletedDishPrefab(string codeName)
+    {
+        var cDish = completedDishPrefabs.Find((cd) => cd.GetCodeName() == codeName);
+        return cDish ? cDish : null;
+    }
+    public ProcessedIngredient GetProcessedIngredientPrefab(string codeName)
+    {
+        var pIng = processedIngredientPrefabs.Find((pIng) => pIng.GetCodeName() == codeName);
+        return pIng ? pIng : null;
+    }
+
+    public List<CompletedDish> GetCompletedDishPrefabs() => completedDishPrefabs;
+
+    private void UpdateStillHasCounters()
+    {
+        bool value = false;
+        foreach (int x in completedDishSpawnCounters)
+        {
+            if (x > 0)
+            {
+                value = true;
+                break;
+            }
+        }
+        stillHasCounters = value;
+    }
+
+    #endregion
 }

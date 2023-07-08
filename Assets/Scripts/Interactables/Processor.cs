@@ -149,6 +149,16 @@ public class Processor : Interactable
         if (isProcessingDish)
         {
             playerAction.GiveItemToHold((CompletedDish)output);
+
+            // tutorial inject
+            if (FindObjectOfType<GameMaster>().OnTutorial())
+            {
+                var tm = FindObjectOfType<TutorialManager>();
+                if(processName == "REBUS" && tm.GetState() == "Cook" && output.GetCodeName() == "mie_aceh")
+                {
+                    tm.NextTutorialState("Cook");
+                }
+            }
         }
         else // is processing ingredient
         {

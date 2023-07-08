@@ -41,6 +41,26 @@ public class PlayerMovement : MonoBehaviour
         {
             Move();
         }
+
+        //if (isAbleToMove)
+        //{
+        //    var check = FindObjectOfType<LevelMasterTutorial>();
+        //    if (check != null)
+        //    {
+        //        if (check.GameHasStarted())
+        //        {
+        //            Move();
+        //        }
+
+        //    }
+        //    else
+        //    {
+        //        if (levelMaster.GameHasStarted())
+        //        {
+        //            Move();
+        //        }
+        //    }
+        //}
     }
 
     void Move()
