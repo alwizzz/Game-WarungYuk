@@ -24,6 +24,8 @@ public class Processor : Interactable
     [SerializeField] GameObject idleModel;
     [SerializeField] GameObject processingModel;
 
+    [SerializeField] private ParticleSystem processFinishedVFX;
+
 
     private void Awake()
     {
@@ -96,6 +98,7 @@ public class Processor : Interactable
 
         Destroy(playerAction.TakeHeldItem().gameObject);
         GiveProcessorOutputToPlayer(playerAction, inProcessItem, isProcessingDish);
+        processFinishedVFX.Play();
 
         AfterProcess(playerAction);
     }

@@ -62,7 +62,8 @@ public class PlayerAction : MonoBehaviour
 
         return temp;
     }
-    public void GiveItemToHold(Item input) { 
+    public void GiveItemToHold(Item input) 
+    { 
         heldItem = input;
         heldItem.MoveToPivot(holdingPivot);
         UpdateIsHolding();

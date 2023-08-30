@@ -34,6 +34,7 @@ Transform:
   m_Children:
   - {fileID: 7664160754467647350}
   - {fileID: 7914558358609349947}
+  - {fileID: 2557584395823100764}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -78,10 +79,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0fb65bfdf47cf40bbfdca488d76d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelRenderers: []
+  rendererMaster: {fileID: 0}
+  childRenderers: []
+  levelSFXManager: {fileID: 0}
+  emissionColor: {r: 0.23529412, g: 0.23529412, b: 0.11764706, a: 0}
   placingPivot: {fileID: 7914558358609349947}
   itemOnTable: {fileID: 0}
   hasItemOnTable: 0
+  unmixableVFX: {fileID: 3553697129798861023}
   levelMaster: {fileID: 0}
 --- !u!23 &3246198195776437448
 MeshRenderer:
@@ -156,6 +161,73 @@ Transform:
   m_Father: {fileID: 7914558357723247513}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1553367802027802708
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7914558357723247513}
+    m_Modifications:
+    - target: {fileID: 3958935360737358600, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958935360737358600, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958935360737358600, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958935360737358600, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958935360737358600, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958935360737358600, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958935360737358600, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958935360737358600, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958935360737358600, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958935360737358600, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3958935360737358600, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947582338269530335, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+      propertyPath: m_Name
+      value: UnmixableParticle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+--- !u!4 &2557584395823100764 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3958935360737358600, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+  m_PrefabInstance: {fileID: 1553367802027802708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3553697129798861023 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2657105634878095499, guid: fba90eaa05ca89e4991554df788dcf97, type: 3}
+  m_PrefabInstance: {fileID: 1553367802027802708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7914558359048931485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -231,6 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasChildren: 0
+  childRenderers: []
 --- !u!4 &7664160754467647350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: db866ee80ea3b6b45989795a11fb0890, type: 3}

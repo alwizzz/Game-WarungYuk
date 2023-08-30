@@ -9,6 +9,10 @@ public class CustomerAction : MonoBehaviour
     [SerializeField] bool isHolding;
     [SerializeField] CompletedDish orderedDish;
 
+    [SerializeField] private ParticleSystem correctOrderedDish;
+    [SerializeField] private ParticleSystem wrongOrderedDish;
+
+
     [SerializeField] CompletedDish heldItem;
     [SerializeField] Transform holdingPivot;
 
@@ -32,19 +36,23 @@ public class CustomerAction : MonoBehaviour
             // Debug.Log("given dish is correct");
             levelMaster.IncreasePoint(orderedDish.GetPoint(), customerMovement.IsAngry());
             FindObjectOfType<LevelSFXManager>().PlayCustomerSatisfiedSFX();
+
+            correctOrderedDish.Play();
         }
         else
         {
             // Debug.Log("given dish is incorrect");
             levelMaster.DecreasePoint(orderedDish.GetPoint());
             FindObjectOfType<LevelSFXManager>().PlayCustomerDisappointedSFX();
+
+            wrongOrderedDish.Play();
         }
 
         heldItem = givenDish;
         heldItem.MoveToPivot(holdingPivot);
         UpdateIsHolding();
 
-        customerMovement.FinishedOrdering();
+        StartCoroutine(customerMovement.FinishedOrdering());
     }
 
 
