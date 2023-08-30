@@ -5,7 +5,7 @@ Genre: Simulation (Cooking)\
 Platform: PC \
 Language: Bahasa Indonesia
 
-This game was made for [GEMASTIK XV 2022](https://gemastik.kemdikbud.go.id/) submission on Game Development category 
+This game was made for [GEMASTIK XVI 2023](https://gemastik.kemdikbud.go.id/) submission on Game Development category 
 
 
 ## Gallery
