@@ -3,7 +3,22 @@ guid: 52c1070c11491144fab932b201d3ff66
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: boots_accent
+    second: {fileID: 2100000, guid: 88268fc5cd905f5418bae5e0f5360196, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: boots_base
+    second: {fileID: 2100000, guid: 6460b74e9d4828f4d98fc821bd5aa37f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: boots_second
+    second: {fileID: 2100000, guid: 073f918dd85562a4e8bb6d1be3bd2a03, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
