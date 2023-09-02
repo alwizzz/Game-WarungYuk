@@ -20,7 +20,7 @@
         },
         {
             "process": "REBUS",
-            "input": "mangkok_daging_sayuran",
+            "input": "piring_daging_sayuran",
             "output": "selat_solo"
         }
     ],
@@ -44,11 +44,6 @@
                     "input": "daging",
                     "nextState": "mangkok_daging",
                     "intoCompletedDish": false
-                },
-                {
-                    "input": "sayuran",
-                    "nextState": "mangkok_sayuran",
-                    "intoCompletedDish": false
                 }
             ]
         },
@@ -69,30 +64,11 @@
                     "input": "nasi",
                     "nextState": "mangkok_nasi_daging",
                     "intoCompletedDish": false
-                },
-                {
-                    "input": "sayuran",
-                    "nextState": "mangkok_daging_sayuran",
-                    "intoCompletedDish": false
-                }
-            ]
-        },
-        {
-            "name": "mangkok_sayuran",
-            "transitions": [
-                {
-                    "input": "daging",
-                    "nextState": "mangkok_daging_sayuran",
-                    "intoCompletedDish": false
                 }
             ]
         },
         {
             "name": "mangkok_nasi_daging",
-            "transitions": null
-        },
-        {
-            "name": "mangkok_daging_sayuran",
             "transitions": null
         }
     ],
@@ -105,8 +81,42 @@
                     "input": "tahugoreng",
                     "nextState": "tahu_sumedang",
                     "intoCompletedDish": true
+                },
+                {
+                    "input": "daging",
+                    "nextState": "piring_daging",
+                    "intoCompletedDish": false
+                },
+                {
+                    "input": "sayuran",
+                    "nextState": "piring_sayuran",
+                    "intoCompletedDish": false
                 }
             ]
+        },
+        {
+            "name": "piring_daging",
+            "transitions": [
+                {
+                    "input": "sayuran",
+                    "nextState": "piring_daging_sayuran",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_sayuran",
+            "transitions": [
+                {
+                    "input": "daging",
+                    "nextState": "piring_daging_sayuran",
+                    "intoCompletedDish": false
+                }
+            ]
+        },
+        {
+            "name": "piring_daging_sayuran",
+            "transitions": null
         }
     ]
 }
