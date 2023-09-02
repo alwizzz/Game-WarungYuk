@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] GameObject playerBody;
     [SerializeField] float moveSpeed = 0.1f;
+    private float baseMoveSpeed;
     [SerializeField] float rotateSpeed = 0.1f;
 
     [SerializeField] bool isMoving;
@@ -22,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        baseMoveSpeed = moveSpeed;
+
         blockedForward = false;
         blockedBackward = false;
         blockedLeft = false;
@@ -127,4 +130,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+    public void SetMoveSpeed(float value)
+    {
+        moveSpeed = value;
+    }
+
+    public void ResetMoveSpeed()
+    {
+        moveSpeed = baseMoveSpeed;
+    }
 }

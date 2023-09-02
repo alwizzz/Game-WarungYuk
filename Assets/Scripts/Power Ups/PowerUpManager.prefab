@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a16a8cdd2d051ee46b89c58c8a296e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpPrefabs: []
+  powerUpPrefabs:
+  - {fileID: 1789176296155740166, guid: 199b728e282a09244beb7c3bdedeeedb, type: 3}
+  - {fileID: 8033566128466174018, guid: 9217a15915b14ea40989e9ed2556bec3, type: 3}
   hasExistingPowerUp: 0
   lastPowerUp: {fileID: 0}
   freeGrounds:
@@ -96,8 +98,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   lastFreeGround: {fileID: 0}
-  powerUpExistDuration: 0
+  powerUpExistDuration: 10
   spawnDelayMin: 5
-  spawnDelayMax: 10
+  spawnDelayMax: 5
   spawnDelay: 0
   spawnDelayCounter: 0

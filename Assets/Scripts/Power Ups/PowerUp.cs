@@ -4,13 +4,12 @@ using UnityEngine;
 
 public abstract class PowerUp : MonoBehaviour
 {
-    [SerializeField] private string powerName = "dummy";
-    [SerializeField] private float duration;
-    [SerializeField] private float existDuration;
-    [SerializeField] private float existCounter;
-
-
-
+    [SerializeField] protected string powerName = "dummy";
+    [SerializeField] protected bool pickedUp;
+    [SerializeField] protected float duration;
+    [SerializeField] protected float durationCounter;
+    [SerializeField] protected float existDuration;
+    [SerializeField] protected float existCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -47,9 +46,29 @@ public abstract class PowerUp : MonoBehaviour
 
     protected void Expire()
     {
+        if (pickedUp) { return; }
+
         print(gameObject + " has expired! respawning power up without offset");
         FindObjectOfType<PowerUpManager>().RespawnPowerUp(0f);
 
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        transform.position = FindObjectOfType<PowerUpManager>().transform.position;
+    }
+
+    protected void OnTriggerEnter(Collider other)
+    {
+        pickedUp = true;
+        PowerUpPlayer();
+    }
+
+    protected abstract void PowerUpPlayer();
+
+    protected void PowerUpPlayer_Base()
+    {
+        print(gameObject + " has been taken by player! respawning power up with offset");
+        FindObjectOfType<PowerUpManager>().RespawnPowerUp(duration);
+
+        //gameObject.SetActive(false);
+        transform.position = FindObjectOfType<PowerUpManager>().transform.position; //hide it;
     }
 }

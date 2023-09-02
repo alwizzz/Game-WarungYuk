@@ -39,6 +39,8 @@ public class LevelMaster : MonoBehaviour
     [SerializeField] private float wrongDishPenaltyMultiplier;
     [SerializeField] private float customerIsAngryPenaltyMultiplier;
 
+    [SerializeField] private float correctDishPointMultiplier;
+
     [Header("Level Statistic")]
     [SerializeField] private int successfulOrders;
     [SerializeField] private int failedOrders;
@@ -76,6 +78,8 @@ public class LevelMaster : MonoBehaviour
 
     private void Start()
     {
+        correctDishPointMultiplier = 1f;
+
         if (gm.OnTutorial())
         {
             Start_T();
@@ -149,15 +153,17 @@ public class LevelMaster : MonoBehaviour
 
         if (customerIsAngry)
         {
-            int penaltiedPoint = Mathf.RoundToInt(customerIsAngryPenaltyMultiplier * dishPoint);
+            int penaltiedPoint = Mathf.RoundToInt(customerIsAngryPenaltyMultiplier * dishPoint * correctDishPointMultiplier);
 
             totalPoints += penaltiedPoint;
-            Debug.Log("Increased point by " + penaltiedPoint.ToString("n0"));
+            Debug.Log("Increased point by " + penaltiedPoint.ToString("n0") + " with multiplier " + correctDishPointMultiplier);
         }
         else
         {
-            totalPoints += dishPoint;
-            Debug.Log("Increased point by " + dishPoint.ToString("n0"));
+            int realDishPoint = Mathf.RoundToInt(dishPoint * correctDishPointMultiplier);
+
+            totalPoints += realDishPoint;
+            Debug.Log("Increased point by " + realDishPoint.ToString("n0") + " with multiplier " + correctDishPointMultiplier);
         }
 
         UpdateDisplayPoint();
@@ -377,4 +383,10 @@ public class LevelMaster : MonoBehaviour
     }
 
     #endregion
+
+
+    public void SetCorrectDishPointMultiplier(float value)
+    {
+        correctDishPointMultiplier = value;
+    }
 }

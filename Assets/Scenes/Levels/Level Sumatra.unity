@@ -25027,6 +25027,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3147862676041423377, guid: 3c69058bae2be9b4aac2324f6c1ca5b5, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c69058bae2be9b4aac2324f6c1ca5b5, type: 3}
 --- !u!1001 &1037059259
@@ -52317,7 +52321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1789176296155740167, guid: 199b728e282a09244beb7c3bdedeeedb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.67
+      value: -11.4
       objectReference: {fileID: 0}
     - target: {fileID: 1789176296155740167, guid: 199b728e282a09244beb7c3bdedeeedb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -52350,6 +52354,10 @@ PrefabInstance:
     - target: {fileID: 1789176296155740187, guid: 199b728e282a09244beb7c3bdedeeedb, type: 3}
       propertyPath: m_Name
       value: PowerUp_MoveSpeedBoost
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789176296155740187, guid: 199b728e282a09244beb7c3bdedeeedb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 199b728e282a09244beb7c3bdedeeedb, type: 3}
@@ -52416,10 +52424,6 @@ PrefabInstance:
       propertyPath: freeGrounds.Array.data[9]
       value: 
       objectReference: {fileID: 2018241917}
-    - target: {fileID: 6865434345587290605, guid: 4224a842e2a1f184da2351f58b4a97ed, type: 3}
-      propertyPath: powerUpPrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6865434345587290605, guid: 4224a842e2a1f184da2351f58b4a97ed, type: 3}
       propertyPath: freeGrounds.Array.data[10]
       value: 
@@ -52568,21 +52572,13 @@ PrefabInstance:
       propertyPath: freeGrounds.Array.data[46]
       value: 
       objectReference: {fileID: 2057820192}
-    - target: {fileID: 6865434345587290605, guid: 4224a842e2a1f184da2351f58b4a97ed, type: 3}
-      propertyPath: powerUpPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 1789176296155740166, guid: 199b728e282a09244beb7c3bdedeeedb, type: 3}
-    - target: {fileID: 6865434345587290605, guid: 4224a842e2a1f184da2351f58b4a97ed, type: 3}
-      propertyPath: powerUpPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 8033566128466174018, guid: 9217a15915b14ea40989e9ed2556bec3, type: 3}
     - target: {fileID: 6865434345587290606, guid: 4224a842e2a1f184da2351f58b4a97ed, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6865434345587290606, guid: 4224a842e2a1f184da2351f58b4a97ed, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 6865434345587290606, guid: 4224a842e2a1f184da2351f58b4a97ed, type: 3}
       propertyPath: m_LocalPosition.y
@@ -52590,7 +52586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6865434345587290606, guid: 4224a842e2a1f184da2351f58b4a97ed, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.5
+      value: -13.2
       objectReference: {fileID: 0}
     - target: {fileID: 6865434345587290606, guid: 4224a842e2a1f184da2351f58b4a97ed, type: 3}
       propertyPath: m_LocalRotation.w
@@ -52643,7 +52639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8033566128466174022, guid: 9217a15915b14ea40989e9ed2556bec3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.72
+      value: -11.07
       objectReference: {fileID: 0}
     - target: {fileID: 8033566128466174022, guid: 9217a15915b14ea40989e9ed2556bec3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -52676,6 +52672,10 @@ PrefabInstance:
     - target: {fileID: 8033566128466174029, guid: 9217a15915b14ea40989e9ed2556bec3, type: 3}
       propertyPath: m_Name
       value: PowerUp_ProfitBoost
+      objectReference: {fileID: 0}
+    - target: {fileID: 8033566128466174029, guid: 9217a15915b14ea40989e9ed2556bec3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9217a15915b14ea40989e9ed2556bec3, type: 3}

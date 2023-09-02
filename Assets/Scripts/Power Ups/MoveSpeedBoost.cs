@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class MoveSpeedBoost : PowerUp
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float boostedMoveSpeed;
+
+    protected override void PowerUpPlayer()
     {
-        
+        PowerUpPlayer_Base();
+
+        StartCoroutine(BoostMoveSpeed());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator BoostMoveSpeed()
     {
-        
+        FindObjectOfType<PlayerMovement>().SetMoveSpeed(boostedMoveSpeed);
+
+        durationCounter = duration;
+        while(durationCounter > 0f)
+        {
+            yield return null;
+            durationCounter -= Time.deltaTime;
+        }
+
+        FindObjectOfType<PlayerMovement>().ResetMoveSpeed();
     }
+
 }
