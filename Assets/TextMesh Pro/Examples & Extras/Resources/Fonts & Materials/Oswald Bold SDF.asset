@@ -576,9 +576,15 @@ Texture2D:
   m_DownscaleFallback: 0
   m_IsAlphaChannelOptional: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Width: 1024
   m_Height: 1024
   m_CompleteImageSize: 1048576
+=======
+  m_Width: 0
+  m_Height: 0
+  m_CompleteImageSize: 0
+>>>>>>> df2ebcf6465302726fee900a8e0bcdaa5496d564
   m_MipsStripped: 0
   m_TextureFormat: 1
   m_MipCount: 1

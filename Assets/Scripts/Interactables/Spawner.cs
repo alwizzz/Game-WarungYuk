@@ -19,6 +19,16 @@ public class Spawner : Interactable
     {
         levelSFXManager.PlayTakeItemFromSpawnerSFX();
         SpawnItemToPlayer(playerAction);
+
+        // tutorial inject
+        if (FindObjectOfType<GameMaster>().OnTutorial())
+        {
+            var tutorialManager = FindObjectOfType<TutorialManager>();
+            if (rawIngredientPrefab.GetCodeName() == "daging" && tutorialManager.GetState() == "TakeDaging")
+            {
+                tutorialManager.NextTutorialState("TakeDaging");
+            }
+        }
     }
 
     void SpawnItemToPlayer(PlayerAction playerAction)

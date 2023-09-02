@@ -76,6 +76,11 @@ public class CustomerMovement : MonoBehaviour
         customerSpawner.SetHasArrived(true);
 
         StartCoroutine(AngryProgressHandler);
+
+        if (FindObjectOfType<GameMaster>().OnTutorial())
+        {
+            FindObjectOfType<TutorialManager>().NextTutorialState("FirstCustomer");
+        }
     }
 
     public IEnumerator FinishedOrdering()

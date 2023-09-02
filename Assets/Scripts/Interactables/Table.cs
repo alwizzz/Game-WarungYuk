@@ -36,7 +36,17 @@ public class Table : Interactable
         if(!hasItemOnTable) 
         {
             levelSFXManager.PlayPopSFX();
-            TakeItemFromPlayer(playerAction); 
+            var itemString = TakeItemFromPlayer(playerAction);
+
+            // tutorial inject
+            if (FindObjectOfType<GameMaster>().OnTutorial())
+            {
+                var tm = FindObjectOfType<TutorialManager>();
+                if (itemString == "mangkok" && tm.GetState() == "DropPlate")
+                {
+                    tm.NextTutorialState("DropPlate");
+                }
+            }
         } 
         else
         {
@@ -63,6 +73,19 @@ public class Table : Interactable
                 var temp = playerAction.TakeHeldItem();
                 Ingredient ingredientToMix = (Ingredient) temp;
                 uDish.Mix(ingredientToMix, this);
+
+                // tutorial inject
+                if (FindObjectOfType<GameMaster>().OnTutorial())
+                {
+                    var tm = FindObjectOfType<TutorialManager>();
+                    if (ingredientToMix.GetCodeName() == "daging" && tm.GetState() == "MixDaging")
+                    {
+                        tm.NextTutorialState("MixDaging");
+                    } else if (ingredientToMix.GetCodeName() == "mie" && tm.GetState() == "MixMie")
+                    {
+                        tm.NextTutorialState("MixMie");
+                    }
+                }
             }
             else 
             {
@@ -97,11 +120,13 @@ public class Table : Interactable
         GiveItemToPlayer(playerAction);
     }
 
-    protected void TakeItemFromPlayer(PlayerAction playerAction)
+    protected string TakeItemFromPlayer(PlayerAction playerAction)
     {
         itemOnTable = playerAction.TakeHeldItem();
         itemOnTable.MoveToPivot(placingPivot);
         UpdateHasItemOnTable();
+
+        return itemOnTable.GetCodeName();
     }
 
     protected void GiveItemToPlayer(PlayerAction playerAction)
