@@ -28,11 +28,16 @@ public class CustomerSpawner : MonoBehaviour
 
     void Setup()
     {
-        //initialSpawnDelayMin = levelMaster.GetInitialSpawnDelayMin();
-        //initialSpawnDelayMax = levelMaster.GetInitialSpawnDelayMax();
-        //initialSpawnDelayMultiplier = levelMaster.GetInitialSpawnDelayMultiplier();
-        spawnDelayMin = levelMaster.GetSpawnDelayMin();
-        spawnDelayMax = levelMaster.GetSpawnDelayMax();
+        if (FindObjectOfType<GameMaster>().OnTutorial())
+        {
+            spawnDelayMin = 0;
+            spawnDelayMax = 0;
+        }
+        else
+        {
+            spawnDelayMin = levelMaster.GetSpawnDelayMin();
+            spawnDelayMax = levelMaster.GetSpawnDelayMax();
+        }
 
         hasExistingSpawn = false;
         hasSpawnedInitial = false;
@@ -63,7 +68,17 @@ public class CustomerSpawner : MonoBehaviour
         spawn.SetOrderedDish(levelMaster.GetRandomCompletedDishPrefab());
         var spawnMovement = spawn.GetCustomerMovement();
         spawnMovement.SetCustomerSpawner(this);
-        spawnMovement.SetAngryConfig(levelMaster.GetToBeAngryDuration());
+
+        if (FindObjectOfType<GameMaster>().OnTutorial())
+        {
+            spawnMovement.SetAngryConfig(9999);
+        }
+        else
+        {
+            spawnMovement.SetAngryConfig(levelMaster.GetToBeAngryDuration());
+        }
+        
+        
         spawn.transform.SetParent(transform);
 
         if (isSpawnInitial) { hasSpawnedInitial = true; }

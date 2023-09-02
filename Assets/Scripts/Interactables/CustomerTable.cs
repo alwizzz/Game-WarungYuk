@@ -39,7 +39,7 @@ public class CustomerTable : Table
         {
             levelSFXManager.PlayPopSFX();            
 
-            TakeItemFromPlayer(playerAction);
+            var itemString = TakeItemFromPlayer(playerAction);
             customerAction.TakeOrderedDishFromTable((CompletedDish)itemOnTable);
             itemOnTable = null;
             UpdateHasItemOnTable();
@@ -48,6 +48,19 @@ public class CustomerTable : Table
             UpdateHasCustomer();
 
             DespawnRecipeBubble();
+
+            print("HOY");
+
+            // tutorial inject
+            if (FindObjectOfType<GameMaster>().OnTutorial())
+            {
+                print("HOOOOY: " + itemString);
+                var tm = FindObjectOfType<TutorialManager>();
+                if(tm.GetState() == "Deliver" && itemString == "mie_aceh")
+                {
+                    tm.NextTutorialState("Deliver");
+                }
+            }
         }
     }
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
@@ -58,6 +71,12 @@ public class CustomerTable : Table
 
         GiveItemToPlayer(playerAction);
         UpdateHasItemOnTable();
+
+        // tutorial inject
+        if (FindObjectOfType<GameMaster>().OnTutorial())
+        {
+            FindObjectOfType<TutorialManager>().UpdateState("DropPlate");
+        }
     }
 
     public void Order(CustomerAction customerAction)

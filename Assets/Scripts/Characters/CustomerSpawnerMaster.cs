@@ -20,8 +20,15 @@ public class CustomerSpawnerMaster : MonoBehaviour
 
     private void Start()
     {
-        initialSpawnDelayMin = levelMaster.GetInitialSpawnDelayMin();
-        initialSpawnDelayMax = levelMaster.GetInitialSpawnDelayMax();
+        if (FindObjectOfType<GameMaster>().OnTutorial())
+        {
+            initialSpawnDelayMin = 0;
+            initialSpawnDelayMax = 0;
+        } else
+        {
+            initialSpawnDelayMin = levelMaster.GetInitialSpawnDelayMin();
+            initialSpawnDelayMax = levelMaster.GetInitialSpawnDelayMax();
+        }
 
           
     }
@@ -44,7 +51,14 @@ public class CustomerSpawnerMaster : MonoBehaviour
             float delay;
             if (!hasFirstSpawned)
             {
-                delay = Random.Range(2f, 5f);
+                if (FindObjectOfType<GameMaster>().OnTutorial())
+                {
+                    delay = 0f;
+                }
+                else
+                {
+                    delay = Random.Range(2f, 5f);
+                }
                 hasFirstSpawned = true;
             }
             else
