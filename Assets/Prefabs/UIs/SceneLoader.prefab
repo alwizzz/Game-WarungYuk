@@ -57,3 +57,5 @@ MonoBehaviour:
   codeLevelKalimantanScene: Level Kalimantan
   codeAfterLevelKalimantan: Afterlevel Kalimantan
   codeHowToPlayScene: How To Play
+  codePrologueScene: Prologue
+  codeEpilogueScene: Epilogue

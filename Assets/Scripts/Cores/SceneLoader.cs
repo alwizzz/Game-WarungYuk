@@ -19,6 +19,10 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] string codeLevelKalimantanScene;
     [SerializeField] string codeAfterLevelKalimantan;
     [SerializeField] string codeHowToPlayScene;
+    [SerializeField] string codePrologueScene;
+    [SerializeField] string codeEpilogueScene;
+
+
 
 
     public void LoadMapScene()
@@ -109,6 +113,30 @@ public class SceneLoader : MonoBehaviour
         else if (levelName == "Sulawesi") { LoadAfterLevelSulawesi(); }
         else if (levelName == "Kalimantan") { LoadAfterLevelKalimantan(); }
         else { Debug.Log("invalid levelName"); }
+    }
+
+    public void LoadPrologueScene()
+    {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
+        SceneManager.LoadScene(codePrologueScene);
+    }
+
+    public void LoadEpilogueScene()
+    {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
+        SceneManager.LoadScene(codeEpilogueScene);
+    }
+
+    public void LastLevelCompleted()
+    {
+        var afterLevel = FindObjectOfType<AfterLevel>();
+        if (afterLevel != null && afterLevel.IsCompleted())
+        {
+            LoadEpilogueScene();
+        } else
+        {
+            LoadMapScene();
+        }
     }
 
 }
