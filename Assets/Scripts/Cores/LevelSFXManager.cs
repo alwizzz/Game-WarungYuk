@@ -17,6 +17,9 @@ public class LevelSFXManager : MonoBehaviour
     [SerializeField] AudioClip trashBinSFX;
     [SerializeField] AudioClip mixSFX;
     [SerializeField] AudioClip popSFX;
+    [SerializeField] AudioClip powerUpSpawnSFX;
+    [SerializeField] AudioClip powerUpDespawnSFX;
+    [SerializeField] AudioClip powerUpTakenSFX;
 
     public void PlayProcessorSFX(string processName)
     {
@@ -103,5 +106,18 @@ public class LevelSFXManager : MonoBehaviour
     public void PlayPopSFX()
     {
         audioSource.PlayOneShot(popSFX);
+    }
+
+    public void PlayPowerUpSpawnSFX()
+    {
+        audioSource.PlayOneShot(powerUpSpawnSFX);
+    }
+    public void PlayPowerUpDespawnSFX()
+    {
+        audioSource.PlayOneShot(powerUpDespawnSFX);
+    }
+    public void PlayPowerUpTakenSFX()
+    {
+        audioSource.PlayOneShot(powerUpTakenSFX);
     }
 }

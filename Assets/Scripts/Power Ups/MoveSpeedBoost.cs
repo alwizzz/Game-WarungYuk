@@ -27,4 +27,9 @@ public class MoveSpeedBoost : PowerUp
         FindObjectOfType<PlayerMovement>().ResetMoveSpeed();
     }
 
+    private void Update()
+    {
+        if (!pickedUp) RotatePowerUp();
+    }
+
 }
