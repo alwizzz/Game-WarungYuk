@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TutorialManager : MonoBehaviour
 {
+    [SerializeField] private bool onModalOpen;
     [SerializeField] private string currentState;
     [SerializeField] private List<TutorialModal> tutorialModals;
     private LevelMaster levelMaster;
@@ -106,5 +107,16 @@ public class TutorialManager : MonoBehaviour
         print("b");
 
         FindModal("Finish").Show();
+    }
+
+    public bool OnModalOpen() => onModalOpen;
+    public void SetOnModalOpen(bool value) { onModalOpen = value; }
+
+    public void EndTutorial()
+    {
+        FindObjectOfType<GameMaster>().SetOnTutorial(false);
+        Time.timeScale = 1f;
+
+        FindObjectOfType<SceneLoader>().LoadMapScene();
     }
 }

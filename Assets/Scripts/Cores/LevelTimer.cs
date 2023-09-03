@@ -21,6 +21,7 @@ public class LevelTimer : MonoBehaviour
     public void ContinueTimer()
     {
         if (isTimeUp) { return; }
+
         StartCoroutine(startTimerHandler);
         isCounting = true;
     }
@@ -52,7 +53,14 @@ public class LevelTimer : MonoBehaviour
         UpdateIsTimeUp();
         UpdateTimerDisplay();
 
-        FindObjectOfType<LevelMaster>().EndLevel();
+        // tutorial inject
+        if (FindObjectOfType<GameMaster>().OnTutorial())
+        {
+            print("bypassed EndLevel()");
+        } else
+        {
+            FindObjectOfType<LevelMaster>().EndLevel();
+        }
     }
 
     public void ResetCounter()

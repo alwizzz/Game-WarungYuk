@@ -106,6 +106,7 @@ public class GameMaster : MonoBehaviour
     }
 
     public bool OnTutorial() => onTutorial;
+    public void SetOnTutorial(bool value) { onTutorial = value; }
 
     void UpdateHasGameData()
     {

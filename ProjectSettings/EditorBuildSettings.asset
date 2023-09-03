@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/USED SCENES/Epilogue.unity
     guid: e889a691478ab2149a52ff28651f7525
+  - enabled: 1
+    path: Assets/Scenes/USED SCENES/Level Tutorial.unity
+    guid: 5d15c3cc1be16ad4ca6256705f70f9f4
   m_configObjects: {}
