@@ -82,6 +82,7 @@ public class GameMaster : MonoBehaviour
     }
 
     [Header("Master")]
+    [SerializeField] private bool onTutorial = false;
     [SerializeField] string dataName = "warungyuk.dat"; //warungyuk_data.dat
     [SerializeField] bool hasGameData;
 
@@ -103,6 +104,8 @@ public class GameMaster : MonoBehaviour
     {
         UpdateHasGameData();
     }
+
+    public bool OnTutorial() => onTutorial;
 
     void UpdateHasGameData()
     {
