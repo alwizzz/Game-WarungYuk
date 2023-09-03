@@ -46,7 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpPrefabs:
   - {fileID: 1789176296155740166, guid: 199b728e282a09244beb7c3bdedeeedb, type: 3}
-  - {fileID: 8033566128466174018, guid: 9217a15915b14ea40989e9ed2556bec3, type: 3}
+  - {fileID: -3768514087471732278, guid: 6ec7966c837d7fa4eadc4a74fc305950, type: 3}
+  - {fileID: 476459369731907251, guid: 8b1aa6fb1d8ff9548be8a809f430736f, type: 3}
   hasExistingPowerUp: 0
   lastPowerUp: {fileID: 0}
   freeGrounds:
@@ -98,7 +99,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   lastFreeGround: {fileID: 0}
-  powerUpExistDuration: 10
+  powerUpExistDuration: 5
   spawnDelayMin: 5
   spawnDelayMax: 5
   spawnDelay: 0

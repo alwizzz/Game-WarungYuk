@@ -389,4 +389,10 @@ public class LevelMaster : MonoBehaviour
     {
         correctDishPointMultiplier = value;
     }
+
+
+    public void AddLevelDuration(int value)
+    {
+        levelDuration += value;
+    }
 }

@@ -11,6 +11,8 @@ public abstract class PowerUp : MonoBehaviour
     [SerializeField] protected float existDuration;
     [SerializeField] protected float existCounter;
 
+    [SerializeField] protected float rotateSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,5 +72,14 @@ public abstract class PowerUp : MonoBehaviour
 
         //gameObject.SetActive(false);
         transform.position = FindObjectOfType<PowerUpManager>().transform.position; //hide it;
+    }
+
+    protected void RotatePowerUp()
+    {
+        transform.eulerAngles = new Vector3(
+            transform.eulerAngles.x,
+            transform.eulerAngles.y + (rotateSpeed * Time.deltaTime) ,
+            transform.eulerAngles.z
+        ); 
     }
 }

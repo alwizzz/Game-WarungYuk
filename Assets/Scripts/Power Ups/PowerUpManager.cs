@@ -19,13 +19,16 @@ public class PowerUpManager : MonoBehaviour
     [SerializeField] private float spawnDelay;
     [SerializeField] private float spawnDelayCounter;
 
-    
+    [SerializeField] private LevelMaster levelMaster;
 
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
+        levelMaster = FindObjectOfType<LevelMaster>();
+
         //StartCoroutine(SpawnDelayTimer());
+        yield return new WaitUntil(() => levelMaster.GameHasStarted());
         RespawnPowerUp(0);
     }
 
@@ -61,7 +64,7 @@ public class PowerUpManager : MonoBehaviour
 
             Destroy(lastPowerUp.gameObject);
         }
-        PowerUp randomPowerUpPrefab = powerUpPrefabsCopy[Random.Range(0, powerUpPrefabsCopy.Count - 1)];
+        PowerUp randomPowerUpPrefab = powerUpPrefabsCopy[Random.Range(0, powerUpPrefabsCopy.Count)];
 
         List<FreeGround> freeGroundsCopy = new List<FreeGround>(freeGrounds);
         if (lastFreeGround != null)
@@ -73,9 +76,10 @@ public class PowerUpManager : MonoBehaviour
         PowerUp randomPowerUp = Instantiate(
             randomPowerUpPrefab,
             randomFreeGround.transform.position + new Vector3(0, 1.5f, 0),
-            Quaternion.identity
+            Quaternion.Euler(0, -90, 0)
         );
         randomPowerUp.transform.parent = transform;
+        //randomPowerUp.transform.LookAt(Camera.main.transform);
         randomPowerUp.SetupAndActivate(powerUpExistDuration);
 
         lastPowerUp = randomPowerUp;

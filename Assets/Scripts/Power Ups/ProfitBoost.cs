@@ -26,4 +26,9 @@ public class ProfitBoost : PowerUp
 
         FindObjectOfType<LevelMaster>().SetCorrectDishPointMultiplier(1f);
     }
+
+    private void Update()
+    {
+        if (!pickedUp) RotatePowerUp();
+    }
 }
