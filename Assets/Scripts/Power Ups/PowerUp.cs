@@ -30,6 +30,7 @@ public abstract class PowerUp : MonoBehaviour
     public void SetupAndActivate(float existDuration)
     {
         this.existDuration = existDuration;
+        FindObjectOfType<LevelSFXManager>().PlayPowerUpSpawnSFX();
 
         StartCoroutine(ExistTimer());
     }
@@ -55,6 +56,7 @@ public abstract class PowerUp : MonoBehaviour
 
         //gameObject.SetActive(false);
         transform.position = FindObjectOfType<PowerUpManager>().transform.position;
+        FindObjectOfType<LevelSFXManager>().PlayPowerUpDespawnSFX();
     }
 
     protected void OnTriggerEnter(Collider other)
@@ -72,6 +74,7 @@ public abstract class PowerUp : MonoBehaviour
 
         //gameObject.SetActive(false);
         transform.position = FindObjectOfType<PowerUpManager>().transform.position; //hide it;
+        FindObjectOfType<LevelSFXManager>().PlayPowerUpTakenSFX();
     }
 
     protected void RotatePowerUp()

@@ -58,6 +58,9 @@ MonoBehaviour:
   trashBinSFX: {fileID: 8300000, guid: 27d5396d43b1afe44a1532a57c165e82, type: 3}
   mixSFX: {fileID: 8300000, guid: b77752983f91c064a9c319c7f504abb1, type: 3}
   popSFX: {fileID: 8300000, guid: f4908466708d7e04981b9b4407964296, type: 3}
+  powerUpSpawnSFX: {fileID: 8300000, guid: 6372b57372b2a2345ae946851c601915, type: 3}
+  powerUpDespawnSFX: {fileID: 8300000, guid: 87d6d5c52a3afbb48a2f831d912b215f, type: 3}
+  powerUpTakenSFX: {fileID: 8300000, guid: 8d6b6d43fe51b0247a4cb20156d7e3e9, type: 3}
 --- !u!82 &302866841247721471
 AudioSource:
   m_ObjectHideFlags: 0

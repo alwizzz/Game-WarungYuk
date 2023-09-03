@@ -391,8 +391,5 @@ public class LevelMaster : MonoBehaviour
     }
 
 
-    public void AddLevelDuration(int value)
-    {
-        levelDuration += value;
-    }
+
 }

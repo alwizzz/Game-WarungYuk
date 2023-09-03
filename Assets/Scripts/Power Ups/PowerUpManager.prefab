@@ -99,8 +99,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   lastFreeGround: {fileID: 0}
-  powerUpExistDuration: 5
-  spawnDelayMin: 5
-  spawnDelayMax: 5
+  powerUpExistDuration: 10
+  spawnDelayMin: 50
+  spawnDelayMax: 70
   spawnDelay: 0
   spawnDelayCounter: 0
+  levelMaster: {fileID: 0}
