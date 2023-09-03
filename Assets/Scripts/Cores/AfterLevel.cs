@@ -120,4 +120,6 @@ public class AfterLevel : MonoBehaviour
 
         gameMaster.UpdateLevelDataAndSaveGame(levelName, hasBeenCompletedNew, highscoreNew, obtainedStarsNew);
     }
+
+    public bool IsCompleted() => isCompleted;
 }

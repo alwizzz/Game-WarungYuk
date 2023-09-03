@@ -6,42 +6,48 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu/Main Menu.unity
+    path: Assets/Scenes/USED SCENES/Main Menu.unity
     guid: 96fc5e4ed00a3e3438eb1bc3bb3236ce
   - enabled: 1
-    path: Assets/Scenes/Menu/How to Play.unity
+    path: Assets/Scenes/USED SCENES/How to Play.unity
     guid: 7037e2d88625a7f4e94a0a9c65b650da
   - enabled: 1
-    path: Assets/Scenes/Menu/Map.unity
+    path: Assets/Scenes/USED SCENES/Map.unity
     guid: 0d220b07d091c17458c7a2293c60457d
   - enabled: 1
-    path: Assets/Scenes/Levels/Level Sumatra.unity
+    path: Assets/Scenes/USED SCENES/Level Sumatra.unity
     guid: 7586e9e9de5e02644a19789cf2dc83fa
   - enabled: 1
-    path: Assets/Scenes/Levels/Afterlevel Sumatra.unity
+    path: Assets/Scenes/USED SCENES/Afterlevel Sumatra.unity
     guid: bbbbe922990546442957f786ac059491
   - enabled: 1
-    path: Assets/Scenes/Levels/Level Jawa.unity
+    path: Assets/Scenes/USED SCENES/Level Jawa.unity
     guid: 9d097b5f3f96bc9438660b52768971b5
   - enabled: 1
-    path: Assets/Scenes/Levels/Afterlevel Jawa.unity
+    path: Assets/Scenes/USED SCENES/Afterlevel Jawa.unity
     guid: baa9f71cfb6d7e14480c67d00f2f8691
   - enabled: 1
-    path: Assets/Scenes/Levels/Level Papua.unity
+    path: Assets/Scenes/USED SCENES/Level Papua.unity
     guid: 74e55f8bf32dcdd4cab9e995446da084
   - enabled: 1
-    path: Assets/Scenes/Levels/Afterlevel Papua.unity
+    path: Assets/Scenes/USED SCENES/Afterlevel Papua.unity
     guid: 657b4965c97fc5f4981c0033ac7847a7
   - enabled: 1
-    path: Assets/Scenes/Levels/Level Sulawesi.unity
+    path: Assets/Scenes/USED SCENES/Level Sulawesi.unity
     guid: 0dfd9481801ba9347bafa5bed3646cac
   - enabled: 1
-    path: Assets/Scenes/Levels/Afterlevel Sulawesi.unity
+    path: Assets/Scenes/USED SCENES/Afterlevel Sulawesi.unity
     guid: cf3aaf507ef1867499f5cd9ba3833346
   - enabled: 1
-    path: Assets/Scenes/Levels/Level Kalimantan.unity
+    path: Assets/Scenes/USED SCENES/Level Kalimantan.unity
     guid: 6fc4a29d71b30ef4cbb584f7268f9c15
   - enabled: 1
-    path: Assets/Scenes/Levels/Afterlevel Kalimantan.unity
+    path: Assets/Scenes/USED SCENES/Afterlevel Kalimantan.unity
     guid: 1040596c3705c0f45b882faa4b7a6ee6
+  - enabled: 1
+    path: Assets/Scenes/USED SCENES/Prologue.unity
+    guid: 03b1fa267efa54a4d9c1945beb84d226
+  - enabled: 1
+    path: Assets/Scenes/USED SCENES/Epilogue.unity
+    guid: e889a691478ab2149a52ff28651f7525
   m_configObjects: {}

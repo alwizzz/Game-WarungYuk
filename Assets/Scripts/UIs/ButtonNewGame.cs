@@ -21,7 +21,8 @@ public class ButtonNewGame : MonoBehaviour
     public void OverwriteAndNewGame()
     {
         FindObjectOfType<GameMaster>().ResetAndLoadGame();
-        sceneLoader.LoadMapScene();
+        //sceneLoader.LoadMapScene();
+        sceneLoader.LoadPrologueScene();
     }
 
     public void Cancel()
