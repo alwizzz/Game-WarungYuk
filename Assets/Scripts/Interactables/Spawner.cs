@@ -17,9 +17,6 @@ public class Spawner : Interactable
     }
     public override void InteractionWhenPlayerNotHoldingItem(PlayerAction playerAction)
     {
-        levelSFXManager.PlayTakeItemFromSpawnerSFX();
-        SpawnItemToPlayer(playerAction);
-
         // tutorial inject
         if (FindObjectOfType<GameMaster>().OnTutorial())
         {
@@ -27,8 +24,23 @@ public class Spawner : Interactable
             if (rawIngredientPrefab.GetCodeName() == "daging" && tutorialManager.GetState() == "TakeDaging")
             {
                 tutorialManager.NextTutorialState("TakeDaging");
+
+                levelSFXManager.PlayTakeItemFromSpawnerSFX();
+                SpawnItemToPlayer(playerAction);
+            } else if(rawIngredientPrefab.GetCodeName() == "mie" && tutorialManager.GetState() == "MixMie")
+            {
+                levelSFXManager.PlayTakeItemFromSpawnerSFX();
+                SpawnItemToPlayer(playerAction);
+            } else 
+            {
+                print("cant take " + rawIngredientPrefab.GetCodeName() + " yet...");
             }
+
+            return;
         }
+
+        levelSFXManager.PlayTakeItemFromSpawnerSFX();
+        SpawnItemToPlayer(playerAction);
     }
 
     void SpawnItemToPlayer(PlayerAction playerAction)

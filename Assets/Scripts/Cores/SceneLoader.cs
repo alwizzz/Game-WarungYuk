@@ -21,6 +21,8 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] string codeHowToPlayScene;
     [SerializeField] string codePrologueScene;
     [SerializeField] string codeEpilogueScene;
+    [SerializeField] string codeTutorialLevelScene;
+
 
 
 
@@ -125,6 +127,15 @@ public class SceneLoader : MonoBehaviour
     {
         FindObjectOfType<AudioMaster>().PlayClickSFX();
         SceneManager.LoadScene(codeEpilogueScene);
+    }
+
+    public void LoadTutorialLevel()
+    {
+        FindObjectOfType<AudioMaster>().PlayClickSFX();
+        FindObjectOfType<GameMaster>().SetOnTutorial(true);
+        
+
+        SceneManager.LoadScene(codeTutorialLevelScene);
     }
 
     public void LastLevelCompleted()

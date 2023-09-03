@@ -131,6 +131,7 @@ public class LevelMaster : MonoBehaviour
 
     private IEnumerator EnterLevelCountdown()
     {
+        print("33333333333333333333333333333333333333333 " + Time.timeScale); 
         enterLevelCounter = enterLevelDuration;
         enterLevelSlider.value = 1f;
 
@@ -264,23 +265,40 @@ public class LevelMaster : MonoBehaviour
         if (!gameHasStarted) { return; }
 
         Time.timeScale = 0f;
+        isPaused = true;
+
         levelTimer.PauseTimer();
 
         modalPause.SetActive(true);
-        isPaused = true;
-
+        
         CloseCookingGuide();
     }
 
     public void Unpause()
     {
 
-        Time.timeScale = 1f;
         levelTimer.ContinueTimer();
 
         modalPause.SetActive(false);
-        isPaused = false;
         FindObjectOfType<AudioMaster>().PlayClickSFX();
+
+        // tutorial inject
+        if (FindObjectOfType<GameMaster>().OnTutorial())
+        {
+            if (!FindObjectOfType<TutorialManager>().OnModalOpen())
+            {
+                Time.timeScale = 1f;
+                isPaused = false;
+            }
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            isPaused = false;
+        }
+
+
+        
     }
 
     public void BackToMap()
@@ -338,12 +356,17 @@ public class LevelMaster : MonoBehaviour
     {
         isPaused = true;
         Time.timeScale = 0f;
+
+        FindObjectOfType<TutorialManager>().SetOnModalOpen(true);
     }
 
     public void Unpause_T()
     {
         isPaused = false;
         Time.timeScale = 1f;
+
+        FindObjectOfType<TutorialManager>().SetOnModalOpen(false);
+
     }
 
     #endregion
