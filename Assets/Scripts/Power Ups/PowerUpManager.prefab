@@ -98,6 +98,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   lastFreeGround: {fileID: 0}
   powerUpExistDuration: 10
   spawnDelayMin: 50
