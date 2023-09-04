@@ -12042,7 +12042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7409960888836731175, guid: 293b40fbb99bdd24a8925b8021240810, type: 3}
       propertyPath: m_text
-      value: Dagin sudah dicampurkan pada mangkok. Sekarang, lakukan hal yang sama
+      value: Daging sudah dicampurkan pada mangkok. Sekarang, lakukan hal yang sama
         pada bahan Mie!
       objectReference: {fileID: 0}
     - target: {fileID: 7621227953375542504, guid: 293b40fbb99bdd24a8925b8021240810, type: 3}

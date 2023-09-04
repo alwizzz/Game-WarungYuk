@@ -21574,12 +21574,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6726628989446232245, guid: 9e8f5acc7872f434a874cc1b0922f5dc, type: 3}
       propertyPath: m_Volume
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6726628989446232245, guid: 9e8f5acc7872f434a874cc1b0922f5dc, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 9fe55186e5e925b4eba294f6137a1f94, type: 3}
+      objectReference: {fileID: 8300000, guid: 99e6cd99e50ba96498f13c29862e4bd8, type: 3}
     - target: {fileID: 7989042470879826820, guid: 9e8f5acc7872f434a874cc1b0922f5dc, type: 3}
       propertyPath: m_RootOrder
       value: 13
