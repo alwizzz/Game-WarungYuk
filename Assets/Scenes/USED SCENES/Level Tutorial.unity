@@ -45010,6 +45010,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1928031698}
     m_Modifications:
+    - target: {fileID: 4961278291773980469, guid: 26a5508ea23b7a4459c22b1a3d2f693f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9379495
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961278291773980469, guid: 26a5508ea23b7a4459c22b1a3d2f693f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.34677196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961278291773980469, guid: 26a5508ea23b7a4459c22b1a3d2f693f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 40.58
+      objectReference: {fileID: 0}
     - target: {fileID: 7901045022163410982, guid: 26a5508ea23b7a4459c22b1a3d2f693f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -51589,7 +51601,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7409960888836731175, guid: 293b40fbb99bdd24a8925b8021240810, type: 3}
       propertyPath: m_text
-      value: 'Selamat! Kamu berhasil menyelesaikan Level Tutorial! '
+      value: Selamat! Kamu berhasil menyelesaikan Level Tutorial! Temukan berbagai
+        masakan daerah lainnya di level-level selanjutnya! Kau juga mungkin akan
+        menemukan PowerUp!
       objectReference: {fileID: 0}
     - target: {fileID: 7621227953375542504, guid: 293b40fbb99bdd24a8925b8021240810, type: 3}
       propertyPath: state
@@ -63140,7 +63154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &201614083870711604
 GameObject:
   m_ObjectHideFlags: 0
@@ -64854,6 +64868,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 450128309}
     m_Modifications:
+    - target: {fileID: 4961278291773980469, guid: 26a5508ea23b7a4459c22b1a3d2f693f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8860257
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961278291773980469, guid: 26a5508ea23b7a4459c22b1a3d2f693f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.46363622
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961278291773980469, guid: 26a5508ea23b7a4459c22b1a3d2f693f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 55.244
+      objectReference: {fileID: 0}
     - target: {fileID: 7901045022163410982, guid: 26a5508ea23b7a4459c22b1a3d2f693f, type: 3}
       propertyPath: m_RootOrder
       value: 0
